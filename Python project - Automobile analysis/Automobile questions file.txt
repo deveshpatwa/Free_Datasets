@@ -1,0 +1,10 @@
+1. what is the average price and average mileage for convertible cars
+2. Sort cars by company and then price in descending order
+3. Save data for 'Toyota' separately
+4. which company is producing most expensive car?
+5. Name the cars on basis of maximum horsepower
+6. company wise average price of cars and order them in descending order
+7. create a column named: "decision", If wheel-base is more than 100 and length is more than 175 then "Buy" else "Don't buy"?
+8. Select only cars whose decision is "buy"?
+9. Find average price based on cars company?
+10. Find is there any relation between horse power and mileage? 
