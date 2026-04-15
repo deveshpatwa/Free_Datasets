@@ -5,4 +5,4 @@ empid,name,depid,salary,manager_id
 104,ravi,2,78000,107
 105,shivam,2,73000,107
 106,kartik,3,90000,105
-107,kunal,8,35000,
+107,kunal,8,35000,NULL
