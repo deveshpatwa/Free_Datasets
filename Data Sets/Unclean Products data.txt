@@ -2,8 +2,7 @@
 				Order Summary Report
 For the Year Ended December 31, 2023
 
-Order Number                    | Order Date                         | Product-Category   | Price per Unit  | Qnatity   |Total
-|----------------------------|-------------------------------------|------------------|-------------|
+Order Number                    , Order Date                         , Product-Category   , Price per Unit  , Qnatity   ,Total
 
 
 
