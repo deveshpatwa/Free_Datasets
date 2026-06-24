@@ -1,4 +1,4 @@
-depid,name,location
-1,sales,block A
-2,marketing,block b
-5,production,block c
+depid,name
+1,sales
+2,marketing
+5,production
