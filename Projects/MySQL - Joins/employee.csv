@@ -1,0 +1,8 @@
+Employee_id,Employee_name,Department_id,Salary,manager_id
+101,Ravi,1,50000,105
+102,Kunal,2,90000,105
+103,Umang,1,30000,107
+104,Ravi,2,78000,107
+105,Shivam,2,73000,107
+106,Kartik,3,90000,105
+107,Kunal,8,35000,NULL
