@@ -16,8 +16,6 @@ create table customer(
     sales int
 );
 
-describe customer;
-select * from customer;
 
 # delete a table
 drop table customer;
@@ -29,13 +27,7 @@ describe customer;
 select * from customer;
 
 
-# Create a table of sales with these columns -  						Order_id (A101), product, weight(5.67) , qty, sales?
-
-
-
-
-
-
+# Create a table of sales with these columns - Order_id (A101), product, weight(5.67) , qty, sales?
 
 # Create a table for library management system where there will be these table ?
 # 1.Create a database Library
@@ -68,8 +60,7 @@ alter table customer rename to new_customer;
 # delete the table customer
 drop table new_customer;
 
--- ------------------------------------------------------------
-# DML
+-- ---------------------------- DML --------------------------------
 
 create table emp(
 	name varchar(30),
@@ -97,20 +88,27 @@ values ("sumit",null,99000);
 
 insert into emp
 values (null,null,null);
+
 select * from emp;
 
+# update a record in emp table where name is rohan and set age to 13
 update emp
-set age = 23, salary = 90000
-where name = "sumit";
+set age = 13
+where name = "rohan";
 
 update emp
 set age = 50;
 
 select * from emp;
 
+# delete a record from emp table where name is mohit
 delete from emp
 where name = "mohit";
 
+delete from emp
+where salary < 30000;
+
+# delete all records from emp table
 truncate table emp;
 
 delete from emp
@@ -123,6 +121,37 @@ describe emp;
 show create table emp;
 
 -- --------------------TCL-------------------------------
+-- --- ACID -------
+/*
+    ACID Properties in Database Systems
+    
+    ACID is an acronym that represents four key properties of reliable database transactions:
+    
+    1. ATOMICITY
+         - Ensures that a transaction is "all-or-nothing"
+         - Either all operations within a transaction complete successfully, or none of them do
+         - If a failure occurs mid-transaction, all changes are rolled back to maintain data consistency
+         - Example: Money transfer must either debit from one account AND credit to another, or neither happens
+    
+    2. CONSISTENCY
+         - Guarantees that a transaction takes the database from one valid state to another valid state
+         - All data integrity rules and constraints are maintained before and after the transaction
+         - The database will never be left in a partially updated or corrupted state
+         - Example: Total balance in all accounts must remain constant during a transfer
+    
+    3. ISOLATION
+         - Ensures that concurrent transactions do not interfere with each other
+         - Each transaction executes independently without visibility into uncommitted changes from other transactions
+         - Example: Two simultaneous transactions on the same data won't cause conflicts
+    
+    4. DURABILITY
+         - Guarantees that once a transaction is committed, the data persists permanently
+         - Even in case of system failures, power outages, or crashes, committed changes survive
+         - Data is stored in persistent storage (disk) and cannot be lost after commit
+         - Example: Once a purchase is confirmed, it remains in the database even if the server crashes
+    
+    ACID properties are essential for maintaining data reliability and integrity in critical applications.
+*/
 
 create table bank(
 	name varchar(30),
@@ -130,6 +159,7 @@ create table bank(
     );
     
 insert into bank values ("ravi",500), ("kunal",1000);
+
 select * from bank;
 
 start transaction ;
@@ -152,8 +182,30 @@ rollback to hello;
 
 select * from bank;
 
+truncate table bank;
+
 commit;
+-- ------------------ CONSTRAINT ----------------
+CREATE table test (
+	name varchar(30) not null,
+    phone int unique,
+    city varchar(30) default "indore"
+    );
+
+insert into test values("ravi",999,"bhopal");
+insert into test values("ravi",999,"bhopal");
+insert into test values(null,888,"bhopal");
+insert into test(name) values("mohit");
+insert into test values("mohan",777,null);
+
+select * from test;
+
+
+
 -- --------------------- DQL ---------------
+-- DQL (Data Query Language) is a subset of SQL used to retrieve and query data from databases.
+-- Common DQL commands include SELECT, which allows you to fetch data from one or more tables
+-- with various filtering, sorting, and aggregation options.
 
 
 select * from store;
@@ -174,7 +226,7 @@ select name as customer_name from store;
 # select with calculations
 select name,sales,profit,sales-profit as cost from store;
 
-###########  select with functions
+#    functions
 
 
 select concat(name, " ", category) as full_name from store;
@@ -224,7 +276,68 @@ from store;
 
 select concat(name," ",state) from store;
 
+
+# select distinct 
+select distinct category  from store;
+
 select distinct category,sub_category from store;
+
+select count(distinct city) from store;
+
+# Q Find number of unique customers ?
+
+
+select distinct * from store ;
+
+
+# Where 
+
+select name,sales
+from store
+where sales>2000;
+
+select * 
+from store
+where region = "east";
+
+# Select all the records of furniture category ?
+# Show name, sales and profit the records where we have loss ?
+# Show all the transaction from year 2015 ?
+
+
+# 	AND - OR 
+# Show customer name category sales and profit where the category is Furniture and we had face a loss ?
+select name, category ,sales , profit
+from store
+where category = "furniture"  and profit<0 ;
+
+# Show all the customer name region and sales where either the region should be East or the sales should be above 1000 ?
+
+
+# show sales column where the sales is between 20 and 25 ?
+select sales
+from store
+where sales > 20 and sales <25;
+
+select sales
+from store
+where sales between 20 and 25;
+
+# filter null values
+select * from store
+where post_code is null;
+
+select * from store
+where post_code is not null;
+
+# Count number of null values in post_code ?
+select count(*)
+from store
+where post_code is null;
+
+# Find total sales in Technology category?
+
+
 
 select round(sales,2) from store;
 
@@ -259,7 +372,7 @@ from store
 order by sales desc;
 
 
-
+# select with having clause
 
 select sub_category, sum(sales) as total_sales
 from store
@@ -445,9 +558,6 @@ on employees.department_id = departments.department_id
 where employee_id is null;
 
 -- 15. display employee name, department name and location
-
-
-
 
 
 
