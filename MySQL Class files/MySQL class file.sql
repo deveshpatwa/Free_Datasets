@@ -379,6 +379,51 @@ from store
 group by sub_category
 having total_sales < 1000;
 
+-- -------------------Windows Functions -----------------------
+select name,region,sales,rank() over (partition by region order by sales desc ) as ranking
+from store;
+
+select * ,rank() over(partition by gender , department order by marks desc) as ranking
+from students;
+
+
+select * , 
+	rank() over(order by scholarship desc) as rank_func,
+	dense_rank() over(order by scholarship desc) as dense_rank_func,
+    ROW_NUMBER() over(order by scholarship desc) as row_number_func
+    
+from students;
+
+
+
+-- create table
+create table yearly_sales (
+    sales_year int,
+    sales_amount int
+);
+
+-- insert sample data
+insert into yearly_sales (sales_year, sales_amount)
+values
+(2018, 42000.00),
+(2019, 44500.00),
+(2020, 39800.00),
+(2021, 46250.00),
+(2022, 48700.00),
+(2023, 51500.00),
+(2024, 53800.00),
+(2025, 55600.00);
+
+-- view data
+select * 
+from yearly_sales;
+
+select * , lag(sales_amount) over() as prv_sales , sales_amount - lag(sales_amount) over() as changes
+from yearly_sales;
+
+select * , lead(sales_amount) over() as nxt_sales 
+from yearly_sales;
+
 -- --------------------Practice Questions -------------------
 
 -- create table
