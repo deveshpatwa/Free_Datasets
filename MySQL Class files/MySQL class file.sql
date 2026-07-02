@@ -84,6 +84,9 @@ insert into emp(name,age)
 values ("mohit",49);
 
 insert into emp
+values(" ",99,15000);
+
+insert into emp
 values ("sumit",null,99000);
 
 insert into emp
@@ -186,21 +189,80 @@ truncate table bank;
 
 commit;
 -- ------------------ CONSTRAINT ----------------
+
+# NOT NULL , UNIQUE , DEFAULT
+
 CREATE table test (
 	name varchar(30) not null,
     phone int unique,
     city varchar(30) default "indore"
     );
 
+describe test;
+
 insert into test values("ravi",999,"bhopal");
-insert into test values("ravi",999,"bhopal");
+insert into test values("suman",999,"itarsi");
 insert into test values(null,888,"bhopal");
 insert into test(name) values("mohit");
 insert into test values("mohan",777,null);
 
 select * from test;
 
+# CHECK 
+create table vote (
+	name varchar(30),
+    age int,
+    weight int,
+    constraint check_age check (age>=18)
+    );
+	
+describe vote;
 
+show create table vote;
+
+insert into vote values ("kunal",24);
+insert into vote values ("mohit",15);
+
+select * from vote;
+
+# AUTO_INCREMENT
+create table people(
+	id int unique AUTO_INCREMENT,
+    name varchar(30)
+    );
+
+describe people;
+
+insert into people(name) values ("rohan"),("kunal"),("mohit");
+
+select * from people;
+
+DELETE from people;
+
+insert into people(name) values ("umang");
+
+truncate table people;
+
+# PRIMARY KEY
+drop table customer;
+drop table orders;
+
+
+create table customer(
+	customer_id int primary key,
+    name varchar(30)
+    );
+
+describe customer;
+	
+create table orders(
+	product_name varchar(30),
+    amount int,
+    customer_id int, 
+    foreign key(customer_id) references customer(customer_id)
+    );
+    
+show create table orders;
 
 -- --------------------- DQL ---------------
 -- DQL (Data Query Language) is a subset of SQL used to retrieve and query data from databases.
@@ -219,6 +281,9 @@ select "hello world" as msg ;
 
 select "Mohan" as name, 45 as age;
 
+select sales from store;
+
+
 select name,city as location ,sales from store;
 
 select name as customer_name from store;
@@ -226,29 +291,45 @@ select name as customer_name from store;
 # select with calculations
 select name,sales,profit,sales-profit as cost from store;
 
-#    functions
+# functions
 
+# Text Functions
+select upper(name) from store;
+select lower(name) from store;
 
-select concat(name, " ", category) as full_name from store;
+select left(name,2) from store;
+select name,right(name,3) from store;
+
+select concat("Rohan"," ","Kumar") as full_name;
+
+select concat(name , " " , category) as full_name from store;
+
+select state , city from store;
+
 
 # make a sales category column?
 select sales,if(sales>1000,"good","bad") as sales_category from store;
 
 # make a profit category( profit / loss ) column?
+select profit from store;
+
 
 select 
 	profit,
     if(profit>0,"profit","loss") as profit_category
 from store; 
 
+
 # Aggfunc - sum, min, max, count, avg
-select sum(sales),min(sales),max(sales)
+select sum(sales),min(sales),max(sales),count(sales),avg(sales)
 from store;
 
 # find total profit
 
 
-# find avg of qty
+# find avg of qty and round them to 2 decimal places 
+select round(avg(qty),2) from store;
+
 
 # find total number of orders?
 select count(*) from store;
@@ -337,28 +418,91 @@ where post_code is null;
 
 # Find total sales in Technology category?
 
+## WHERE - LIKE
+
+# Show all the unique names which starts with "A"
+SELECT distinct name
+from store
+where name like "s%";
+
+# Find all the unique name which start with "T"
+SELECT distinct name
+from store
+where name like "t%s";
+
+# Find all the unique name which ends with "sh"
+
+# Find all the unique sub_category which start with "A" and has total 3 char?
+select distinct sub_category
+from store
+where sub_category like "a__";
 
 
-select round(sales,2) from store;
+# WHERE - IN , NOT IN
 
-select * from students ;
+select name, sub_category,sales
+from store
+where sub_category in ("art","paper","tables");
 
+select name, sub_category,sales
+from store
+where sub_category NOT in ("art","paper","tables");
 
-select sub_category , sum(sales)
+# GROUP BY
+
+select region, sum(sales)
+from store
+group by region;
+
+# Shows up sub_category wise total sales and total profit ?
+select sub_category , sum(sales) , sum(profit)
 from store
 group by sub_category;
+
+# Find category wise number of orders ?
+
+
+# Show category wise sales for each region ?
+select region,category, sum(sales)
+from store
+group by region , category;
+
+# Show category then subcategory by total sales total profit and average quantity ?
+
+
+# ORDER BY
+SELECT *
+from store
+order by order_date ;
+
 
 select region,category , sum(sales)
 from store
 group by region,category
 order by region, category ;
 
+# Group BY
 
 
 select month(order_date) as month , count(*) as cnt
 from store
 where category = "furniture"
 group by month ;
+
+# Limit 
+select name,sales
+from store
+order by sales desc
+limit 1 offset 4;
+
+# Find top three cities with highest total sales ?
+select city , round(sum(sales)) as total_sales
+from store
+group by city
+order by total_sales desc
+limit 3;
+
+
 
 # CASE - WHEN - THEN - ELSE - END
 select sales , 
@@ -423,6 +567,44 @@ from yearly_sales;
 
 select * , lead(sales_amount) over() as nxt_sales 
 from yearly_sales;
+
+-- ------------------Views in MySQL ------------------------
+/*A View in MySQL is a virtual table based on the resultset of a SQL query. It doesn't store data itself; instead, it stores the query that generates the data. When you query the view, MySQL runs the stored query and returns the result
+
+Updatable View: A simple view (usually based on a single table) where you can use
+INSERT, UPDATE, and DELETE.
+
+Non-Updatable View: A complex view that uses things like sums, averages, or
+grouping (GROUP BY). You can only use SELECT on it.
+ */
+
+create view  v1 as
+select name,region,sales
+from store
+where region = "east" and sales >= 1000;
+
+select * from v1;
+
+# Create a view to fetch a daily report of the last day's total sales total profit and total quantity ?
+
+select max(order_date) from store;  # to get the newest date
+
+create view daily_report as 
+select 
+	order_date,
+	sum(sales) as total_sales,
+    sum(profit) as total_profit,
+    sum(qty) as total_QTY
+from store 
+where order_date = ( select max(order_date) from store )
+group by order_date; 
+
+select * from daily_report;
+
+
+# select date_add( current_date() , interval -1 day) ;
+
+
 
 -- --------------------Practice Questions -------------------
 
@@ -603,6 +785,14 @@ on employees.department_id = departments.department_id
 where employee_id is null;
 
 -- 15. display employee name, department name and location
+
+
+
+
+
+
+
+
 
 
 
