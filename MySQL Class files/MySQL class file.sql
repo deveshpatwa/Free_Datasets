@@ -97,16 +97,20 @@ select * from emp;
 # update a record in emp table where name is rohan and set age to 13
 update emp
 set age = 13
-where name = "rohan";
+where name = "suman";
 
 update emp
 set age = 50;
 
 select * from emp;
 
+set sql_safe_updates = 0;
+
 # delete a record from emp table where name is mohit
 delete from emp
 where name = "mohit";
+
+delete from emp;
 
 delete from emp
 where salary < 30000;
@@ -261,8 +265,20 @@ create table orders(
     customer_id int, 
     foreign key(customer_id) references customer(customer_id)
     );
-    
+  
+  
+insert into customer values(1,"rohan"),(2,"kunal");
+select * from customer;
+
+insert into orders values("apple",400,2); 
+insert into orders values("Banana",670,4);
+insert into orders values("Banana",670,null);
+select * from orders;
+  
+describe orders;  
+  
 show create table orders;
+
 
 -- --------------------- DQL ---------------
 -- DQL (Data Query Language) is a subset of SQL used to retrieve and query data from databases.
@@ -272,7 +288,6 @@ show create table orders;
 
 select * from store;
 
-
 # select - use to show anything on screen
 
 select 870 ;
@@ -281,7 +296,7 @@ select "hello world" as msg ;
 
 select "Mohan" as name, 45 as age;
 
-select sales from store;
+select name,sales,sales*0.8 from store;
 
 
 select name,city as location ,sales from store;
@@ -336,6 +351,8 @@ select count(*) from store;
 
 select count(post_code) from store;
 
+
+
 # find the profit margin of orders and round it to 2 decimal places?
 select round(sum(profit) / sum(sales) * 100,2) as profit_margin
 from store;
@@ -352,13 +369,14 @@ select
 from store;
 
 # Difference between two dates (to calculate age)?
-select timestampdiff(month, order_date, current_date())
+select order_date as DOB, timestampdiff(year, order_date, current_date()) as AGE
 from store;
-
-select concat(name," ",state) from store;
 
 
 # select distinct 
+
+select category from store;
+
 select distinct category  from store;
 
 select distinct category,sub_category from store;
@@ -373,6 +391,10 @@ select distinct * from store ;
 
 # Where 
 
+select *
+from store
+where sub_category = "chairs";
+
 select name,sales
 from store
 where sales>2000;
@@ -384,7 +406,7 @@ where region = "east";
 # Select all the records of furniture category ?
 # Show name, sales and profit the records where we have loss ?
 # Show all the transaction from year 2015 ?
-
+# Find total sales in 2016 ?
 
 # 	AND - OR 
 # Show customer name category sales and profit where the category is Furniture and we had face a loss ?
