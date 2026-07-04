@@ -404,6 +404,8 @@ select category from store;
 
 select distinct category  from store;
 
+select count(distinct category)  from store;
+
 select distinct category,sub_category from store;
 
 select count(distinct city) from store;
@@ -420,9 +422,20 @@ select *
 from store
 where sub_category = "chairs";
 
+# Find total sales in furniture category ?
+select sum(sales) as total_sales
+from store
+where category = "furniture";
+
+# Select all the records where the category should not be furnished ?
+select *
+from store
+where category != "furniture";
+
+
 select name,sales
 from store
-where sales>2000;
+where sales>=2000;
 
 select * 
 from store
@@ -434,10 +447,17 @@ where region = "east";
 # Find total sales in 2016 ?
 # Find average profit in furniture category ?
 
+select * 
+from store
+where year(order_date) = 2015 and month(order_date) = 3;
+
+
+
+
 # 	AND - OR 
 
-# Show customer name category sales and profit where the category is Furniture and we had face a loss ?
-select name, category ,sales , profit
+# Show customer name, category, sales, profit and there cost where the category is Furniture and we had face a loss ?
+select name, category ,sales , profit,round(sales-profit,1) as cost
 from store
 where category = "furniture"  and profit<0 ;
 
@@ -454,7 +474,7 @@ from store
 where sales between 20 and 25;
 
 # filter null values
-select * from store;
+select * from store
 where post_code is null;
 
 select * from store
@@ -467,14 +487,17 @@ where post_code is null;
 
 # Find total sales in Technology category?
 
+# Show name column where the customer name start with 'P'?
+
+
 ## WHERE - LIKE
 
 # Show all the unique names which starts with "A"
 SELECT distinct name
 from store
-where name like "s%";
+where name like "a%";
 
-# Find all the unique name which start with "T"
+# Find all the unique name which start with "T" and ends with "s"?
 SELECT distinct name
 from store
 where name like "t%s";
@@ -485,6 +508,10 @@ where name like "t%s";
 select distinct sub_category
 from store
 where sub_category like "a__";
+
+select sales
+from store
+where sales like "_4.%";
 
 
 # WHERE - IN , NOT IN
