@@ -309,7 +309,7 @@ select name,sales,profit,sales-profit as cost from store;
 # functions
 
 # Text Functions
-select upper(name) from store;
+select upper(name),name from store;
 select lower(name) from store;
 
 select left(name,2) from store;
@@ -335,15 +335,40 @@ select
 from store; 
 
 
-# Aggfunc - sum, min, max, count, avg
-select sum(sales),min(sales),max(sales),count(sales),avg(sales)
+# CASE - WHEN - THEN - ELSE - END
+select sales , 
+	case 
+		when sales < 500 then "Low"
+		when sales < 1000 then "Mid"
+		when sales < 2000 then "High"
+        else "Very High"
+    end as sales_category
 from store;
+
+# create a column for profit category - Loss, low profit , high profit, very high profit ?
+select profit from store;
+
+
+
+
+
+
+# Aggfunc - sum, min, max, count, avg
+SELECT 
+    SUM(sales) AS total_sales,
+    MIN(sales),
+    MAX(sales),
+    COUNT(sales),
+    AVG(sales)
+FROM
+    store;
 
 # find total profit
 
+select   concat(  round(sum(sales)/1000) , " k") as total_sales from store;
 
 # find avg of qty and round them to 2 decimal places 
-select round(avg(qty),2) from store;
+select avg(qty) from store;
 
 
 # find total number of orders?
@@ -407,8 +432,10 @@ where region = "east";
 # Show name, sales and profit the records where we have loss ?
 # Show all the transaction from year 2015 ?
 # Find total sales in 2016 ?
+# Find average profit in furniture category ?
 
 # 	AND - OR 
+
 # Show customer name category sales and profit where the category is Furniture and we had face a loss ?
 select name, category ,sales , profit
 from store
@@ -427,7 +454,7 @@ from store
 where sales between 20 and 25;
 
 # filter null values
-select * from store
+select * from store;
 where post_code is null;
 
 select * from store
@@ -525,17 +552,6 @@ order by total_sales desc
 limit 3;
 
 
-
-# CASE - WHEN - THEN - ELSE - END
-select sales , 
-	case 
-		when sales < 500 then "Low"
-		when sales < 1000 then "Mid"
-		when sales < 2000 then "High"
-        else "Very High"
-    end as sales_category
-from store
-order by sales desc;
 
 
 # select with having clause
