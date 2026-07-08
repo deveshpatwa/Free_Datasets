@@ -194,7 +194,7 @@ truncate table bank;
 commit;
 -- ------------------ CONSTRAINT ----------------
 
-# NOT NULL , UNIQUE , DEFAULT
+-- ---- NOT NULL , UNIQUE , DEFAULT ---------------
 drop table test;
 
 CREATE table test (
@@ -213,7 +213,7 @@ insert into test values("mohan",777,null);
 
 select * from test;
 
-# CHECK 
+-- ----------- CHECK ---------------
 drop table vote;
 
 create table vote (
@@ -231,8 +231,10 @@ insert into vote values ("mohit",15);
 
 select * from vote;
 
-# AUTO_INCREMENT
+-- ------------AUTO_INCREMENT ---------------
+
 drop table people;
+
 create table people(
 	id int unique AUTO_INCREMENT,
     name varchar(30)
@@ -250,7 +252,7 @@ insert into people(name) values ("umang");
 
 truncate table people;
 
-# PRIMARY KEY
+-- ----------------- PRIMARY KEY
 drop table customer;
 drop table orders;
 
@@ -262,6 +264,7 @@ create table customer(
 
 describe customer;
 	
+-- -----------Foreign Key ----------------    
 create table orders(
 	product_name varchar(30),
     amount int,
@@ -291,7 +294,7 @@ show create table orders;
 
 select * from store;
 
-# select - use to show anything on screen
+-- ------------------ select -----------------
 
 select 870 ;
 
@@ -306,12 +309,12 @@ select name,city as location ,sales from store;
 
 select name as customer_name from store;
 
-# select with calculations
+-- -------------select with calculations
 select name,sales,profit,sales-profit as cost from store;
 
-# functions
+-- ---------------- functions
 
-# Text Functions
+-- --------- Text Functions
 select upper(name),name from store;
 select lower(name) from store;
 
@@ -338,7 +341,7 @@ select
 from store; 
 
 
-# CASE - WHEN - THEN - ELSE - END
+-- ---------------CASE - WHEN - THEN - ELSE - END
 select sales , 
 	case 
 		when sales < 500 then "Low"
@@ -352,11 +355,7 @@ from store;
 select profit from store;
 
 
-
-
-
-
-# Aggfunc - sum, min, max, count, avg
+-- ------------ Aggfunc - sum, min, max, count, avg
 SELECT 
     SUM(sales) AS total_sales,
     MIN(sales),
@@ -368,25 +367,19 @@ FROM
 
 # find total profit
 
-select   concat(  round(sum(sales)/1000) , " k") as total_sales from store;
-
 # find avg of qty and round them to 2 decimal places 
-select avg(qty) from store;
-
 
 # find total number of orders?
 select count(*) from store;
 
 select count(post_code) from store;
 
-
-
 # find the profit margin of orders and round it to 2 decimal places?
 select round(sum(profit) / sum(sales) * 100,2) as profit_margin
 from store;
 
 
-# year - month - day functions
+-- --------------- year - month - day functions
 select 
 	order_date, 
     year(order_date),
@@ -396,12 +389,12 @@ select
     dayname(order_date)
 from store;
 
-# Difference between two dates (to calculate age)?
+-- ---------TIMESTAMPDIFF 
 select order_date as DOB, timestampdiff(year, order_date, current_date()) as AGE
 from store;
 
 
-# select distinct 
+ ---------- select distinct 
 
 select category from store;
 
@@ -419,7 +412,7 @@ select count(distinct city) from store;
 select distinct * from store ;
 
 
-# Where 
+-- -------SELECT  WHERE 
 
 select *
 from store
@@ -450,14 +443,7 @@ where region = "east";
 # Find total sales in 2016 ?
 # Find average profit in furniture category ?
 
-select * 
-from store
-where year(order_date) = 2015 and month(order_date) = 3;
-
-
-
-
-# 	AND - OR 
+-- -------------WHERE WITH 	AND - OR 
 
 # Show customer name, category, sales, profit and there cost where the category is Furniture and we had face a loss ?
 select name, category ,sales , profit,round(sales-profit,1) as cost
@@ -467,6 +453,7 @@ where category = "furniture"  and profit<0 ;
 # Show all the customer name region and sales where either the region should be East or the sales should be above 1000 ?
 
 
+-- ---------SELECT WHERE  BETWEEN
 # show sales column where the sales is between 20 and 25 ?
 select sales
 from store
@@ -476,6 +463,8 @@ select sales
 from store
 where sales between 20 and 25;
 
+
+-- ---------SELECT WHERE  NULL AND NOT NULL
 # filter null values
 select * from store
 where post_code is null;
@@ -488,12 +477,7 @@ select count(*)
 from store
 where post_code is null;
 
-# Find total sales in Technology category?
-
-# Show name column where the customer name start with 'P'?
-
-
-## WHERE - LIKE
+-- --------------- WHERE LIKE
 
 # Show all the unique names which starts with "A"
 SELECT distinct name
@@ -506,18 +490,17 @@ from store
 where name like "t%s";
 
 # Find all the unique name which ends with "sh"
+# Show name column where the customer name start with 'P'?
+# Show name column from store where the customer name end with "gh"
 
 # Find all the unique sub_category which start with "A" and has total 3 char?
 select distinct sub_category
 from store
 where sub_category like "a__";
 
-select sales
-from store
-where sales like "_4.%";
+# Find if like works on numeric values? 
 
-
-# WHERE - IN , NOT IN
+-- ------------- WHERE  IN , NOT IN
 
 select name, sub_category,sales
 from store
@@ -527,11 +510,19 @@ select name, sub_category,sales
 from store
 where sub_category NOT in ("art","paper","tables");
 
-# GROUP BY
+-- ------------------ GROUP BY
+-- for single column
 
+# show region wise total sales ?
 select region, sum(sales)
 from store
 group by region;
+
+# Find city wise total profit and total sales ?
+select city , round(sum(sales)), round(sum(profit))
+from store
+group by city;
+
 
 # Shows up sub_category wise total sales and total profit ?
 select sub_category , sum(sales) , sum(profit)
@@ -540,62 +531,106 @@ group by sub_category;
 
 # Find category wise number of orders ?
 
+-- group by with multiple columns
 
-# Show category wise sales for each region ?
+# Show category wise total sales for each region ?
 select region,category, sum(sales)
 from store
 group by region , category;
 
-# Show category then subcategory by total sales total profit and average quantity ?
+# Show category then subcategory by total sales, total profit and average quantity ?
 
+-- ------------------ HAVING -------------------
 
-# ORDER BY
-SELECT *
-from store
-order by order_date ;
-
-
-select region,category , sum(sales)
-from store
-group by region,category
-order by region, category ;
-
-# Group BY
-
-
-select month(order_date) as month , count(*) as cnt
-from store
-where category = "furniture"
-group by month ;
-
-# Limit 
-select name,sales
-from store
-order by sales desc
-limit 1 offset 4;
-
-# Find top three cities with highest total sales ?
-select city , round(sum(sales)) as total_sales
-from store
-group by city
-order by total_sales desc
-limit 3;
-
-
-
-
-# select with having clause
-
-select sub_category, sum(sales) as total_sales
+# show subcategory wise total sales where the total sales is less then 1000?
+select sub_category, round(sum(sales)) as total_sales
 from store
 group by sub_category
 having total_sales < 1000;
 
+
+-- ------------HAVING VS WHERE
+
+select category, round(sum(sales)) as total_sales
+from store
+where category = "furniture"
+group by category;
+
+
+select category, round(sum(sales)) as total_sales
+from store
+group by category
+having category = "furniture";
+
+
+
+# Find all the subcategories where the total profit is in negative ?
+# Find category wise total sales where the total sales is less than 30,000 ?
+
+
+-- ------------------ ORDER BY
+
+select * from store;
+
+# show all the records from store table in ascending order of order_date ?
+SELECT *
+from store
+order by order_date asc ;
+
+
+select category , sum(sales) as total_sales
+from store
+group by category 
+order by total_sales desc;
+-- -----------order by with 2 columns
+select * 
+from store
+order by category , sub_category , sales desc;
+
+-- ---------------- limit 
+select * 
+from store
+limit 3;
+
+# Top three translation with highest sales in east region?
+select *
+from store
+where region = "east"
+order by sales desc
+limit 3;
+
+# Show name region and profit column where the name should start with "S" and the region should be "East" and show only top 10 transactions with highest profit ?
+
+-- -----------------JOINS -------------------------------
+
+
+-- ------------------SUB-QUERY ---------------------------
+
+
 -- -------------------Windows Functions -----------------------
-select name,region,sales,rank() over (partition by region order by sales desc ) as ranking
+
+select region,sum(sales)
+from store
+group by region;
+
+select * , sum(sales) over(partition by region)
 from store;
 
-select * ,rank() over(partition by gender , department order by marks desc) as ranking
+select sum(sales)
+from store;
+
+select * from students;
+
+select *, rank() over(order by marks desc)
+from students;
+
+select *, rank() over(partition by city order by marks desc)
+from students;
+
+select *, dense_rank() over(order by marks desc)
+from students;
+
+select *, row_number() over()
 from students;
 
 
@@ -605,7 +640,6 @@ select * ,
     ROW_NUMBER() over(order by scholarship desc) as row_number_func
     
 from students;
-
 
 
 -- create table
@@ -653,29 +687,11 @@ where region = "east" and sales >= 1000;
 
 select * from v1;
 
-# Create a view to fetch a daily report of the last day's total sales total profit and total quantity ?
-
-select max(order_date) from store;  # to get the newest date
-
-create view daily_report as 
-select 
-	order_date,
-	sum(sales) as total_sales,
-    sum(profit) as total_profit,
-    sum(qty) as total_QTY
-from store 
-where order_date = ( select max(order_date) from store )
-group by order_date; 
-
-select * from daily_report;
-
-
-# select date_add( current_date() , interval -1 day) ;
-
+# Create a view to fetch a daily report of the last days total sales total profit and total quantity ?
 
 
 -- --------------------Practice Questions -------------------
-
+drop table students;
 -- create table
 create table students (
     student_id int primary key,
@@ -691,10 +707,10 @@ create table students (
 
 -- insert records
 insert into students values
-(101, 'arjun', 'male', 20, 'computer science', 3, 'indore', 85.50, 5000),
+(101, 'arjun', 'male', 20, 'computer science', 3, 'indore', 91.00, 5000),
 (102, 'priya', 'female', 19, 'computer science', 2, 'bhopal', 91.00, 8000),
 (103, 'rohan', 'male', 21, 'mechanical', 5, 'indore', 72.50, 3000),
-(104, 'neha', 'female', 20, 'civil', 4, 'ujjain', 88.00, 6000),
+(104, 'neha', 'female', 20, 'civil', 4, 'ujjain', 91.00, 6000),
 (105, 'amit', 'male', 22, 'electrical', 6, 'dewas', 67.00, 2000),
 (106, 'kavya', 'female', 18, 'computer science', 1, 'bhopal', 95.50, 10000),
 (107, 'vivek', 'male', 23, 'mechanical', 7, 'indore', 78.00, 4000),
@@ -774,87 +790,6 @@ select * from students;
 -- 29. display students whose scholarship is greater than 5000
 
 -- 30. display top 3 students with highest scholarship
-
-
--- --------------------Joins in MySQL -------------------
-
--- create department table
-create table departments (
-    department_id int primary key,
-    department_name varchar(50),
-    location varchar(50)
-);
-
--- create employee table
-create table employees (
-    employee_id int primary key,
-    employee_name varchar(50),
-    salary decimal(10,2),
-    department_id int,
-    manager_id int
-);
-
--- insert departments
-insert into departments values
-(1, 'hr', 'indore'),
-(2, 'finance', 'bhopal'),
-(3, 'it', 'pune'),
-(4, 'marketing', 'mumbai'),
-(5, 'sales', 'delhi'),
-(6, 'research', 'hyderabad');
-
--- insert employees
-insert into employees values
-(101, 'arjun', 80000, 1, null),
-(102, 'priya', 55000, 2, 101),
-(103, 'rohan', 60000, 3, 101),
-(104, 'neha', 48000, 3, 102),
-(105, 'amit', 52000, 5, 102),
-(106, 'kavya', 65000, 2, 101),
-(107, 'vivek', 70000, 4, 103),
-(108, 'pooja', 47000, 1, 103),
-(109, 'rahul', 58000, null, 101),
-(110, 'sneha', 62000, null, 106);
-
--- view data
-select * from departments;
-select * from employees;
-
--- 1. display employee name and department name using inner join
-
--- 2. display all employees whether department exists or not
-
--- 3. display all departments whether employees exist or not
-
--- 4. display employee name, salary and department name
-
--- 5. display employees working in it department
-
--- 6. display employees whose department location is pune
-
--- 7. count employees department wise
-
--- 8. display average salary department wise
-
--- 9. display departments having more than 1 employee
-
--- 10. display department with highest average salary
-
--- 11. display all employee-department combinations using cross join
-
--- 12. display employee and manager names using self join
-
--- 13. display employees who are not assigned to any department
-
--- 14. display departments that have no employees
-select *
-from departments left join employees
-on employees.department_id = departments.department_id
-where employee_id is null;
-
--- 15. display employee name, department name and location
-
-
 
 
 
