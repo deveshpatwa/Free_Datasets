@@ -195,6 +195,7 @@ commit;
 -- ------------------ CONSTRAINT ----------------
 
 # NOT NULL , UNIQUE , DEFAULT
+drop table test;
 
 CREATE table test (
 	name varchar(30) not null,
@@ -213,10 +214,11 @@ insert into test values("mohan",777,null);
 select * from test;
 
 # CHECK 
+drop table vote;
+
 create table vote (
 	name varchar(30),
     age int,
-    weight int,
     constraint check_age check (age>=18)
     );
 	
@@ -230,6 +232,7 @@ insert into vote values ("mohit",15);
 select * from vote;
 
 # AUTO_INCREMENT
+drop table people;
 create table people(
 	id int unique AUTO_INCREMENT,
     name varchar(30)
