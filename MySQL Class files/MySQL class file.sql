@@ -513,6 +513,7 @@ where sub_category NOT in ("art","paper","tables");
 
 -- ------------------ GROUP BY
 -- for single column
+select region,sales from store;
 
 # show region wise total sales ?
 select region, sum(sales)
@@ -524,15 +525,17 @@ select city , round(sum(sales)), round(sum(profit))
 from store
 group by city;
 
+select * from students;
 
-# Shows up sub_category wise total sales and total profit ?
-select sub_category , sum(sales) , sum(profit)
-from store
-group by sub_category;
+select gender, avg(marks)
+from students
+group by gender;
+
+# Show sub_category wise total sales and total profit ?
 
 # Find category wise number of orders ?
 
--- group by with multiple columns
+-- --------------group by with multiple columns
 
 # Show category wise total sales for each region ?
 select region,category, sum(sales)
