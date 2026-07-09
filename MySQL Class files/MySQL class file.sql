@@ -264,7 +264,7 @@ create table customer(
 
 describe customer;
 	
--- -----------Foreign Key ----------------    
+-- -----------Foreign Key ---------------- 
 create table orders(
 	product_name varchar(30),
     amount int,
@@ -272,8 +272,9 @@ create table orders(
     foreign key(customer_id) references customer(customer_id)
     );
   
-  
+
 insert into customer values(1,"rohan"),(2,"kunal");
+
 select * from customer;
 
 insert into orders values("apple",400,2); 
@@ -394,7 +395,7 @@ select order_date as DOB, timestampdiff(year, order_date, current_date()) as AGE
 from store;
 
 
- ---------- select distinct 
+ -- -------- select distinct 
 
 select category from store;
 
