@@ -612,7 +612,30 @@ limit 3;
 # Show name region and profit column where the name should start with "S" and the region should be "East" and show only top 10 transactions with highest profit ?
 
 -- -----------------JOINS -------------------------------
+select * from employee;
+select * from department;
 
+select * 
+from employee inner join department
+on employee.department_id = department.department_id;
+
+select * 
+from employee left join department
+on employee.department_id = department.department_id;
+
+select * 
+from employee right join department
+on employee.department_id = department.department_id;
+
+select *
+from employee as emp left join employee as manager
+on emp.manager_id = manager.employee_id;
+
+# Show all the employees whose department head is Rakesh ?
+
+
+
+-- ----------------- UNION -------------------------------
 
 -- ------------------SUB-QUERY ---------------------------
 
