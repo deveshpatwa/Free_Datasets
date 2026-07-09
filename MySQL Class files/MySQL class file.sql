@@ -525,15 +525,14 @@ select city , round(sum(sales)), round(sum(profit))
 from store
 group by city;
 
-select * from students;
+# Show gender wise average marks from students table?
 
-select gender, avg(marks)
-from students
-group by gender;
+# Show department wise average marks for each gender ?
 
 # Show sub_category wise total sales and total profit ?
 
 # Find category wise number of orders ?
+
 
 -- --------------group by with multiple columns
 
@@ -544,6 +543,7 @@ group by region , category;
 
 # Show category then subcategory by total sales, total profit and average quantity ?
 
+
 -- ------------------ HAVING -------------------
 
 # show subcategory wise total sales where the total sales is less then 1000?
@@ -551,6 +551,12 @@ select sub_category, round(sum(sales)) as total_sales
 from store
 group by sub_category
 having total_sales < 1000;
+
+# Find department wise Average marks ?
+select  department , avg(marks) as percentage
+from students
+group by department
+having percentage > 85;
 
 
 -- ------------HAVING VS WHERE
