@@ -611,13 +611,25 @@ limit 3;
 
 # Show name region and profit column where the name should start with "S" and the region should be "East" and show only top 10 transactions with highest profit ?
 
+# Find top 2nd person with the highest total sales ?
+select name, sum(sales) as total_sales
+from store
+group by name
+order by total_sales desc
+limit 1 offset 1;
+
+
 -- -----------------JOINS -------------------------------
 select * from employee;
 select * from department;
 
-select * 
-from employee inner join department
-on employee.department_id = department.department_id;
+select *
+from employee as e inner join department as d
+on e.department_id = d.department_id;
+
+select e.employee_id, e.name,e.salary,d.name
+from employee as e inner join department as d
+on e.department_id = d.department_id;
 
 select * 
 from employee left join department
@@ -627,6 +639,18 @@ select *
 from employee right join department
 on employee.department_id = department.department_id;
 
+# full join
+
+select * 
+from employee left join department
+on employee.department_id = department.department_id
+union 
+select * 
+from employee right join department
+on employee.department_id = department.department_id;
+
+
+# self join
 select *
 from employee as emp left join employee as manager
 on emp.manager_id = manager.employee_id;
@@ -636,6 +660,26 @@ on emp.manager_id = manager.employee_id;
 
 
 -- ----------------- UNION -------------------------------
+select * from sales_2019
+union
+select * from sales_2020
+union
+select * from sales_2021;
+
+
+select * from sales_2019
+union 
+select * from sales_2020
+union 
+select * from sales_2021
+union all
+select * from sales_2021;
+
+
+select month,salesamount from sales_2019
+union 
+select region,salesamount from sales_2020;
+
 
 -- ------------------SUB-QUERY ---------------------------
 

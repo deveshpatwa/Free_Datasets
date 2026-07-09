@@ -1,0 +1,11 @@
+SaleID,Month,SalesAmount,Region
+2021-001,Jan,32847,West
+2021-002,Feb,65142,North
+2021-003,Mar,54807,North
+2021-004,Apr,66178,East
+2021-005,May,53700,South
+2021-006,Jun,34558,North
+2021-007,Jul,44935,East
+2021-008,Aug,35229,South
+2021-009,Sep,36619,West
+2021-010,Oct,48217,West
