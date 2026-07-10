@@ -651,9 +651,12 @@ select *
 from employee left join department
 on employee.department_id = department.department_id;
 
+-- right join
 select * 
 from employee right join department
 on employee.department_id = department.department_id;
+
+
 
 # full join
 
@@ -665,14 +668,19 @@ select *
 from employee right join department
 on employee.department_id = department.department_id;
 
+# cross join 
+select * 
+from employee , department;
+
+select *
+from employee cross join department;
 
 # self join
-select *
-from employee as emp left join employee as manager
+select emp.name as employee , manager.name as manager
+from employee as emp join employee as manager
 on emp.manager_id = manager.employee_id;
 
 # Show all the employees whose department head is Rakesh ?
-
 
 
 -- ----------------- UNION -------------------------------
@@ -682,7 +690,7 @@ select * from sales_2020
 union
 select * from sales_2021;
 
-
+-- union all
 select * from sales_2019
 union 
 select * from sales_2020
@@ -698,6 +706,30 @@ select region,salesamount from sales_2020;
 
 
 -- ------------------SUB-QUERY ---------------------------
+-- When the output of a sub query is a single value ?
+select * from students;
+select avg(marks) from students;
+
+# Find the students with above average marks ?
+select * 
+from students
+where marks > (select avg(marks) from students )
+order by marks desc;
+
+# Find a student with the highest marks ?
+
+
+
+-- When the output is a single column ?
+# Show all the transaction of customers who have made a transaction of above 1000 in their lifetime ?
+
+select distinct name
+from store
+where sales > 1000;
+
+select * 
+from store
+where name in (select distinct name from store where sales > 1000) ; 
 
 
 -- -------------------Windows Functions -----------------------
