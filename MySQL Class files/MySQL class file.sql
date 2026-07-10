@@ -591,11 +591,12 @@ SELECT *
 from store
 order by order_date asc ;
 
-
-select category , sum(sales) as total_sales
+# Show subcategory wise total sales and order them in descending order ?
+select sub_category , round(sum(sales)) as total_sales
 from store
-group by category 
+group by sub_category
 order by total_sales desc;
+
 -- -----------order by with 2 columns
 select * 
 from store
@@ -615,12 +616,15 @@ limit 3;
 
 # Show name region and profit column where the name should start with "S" and the region should be "East" and show only top 10 transactions with highest profit ?
 
+
 # Find top 2nd person with the highest total sales ?
-select name, sum(sales) as total_sales
+select name, round(sum(sales)) as total_sales
 from store
 group by name
 order by total_sales desc
 limit 1 offset 1;
+
+# Find the customer who has the longest name ?
 
 
 -- -----------------JOINS -------------------------------
@@ -628,13 +632,21 @@ select * from employee;
 select * from department;
 
 select *
-from employee as e inner join department as d
-on e.department_id = d.department_id;
+from employee inner join department
+on employee.department_id = department.department_id;
 
+-- using there full names 
+select employee.name, employee.salary, department.name as department
+from employee inner join department
+on employee.department_id = department.department_id;
+
+# using short names
 select e.employee_id, e.name,e.salary,d.name
 from employee as e inner join department as d
 on e.department_id = d.department_id;
 
+
+-- left join
 select * 
 from employee left join department
 on employee.department_id = department.department_id;
