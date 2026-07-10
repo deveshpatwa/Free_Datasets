@@ -299,11 +299,13 @@ select * from store;
 
 select 870 ;
 
+select 67*2 ;
+
 select "hello world" as msg ;
 
 select "Mohan" as name, 45 as age;
 
-select name,sales,sales*0.8 from store;
+select name,sales,sales*0.8 as discounted_sales from store;
 
 
 select name,city as location ,sales from store;
@@ -323,6 +325,8 @@ select left(name,2) from store;
 select name,right(name,3) from store;
 
 select concat("Rohan"," ","Kumar") as full_name;
+
+select length(name),name from store;
 
 select concat(name , " " , category) as full_name from store;
 
