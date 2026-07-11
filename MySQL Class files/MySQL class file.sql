@@ -656,8 +656,6 @@ select *
 from employee right join department
 on employee.department_id = department.department_id;
 
-
-
 # full join
 
 select * 
@@ -676,8 +674,8 @@ select *
 from employee cross join department;
 
 # self join
-select emp.name as employee , manager.name as manager
-from employee as emp join employee as manager
+select emp.name as employee , coalesce(manager.name,"No manager")    as manager
+from employee as emp left join employee as manager
 on emp.manager_id = manager.employee_id;
 
 # Show all the employees whose department head is Rakesh ?
@@ -731,8 +729,46 @@ select *
 from store
 where name in (select distinct name from store where sales > 1000) ; 
 
+-- when you have a table as a output
+# Show how many number of orders are profit or loss and their average amount ?
 
--- -------------------Windows Functions -----------------------
+select pnl,count(*) as order_count, avg(profit)
+from (select if(profit>0,"Profit","Loss") as pnl ,profit from store) as temp
+group by pnl;
+
+
+-- -------------------WITH (CTE)--------------------------
+
+with 
+pnl_table as ( select if(profit>0,"Profit","Loss") as pnl ,profit from store),
+
+pnl2 as (select pnl,count(*),avg(profit) from pnl_table group by pnl)
+
+select * 
+from pnl2
+where pnl = "loss";
+
+# Find how many small, mid, high and very high value sales transactions are there ?
+
+with temp as (
+select case
+			when sales < 50 then "Small"
+            when sales < 200 then "Mid"
+            when sales < 500 then "High"
+            else "Very High"
+		end as sales_category
+from store)
+
+select sales_category, count(*)/(select count(*) from store) * 100 as order_count
+from temp
+group by sales_category
+order by order_count desc;
+
+
+-- ------------------- Windows Functions -----------------------
+
+select *,max(sales) over(partition by sub_category)
+from store;
 
 select region,sum(sales)
 from store
@@ -813,6 +849,8 @@ where region = "east" and sales >= 1000;
 select * from v1;
 
 # Create a view to fetch a daily report of the last days total sales total profit and total quantity ?
+
+
 
 
 -- --------------------Practice Questions -------------------
