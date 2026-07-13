@@ -723,6 +723,7 @@ order by marks desc;
 
 -- When the output is a single column ?
 # Show all the transaction of customers who have made a transaction of above 1000 in their lifetime ?
+select * from store;
 
 select distinct name
 from store
@@ -733,25 +734,30 @@ from store
 where name in (select distinct name from store where sales > 1000) ; 
 
 -- when you have a table as a output
-# Show how many number of orders are profit or loss and their average amount ?
+# Show how many number of orders are of profit or loss ?
+select profit, if(profit>0,"Profit","Loss") as pnl from store;
 
-select pnl,count(*) as order_count, avg(profit)
-from (select if(profit>0,"Profit","Loss") as pnl ,profit from store) as temp
+select pnl,count(*)
+from (select profit, if(profit>0,"Profit","Loss") as pnl from store) as temp
 group by pnl;
-
 
 -- -------------------WITH (CTE)--------------------------
 
-with 
-pnl_table as ( select if(profit>0,"Profit","Loss") as pnl ,profit from store),
+# Calculate year wise profit margin ?
 
-pnl2 as (select pnl,count(*),avg(profit) from pnl_table group by pnl)
+with year_wise_sales_data as (
+select 
+	year(order_date) as years , 
+    round(sum(sales)) as total_sales ,
+    round(sum(profit)) as total_profit
+from store
+group by years)
 
-select * 
-from pnl2
-where pnl = "loss";
+select * , round(total_profit / total_sales * 100,2) as profit_margin
+from year_wise_sales_data;
 
-# Find how many small, mid, high and very high value sales transactions are there ?
+
+# Find how many small, mid, high and very high value sales transactions are there in percentage ?
 
 with temp as (
 select case
@@ -762,13 +768,15 @@ select case
 		end as sales_category
 from store)
 
-select sales_category, count(*)/(select count(*) from store) * 100 as order_count
+select sales_category, count(*)/(select count(*) from store) * 100 as number_of_orders
 from temp
 group by sales_category
-order by order_count desc;
+order by number_of_orders desc;
 
 
 -- ------------------- Windows Functions -----------------------
+
+select * , max(sales) over() from store;
 
 select *,max(sales) over(partition by sub_category)
 from store;
@@ -780,15 +788,13 @@ group by region;
 select * , sum(sales) over(partition by region)
 from store;
 
-select sum(sales)
-from store;
 
 select * from students;
 
 select *, rank() over(order by marks desc)
 from students;
 
-select *, rank() over(partition by city order by marks desc)
+select *, rank() over(partition by department order by marks desc)
 from students;
 
 select *, dense_rank() over(order by marks desc)
@@ -805,6 +811,16 @@ select * ,
     
 from students;
 
+
+# Find the top student from each deartment who has the first ring from his deartment  ?
+
+with stud2 as (
+select *, rank() over(partition by department order by marks desc) as ranking
+from students)
+
+select * 
+from stud2
+where ranking <=3;
 
 -- create table
 create table yearly_sales (
