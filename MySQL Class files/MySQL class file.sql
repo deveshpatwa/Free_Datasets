@@ -775,6 +775,7 @@ order by number_of_orders desc;
 
 
 -- ------------------- Windows Functions -----------------------
+select max(sales) over() from store;
 
 select * , max(sales) over() from store;
 
@@ -791,16 +792,16 @@ from store;
 
 select * from students;
 
-select *, rank() over(order by marks desc)
+select student_name, marks, rank() over(order by marks desc)
 from students;
 
-select *, rank() over(partition by department order by marks desc)
+select * , rank() over(partition by department order by marks desc) as ranking
 from students;
 
-select *, dense_rank() over(order by marks desc)
+select student_name, marks, dense_rank() over(order by marks desc)
 from students;
 
-select *, row_number() over()
+select *, row_number() over(order by marks desc)
 from students;
 
 
@@ -820,7 +821,7 @@ from students)
 
 select * 
 from stud2
-where ranking <=3;
+where ranking  =1 ;
 
 -- create table
 create table yearly_sales (
@@ -842,6 +843,10 @@ values
 
 -- view data
 select * 
+from yearly_sales;
+
+
+select *, lag(sales_amount) over()
 from yearly_sales;
 
 select * , lag(sales_amount) over() as prv_sales , sales_amount - lag(sales_amount) over() as changes
@@ -866,6 +871,10 @@ from store
 where region = "east" and sales >= 1000;
 
 select * from v1;
+
+insert into v1 values("rohan","east",5555);
+
+select * from store;
 
 # Create a view to fetch a daily report of the last days total sales total profit and total quantity ?
 

@@ -1,4 +1,4 @@
-# HR Analytics SQL Project
+# HR Analytics SQL Project - Skip this project for now
 
 ## Database
 
@@ -179,5 +179,3 @@ Create a table named **`employees`** using the dataset provided.
 98. Write a query to generate department-wise KPI metrics.
 99. Write a query to identify the top-performing employees.
 100. Build a final HR analytics report combining multiple metrics in a single query.
-
-
