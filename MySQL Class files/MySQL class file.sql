@@ -345,6 +345,9 @@ select
     if(profit>0,"profit","loss") as profit_category
 from store; 
 
+select sales, round( if(sales>1000,sales*0.10,sales*0.05)) as discount
+from store;
+
 
 -- ---------------CASE - WHEN - THEN - ELSE - END
 select sales , 
