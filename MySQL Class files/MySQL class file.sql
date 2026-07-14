@@ -431,7 +431,7 @@ select sum(sales) as total_sales
 from store
 where category = "furniture";
 
-# Select all the records where the category should not be furnished ?
+# Select all the records where the category should not be furniture ?
 select *
 from store
 where category != "furniture";
@@ -484,6 +484,7 @@ where post_code is not null;
 select count(*)
 from store
 where post_code is null;
+
 
 -- --------------- WHERE LIKE
 
@@ -846,13 +847,15 @@ select *
 from yearly_sales;
 
 
-select *, lag(sales_amount) over()
+select *, lag(sales_amount) over() as prv_year
 from yearly_sales;
 
-select * , lag(sales_amount) over() as prv_sales , sales_amount - lag(sales_amount) over() as changes
+select * , 
+	lag(sales_amount) over() as prv_sales , 
+    sales_amount - lag(sales_amount) over() as changes
 from yearly_sales;
 
-select * , lead(sales_amount) over() as nxt_sales 
+select * , lead(sales_amount) over() as nxt_year
 from yearly_sales;
 
 -- ------------------Views in MySQL ------------------------
@@ -872,9 +875,20 @@ where region = "east" and sales >= 1000;
 
 select * from v1;
 
-insert into v1 values("rohan","east",5555);
+insert into v1 values("rohan","east",5500);
 
 select * from store;
+
+create view  region_report as 
+select region, sum(sales) as total_sales
+from store
+group by region;
+
+select * from region_report;
+
+insert into region_report values("random",500);
+
+
 
 # Create a view to fetch a daily report of the last days total sales total profit and total quantity ?
 
