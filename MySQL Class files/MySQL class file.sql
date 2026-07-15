@@ -557,6 +557,12 @@ group by region , category;
 # show subcategory wise total sales where the total sales is less then 1000?
 select sub_category, round(sum(sales)) as total_sales
 from store
+where total_sales < 1000
+group by sub_category;
+
+
+select sub_category, round(sum(sales)) as total_sales
+from store
 group by sub_category
 having total_sales < 1000;
 
