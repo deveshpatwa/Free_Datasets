@@ -43,7 +43,7 @@ alter table customer add column address varchar(100);
 
 
 # Add a new column phone (bigint) in customer table
-alter table customer add phone bigint;
+alter table customer add column phone bigint;
 
 # Now change the data type of phone to varchar(10)? 
 alter table customer modify column phone varchar(10);
@@ -610,7 +610,7 @@ order by total_sales desc;
 -- -----------order by with 2 columns
 select * 
 from store
-order by category , sub_category , sales desc;
+order by category,sub_category,sales desc ;
 
 -- ---------------- limit 
 select * 
@@ -624,6 +624,7 @@ where region = "east"
 order by sales desc
 limit 3;
 
+
 # Show name region and profit column where the name should start with "S" and the region should be "East" and show only top 10 transactions with highest profit ?
 
 
@@ -633,6 +634,18 @@ from store
 group by name
 order by total_sales desc
 limit 1 offset 1;
+
+select name, round(sum(sales)) as total_sales
+from store
+group by name
+order by total_sales desc
+limit 4,1;
+
+select name, round(sum(sales)) as total_sales
+from store
+group by name
+order by total_sales desc
+limit 1 offset 4;
 
 # Find the customer who has the longest name ?
 
@@ -688,6 +701,7 @@ select emp.name as employee , coalesce(manager.name,"No manager")    as manager
 from employee as emp left join employee as manager
 on emp.manager_id = manager.employee_id;
 
+
 # Show all the employees whose department head is Rakesh ?
 
 
@@ -716,13 +730,14 @@ select region,salesamount from sales_2020;
 -- ------------------SUB-QUERY ---------------------------
 -- When the output of a sub query is a single value ?
 select * from students;
+
 select avg(marks) from students;
 
 # Find the students with above average marks ?
 select * 
 from students
 where marks > (select avg(marks) from students )
-order by marks desc;
+order by marks ;
 
 # Find a student with the highest marks ?
 
@@ -1001,6 +1016,14 @@ select * from students;
 -- 29. display students whose scholarship is greater than 5000
 
 -- 30. display top 3 students with highest scholarship
+
+
+
+
+
+
+
+
 
 
 
