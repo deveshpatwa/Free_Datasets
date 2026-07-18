@@ -16,4 +16,39 @@
 
 # we will create a bank account class as A bank account has Account Holder Name, Account Number 
 # and Balance
+print("hello")
 
+class bank_account():
+    def __init__(self,name,account_number,balance):     # constructor which runs automatically 
+        self.name = name
+        self.account_number = account_number
+        self.balance = balance
+
+
+acc1 = bank_account("rohan",4456,500)
+
+# ---------------------------------------
+
+class BankAccount:
+
+    def __init__(self, name, account_no, balance):
+        self.name = name
+        self.account_no = account_no
+        self.balance = balance
+
+    def deposit(self, amount):
+        self.balance += amount
+        print(f"₹{amount} deposited successfully.")
+
+    def withdraw(self, amount):
+        if amount <= self.balance:
+            self.balance -= amount
+            print(f"₹{amount} withdrawn successfully.")
+        else:
+            print("Insufficient balance.")
+
+    def show_details(self):
+        print("\n------ Account Details ------")
+        print("Name       :", self.name)
+        print("Account No :", self.account_no)
+        print("Balance    :", self.balance)
