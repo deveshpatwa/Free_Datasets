@@ -90,6 +90,12 @@ insert into emp
 values ("sumit",null,99000);
 
 insert into emp
+values (null,45,99000);
+
+insert into emp
+values ('null',45,99000);
+
+insert into emp
 values (null,null,null);
 
 select * from emp;
@@ -97,16 +103,19 @@ select * from emp;
 # update a record in emp table where name is rohan and set age to 13
 update emp
 set age = 13
-where name = "suman";
+where name = "rohan";
+
 
 update emp
-set age = 50;
+set age = 55;
 
 select * from emp;
 
 set sql_safe_updates = 0;
 
 # delete a record from emp table where name is mohit
+select * from emp;
+
 delete from emp
 where name = "mohit";
 
@@ -764,6 +773,12 @@ from (select profit, if(profit>0,"Profit","Loss") as pnl from store) as temp
 group by pnl;
 
 -- -------------------WITH (CTE)--------------------------
+with temp as (
+select profit, if(profit>0,"Profit","Loss") as pnl from store)
+
+select pnl,count(*) as number_of_orders
+from temp
+group by pnl;
 
 # Calculate year wise profit margin ?
 
@@ -773,7 +788,8 @@ select
     round(sum(sales)) as total_sales ,
     round(sum(profit)) as total_profit
 from store
-group by years)
+group by years
+order by years)
 
 select * , round(total_profit / total_sales * 100,2) as profit_margin
 from year_wise_sales_data;

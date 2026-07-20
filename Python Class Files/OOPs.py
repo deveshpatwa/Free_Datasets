@@ -14,9 +14,31 @@
 #   A specific instance built from a class blueprint. It holds its own actual data.
 
 
+# Four main pillars of object oriented programming :
+
+# Encapsulation :
+#   is the binding of data and the methods that operate on that data into a single 
+#   unit, known as a class. It hides the internal state of an object from the outside world and only 
+#   allows access through a public interface.
+
+# Abstraction : 
+#   is the concept of hiding complex implementation details and showing only the essential features 
+#   of the object. It focuses on what the object does rather than how it does it.
+
+# Inheritance :
+#   is a mechanism that allows a new class to inherit properties and behaviors from an 
+#   existing class. The new class is called the subclass (or child class), and the existing class 
+#   is called the superclass (or parent class). This promotes code reusability.
+
+# Polymorphism :
+#   means "many forms." In OOP, it allows objects of different classes to be treated as objects 
+#   of a common superclass. This means a single action can have different behaviors depending on 
+#   the object it's being applied to.
+
 # we will create a bank account class as A bank account has Account Holder Name, Account Number 
 # and Balance
-print("hello")
+import os
+os.system("cls")
 
 class bank_account():
     def __init__(self,name,account_number,balance):     # constructor which runs automatically 
@@ -24,31 +46,38 @@ class bank_account():
         self.account_number = account_number
         self.balance = balance
 
+    def details(self):
+        print("Account details are -")
+        print("Name :",self.name)
+        print("account No :",self.account_number)
+        print("Account balance :",self.balance)
+
+    def deposit(self,amount):
+        self.balance += amount
+        print("Deposited successfull")
+
+    def withdraw(self,amount):
+        if amount > self.balance:
+            print("Can't withdwar low balance !!")
+        else:
+            self.balance -= amount
+        print(f"{amount} withdrawn {self.balance} left")
+
 
 acc1 = bank_account("rohan",4456,500)
 
-# ---------------------------------------
+acc1.name
+acc1.account_number
 
-class BankAccount:
+acc2 = bank_account("kunal",8897,240)
 
-    def __init__(self, name, account_no, balance):
-        self.name = name
-        self.account_no = account_no
-        self.balance = balance
+acc2.name
+acc2.account_number
 
-    def deposit(self, amount):
-        self.balance += amount
-        print(f"₹{amount} deposited successfully.")
+acc2.details()
+acc1.details()
 
-    def withdraw(self, amount):
-        if amount <= self.balance:
-            self.balance -= amount
-            print(f"₹{amount} withdrawn successfully.")
-        else:
-            print("Insufficient balance.")
+acc1.deposit(2300)
+acc1.details()
+acc1.withdraw(555)
 
-    def show_details(self):
-        print("\n------ Account Details ------")
-        print("Name       :", self.name)
-        print("Account No :", self.account_no)
-        print("Balance    :", self.balance)
