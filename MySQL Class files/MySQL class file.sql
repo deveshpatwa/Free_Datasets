@@ -839,7 +839,7 @@ from students;
 select student_name, marks, dense_rank() over(order by marks desc)
 from students;
 
-select *, row_number() over(order by marks desc)
+select student_name,marks, row_number() over()
 from students;
 
 
@@ -851,7 +851,7 @@ select * ,
 from students;
 
 
-# Find the top student from each deartment who has the first ring from his deartment  ?
+# Find the top student from each deartment who has the first rank from his deartment  ?
 
 with stud2 as (
 select *, rank() over(partition by department order by marks desc) as ranking
@@ -863,37 +863,44 @@ where ranking  =1 ;
 
 -- create table
 create table yearly_sales (
-    sales_year int,
-    sales_amount int
+    year int,
+    amount int
 );
 
 -- insert sample data
-insert into yearly_sales (sales_year, sales_amount)
+insert into yearly_sales
 values
-(2018, 42000.00),
-(2019, 44500.00),
-(2020, 39800.00),
-(2021, 46250.00),
-(2022, 48700.00),
-(2023, 51500.00),
-(2024, 53800.00),
-(2025, 55600.00);
+(2018, 4200),
+(2019, 4450),
+(2020, 3980),
+(2021, 4625),
+(2022, 4870),
+(2023, 5150),
+(2024, 5380),
+(2025, 5560);
 
 -- view data
 select * 
 from yearly_sales;
 
 
-select *, lag(sales_amount) over() as prv_year
+select *, lag(amount,2) over() as prv_year
 from yearly_sales;
 
-select * , 
-	lag(sales_amount) over() as prv_sales , 
-    sales_amount - lag(sales_amount) over() as changes
+select * , lead(amount) over() as nxt_year
 from yearly_sales;
 
-select * , lead(sales_amount) over() as nxt_year
-from yearly_sales;
+# Change in sales amount from previous year 
+with new as (
+select year,amount as cur_year, lag(amount) over() as prv_year
+from yearly_sales)
+
+select * , cur_year - prv_year as changes
+from new;
+
+
+
+
 
 -- ------------------Views in MySQL ------------------------
 /*A View in MySQL is a virtual table based on the resultset of a SQL query. It doesn't store data itself; instead, it stores the query that generates the data. When you query the view, MySQL runs the stored query and returns the result
