@@ -343,6 +343,7 @@ select state , city from store;
 
 
 # make a sales category column?
+
 select sales,if(sales>1000,"good","bad") as sales_category from store;
 
 # make a profit category( profit / loss ) column?
@@ -354,7 +355,7 @@ select
     if(profit>0,"profit","loss") as profit_category
 from store; 
 
-select sales, round( if(sales>1000,sales*0.10,sales*0.05)) as discount
+select sales, round( if(sales>1000,sales*0.10,sales*0.05),2) as discount
 from store;
 
 
@@ -395,6 +396,9 @@ select count(post_code) from store;
 select round(sum(profit) / sum(sales) * 100,2) as profit_margin
 from store;
 
+# Find average unit price (sales/qty) and round it to 2 decimal places
+
+
 
 -- --------------- year - month - day functions
 select 
@@ -403,11 +407,24 @@ select
     month(order_date),
     day(order_date),
     monthname(order_date),
-    dayname(order_date)
+    dayname(order_date),
+    now(),
+    current_date(),
+    current_time()
 from store;
 
 -- ---------TIMESTAMPDIFF 
 select order_date as DOB, timestampdiff(year, order_date, current_date()) as AGE
+from store;
+
+
+select order_date, 
+	concat(
+    timestampdiff(year , order_date,current_date()), " years and ",
+    mod( timestampdiff(month , order_date,current_date()) , 12), " months") as age
+from store;
+
+select concat(  round(sum(sales) / 1000,2) , " K") as total_sales
 from store;
 
 
@@ -417,17 +434,15 @@ select category from store;
 
 select distinct category  from store;
 
+# Find all the unique customers name from store ?
+
 select count(distinct category)  from store;
 
 select distinct category,sub_category from store;
 
 select count(distinct city) from store;
 
-# Q Find number of unique customers ?
-
-
-select distinct * from store ;
-
+select  distinct * from store ;
 
 -- -------SELECT  WHERE 
 
