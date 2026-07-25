@@ -1,3 +1,9 @@
+# Ridge Regression is an extension of standard linear regression that prevents overfitting and 
+# handles highly correlated variables by adding an L2 regularization penalty to the model's loss 
+# function. Instead of just minimizing the prediction error, it shrinks the coefficient estimates
+# toward zero, stabilizing the model for better predictions on unseen data
+
+
 # importing data analysis library
 import numpy as np
 import matplotlib.pyplot as plt
@@ -5,11 +11,10 @@ import pandas as pd
 import seaborn as sns
 
 # importing machine learning library
-from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import Ridge
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler , OneHotEncoder
 from sklearn.compose import ColumnTransformer
-from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score, root_mean_squared_error, mean_absolute_error, mean_squared_error
 from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer
@@ -55,7 +60,6 @@ y_test
 num_pipeline = Pipeline(
     [
         ("imputer", SimpleImputer(strategy="median")),
-        ("polynomial_features",PolynomialFeatures(degree=2)),
         ("scaler",StandardScaler())
     ]
 )
@@ -81,7 +85,7 @@ transformer = ColumnTransformer(
 pipe = Pipeline(
     [
         ("transform_data",transformer),
-        ("mocel",LinearRegression())
+        ("mocel",Ridge(alpha=1))
 
     ]
 )

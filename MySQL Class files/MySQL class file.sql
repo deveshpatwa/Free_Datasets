@@ -461,19 +461,25 @@ from store
 where category != "furniture";
 
 
+
+
 select name,sales
 from store
 where sales>=2000;
 
+
 select * 
 from store
 where region = "east";
+
+select * from store;
 
 # Select all the records of furniture category ?
 # Show name, sales and profit the records where we have loss ?
 # Show all the transaction from year 2015 ?
 # Find total sales in 2016 ?
 # Find average profit in furniture category ?
+
 
 -- -------------WHERE WITH 	AND - OR 
 
