@@ -61,4 +61,63 @@ df['Cabin'] = df['Cabin'].astype(str)
 df['Cabin'] = df['Cabin'].apply(lambda x : x[0])
 
 df.head()
+df.info()
 
+# Embarked column as some values null fix those
+df['Embarked'].value_counts()
+df['Embarked'] = df['Embarked'].fillna("S")
+
+# ------------check sigmoid function----------
+# logistic sigmoid function
+
+# def sigmoid(x):
+#     e = 2.178
+#     y = 1/ (1+(e**-x))
+#     return round(y,2)
+
+# plt.plot([sigmoid(i) for i in list(range(-10,10))] )
+# plt.show()
+
+# -----------------------------------------
+
+df.head()
+
+x = df.drop(columns="Survived")
+y = df['Survived']
+
+xtrain,xtest,ytrain,ytest = train_test_split(x,y,test_size=0.2,random_state=42)
+
+cat = x.select_dtypes("object").columns
+num = x.select_dtypes(np.number).columns
+
+preprocessor = ColumnTransformer( [ ("cat",OneHotEncoder(),cat),("num",StandardScaler(),num)] )
+
+model = LogisticRegression()
+
+pipe = Pipeline([("preprocessor",preprocessor),("model",model)])
+
+
+pipe.fit(xtrain,ytrain)
+
+prediction = pipe.predict(xtest)
+
+accuracy_score(ytest,prediction)
+confusion_matrix(ytest,prediction)
+print(classification_report(ytest,prediction))
+
+# making ROC and AUC curve
+prediction_probability = pipe.predict_proba(xtest)[:,1]
+prediction_probability
+
+fpr,tpr,threshhold = roc_curve(ytest,prediction_probability)
+auc = roc_auc_score(ytest,prediction)
+
+
+# plot ROC-AUC curve
+plt.plot(fpr, tpr, linewidth=2, label=f"AUC = {auc:.2f}")
+plt.plot([0,1],[0,1],'k--')
+plt.xlabel("False Positive Rate")
+plt.ylabel("True Positive Rate")
+plt.title("ROC Curve")
+plt.legend()
+plt.show()

@@ -575,7 +575,7 @@ group by city;
 -- --------------group by with multiple columns
 
 # Show category wise total sales for each region ?
-select region,category, sum(sales)
+select region,category, round(sum(sales))
 from store
 group by region , category;
 
@@ -629,7 +629,7 @@ select * from store;
 # show all the records from store table in ascending order of order_date ?
 SELECT *
 from store
-order by order_date asc ;
+order by order_date  desc;
 
 # Show subcategory wise total sales and order them in descending order ?
 select sub_category , round(sum(sales)) as total_sales
@@ -640,12 +640,12 @@ order by total_sales desc;
 -- -----------order by with 2 columns
 select * 
 from store
-order by category,sub_category,sales desc ;
+order by category,sub_category ,sales desc ;
 
 -- ---------------- limit 
 select * 
 from store
-limit 3;
+limit 5;
 
 # Top three translation with highest sales in east region?
 select *
@@ -1060,6 +1060,15 @@ select * from students;
 -- 29. display students whose scholarship is greater than 5000
 
 -- 30. display top 3 students with highest scholarship
+
+
+select * from employee;
+
+select * 
+from employee left join employee as manager
+on employee.manager_id = manager.employee_id;
+
+
 
 
 
