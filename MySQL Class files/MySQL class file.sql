@@ -685,7 +685,15 @@ select * from employee;
 select * from department;
 
 select *
-from employee inner join department
+from employee join department
+on employee.department_id = department.department_id;
+
+select name,name
+from employee join department
+on employee.department_id = department.department_id;
+
+select employee.name as employee , department.name as department
+from employee join department
 on employee.department_id = department.department_id;
 
 -- using there full names 
@@ -714,7 +722,7 @@ on employee.department_id = department.department_id;
 select * 
 from employee left join department
 on employee.department_id = department.department_id
-union 
+union
 select * 
 from employee right join department
 on employee.department_id = department.department_id;
@@ -784,6 +792,9 @@ where sales > 1000;
 select * 
 from store
 where name in (select distinct name from store where sales > 1000) ; 
+
+# Show all the records of the most profitable customer ?
+
 
 -- when you have a table as a output
 # Show how many number of orders are of profit or loss ?
