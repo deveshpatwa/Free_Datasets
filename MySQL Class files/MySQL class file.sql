@@ -800,13 +800,13 @@ where name in (select distinct name from store where sales > 1000) ;
 # Show how many number of orders are of profit or loss ?
 select profit, if(profit>0,"Profit","Loss") as pnl from store;
 
-select pnl,count(*)
+select pnl,count(*),avg(profit) 
 from (select profit, if(profit>0,"Profit","Loss") as pnl from store) as temp
 group by pnl;
 
 -- -------------------WITH (CTE)--------------------------
-with temp as (
-select profit, if(profit>0,"Profit","Loss") as pnl from store)
+with temp as 
+(select profit, if(profit>0,"Profit","Loss") as pnl from store)
 
 select pnl,count(*) as number_of_orders
 from temp
