@@ -823,6 +823,7 @@ from store
 group by years
 order by years)
 
+
 select * , round(total_profit / total_sales * 100,2) as profit_margin
 from year_wise_sales_data;
 
@@ -849,6 +850,8 @@ select max(sales) over() from store;
 
 select * , max(sales) over() from store;
 
+select * , max(sales) from store;
+
 select *,max(sales) over(partition by sub_category)
 from store;
 
@@ -865,6 +868,9 @@ select * from students;
 select student_name, marks, rank() over(order by marks desc)
 from students;
 
+select student_name, marks, rank() over(order by marks desc)
+from students;
+
 select * , rank() over(partition by department order by marks desc) as ranking
 from students;
 
@@ -876,9 +882,9 @@ from students;
 
 
 select * , 
-	rank() over(order by scholarship desc) as rank_func,
-	dense_rank() over(order by scholarship desc) as dense_rank_func,
-    ROW_NUMBER() over(order by scholarship desc) as row_number_func
+	rank() over(order by marks desc) as rank_func,
+	dense_rank() over(order by marks desc) as dense_rank_func,
+    ROW_NUMBER() over(order by marks desc) as row_number_func
     
 from students;
 
@@ -894,6 +900,7 @@ from stud2
 where ranking  =1 ;
 
 -- create table
+drop table yearly_sales;
 create table yearly_sales (
     year int,
     amount int
@@ -916,7 +923,7 @@ select *
 from yearly_sales;
 
 
-select *, lag(amount,2) over() as prv_year
+select *, lag(amount) over() as prv_year
 from yearly_sales;
 
 select * , lead(amount) over() as nxt_year
@@ -1073,11 +1080,6 @@ select * from students;
 -- 30. display top 3 students with highest scholarship
 
 
-select * from employee;
-
-select * 
-from employee left join employee as manager
-on employee.manager_id = manager.employee_id;
 
 
 
