@@ -1,0 +1,11 @@
+SaleID,Month,SalesAmount,Region
+2019-001,Jan,37296,North
+2019-002,Feb,48024,South
+2019-003,Mar,44628,South
+2019-004,Apr,36717,North
+2019-005,May,68698,West
+2019-006,Jun,32082,North
+2019-007,Jul,36140,South
+2019-008,Aug,45247,North
+2019-009,Sep,66781,South
+2019-010,Oct,65713,West
