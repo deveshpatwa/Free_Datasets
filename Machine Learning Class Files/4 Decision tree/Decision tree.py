@@ -7,28 +7,27 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from sklearn import tree
+from sklearn import datasets
 
-df = pd.read_csv(r"C:\Users\deves\Documents\GitHub\Free_Datasets\Data Sets\titanic.csv")
-df.head()
+df = datasets.load_iris()
 
-df.info()
+x = df['data']
+x
+y = df['target']
+y
 
-df.describe().round(2)
+# train test split
+xtrain,xtest,ytrain,ytest = train_test_split(x,y,random_state=42,test_size=0.2)
 
-df.isnull().sum()
+model = DecisionTreeClassifier()
 
-# keep usefull columns
-df.columns
-df = df[['Survived', 'Pclass', 'Sex', 'Age', 'SibSp',
-       'Parch','Fare', 'Cabin', 'Embarked']]
+model.fit(xtrain,ytrain)
 
-df.head()
-# rename columns in all lower
-df = df.rename(columns={i:i.lower() for i in df.columns})
-x = df.drop(columns="survived")
-y = df['survived']
+train_prediction = model.predict(xtrain)
+test_prediction = model.predict(xtest)
 
+accuracy_score(ytrain,train_prediction)
+accuracy_score(ytest,test_prediction)
 
-# Decision Trees do not require feature scaling.
-# Decision Trees do need encoding if your dataset contains categorical (text) features.
-# you need to remove null values only
+print(classification_report(ytrain,train_prediction))
+print(classification_report(ytest,test_prediction))
