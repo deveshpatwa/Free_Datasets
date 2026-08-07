@@ -30,4 +30,6 @@ accuracy_score(ytrain,train_prediction)
 accuracy_score(ytest,test_prediction)
 
 print(classification_report(ytrain,train_prediction))
-print(classification_report(ytest,test_prediction))
+
+
+classification_report(ytest,test_prediction)
