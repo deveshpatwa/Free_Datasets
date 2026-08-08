@@ -70,6 +70,8 @@ prediction = model.predict(x_test)
 accuracy_score(y_test,prediction)
 print(classification_report(y_test,prediction))
 
+
+# decision tree model
 model = DecisionTreeClassifier()
 model.fit(x_train,y_train)
 
