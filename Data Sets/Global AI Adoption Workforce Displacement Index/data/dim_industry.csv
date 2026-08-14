@@ -1,0 +1,26 @@
+industry_id,industry_name,industry_sector,automation_susceptibility,avg_ai_investment_pct_revenue,ai_adoption_stage,global_workforce_millions,primary_ai_use_case
+1,Information Technology,Technology,51.8,1.62,Scaling,12.1,Predictive analytics & code generation
+2,Financial Services,Finance,53.9,6.58,Exploring,61.4,Fraud detection & algorithmic trading
+3,Healthcare,Healthcare,45.0,1.5,Piloting,22.9,Diagnostic imaging & drug discovery
+4,Manufacturing,Industrial,95.0,1.8,Piloting,116.1,Predictive maintenance & robotics
+5,Retail & E-commerce,Consumer,73.6,3.3,Piloting,47.4,Demand forecasting & personalisation
+6,Transportation & Logistics,Industrial,41.9,3.4,Piloting,36.3,Route optimisation & autonomous vehicles
+7,Education,Public Services,29.4,2.96,Mature,226.1,Adaptive learning platforms
+8,Media & Entertainment,Consumer,52.6,3.14,Scaling,176.9,Content recommendation & generation
+9,Energy & Utilities,Industrial,46.8,4.73,Scaling,80.3,Grid optimisation & demand forecasting
+10,Agriculture,Primary,58.7,1.47,Exploring,15.9,Crop monitoring & yield prediction
+11,Construction,Industrial,89.5,2.48,Piloting,38.7,Site safety monitoring & design automation
+12,Telecommunications,Technology,32.9,1.74,Mature,97.4,Network optimisation & customer service bots
+13,Government & Public Sector,Public Services,54.9,2.5,Exploring,74.0,Citizen service automation
+14,Legal Services,Professional Services,56.8,3.75,Piloting,8.6,Contract review & legal research
+15,Hospitality & Tourism,Consumer,38.1,1.48,Scaling,24.8,Dynamic pricing & guest personalisation
+16,Real Estate,Finance,73.3,1.4,Exploring,56.1,Property valuation & market analysis
+17,Insurance,Finance,64.8,2.13,Piloting,40.7,Underwriting & claims automation
+18,Pharmaceuticals,Healthcare,65.8,5.31,Mature,47.5,Drug discovery & clinical trial matching
+19,Automotive,Industrial,50.5,3.07,Exploring,64.0,Autonomous driving & quality control
+20,Professional Services,Professional Services,56.8,3.05,Piloting,526.2,Document automation & research synthesis
+21,Aerospace & Defence,Industrial,37.9,2.35,Scaling,14.6,Predictive maintenance & simulation
+22,Mining & Resources,Primary,61.3,4.97,Scaling,28.3,Autonomous extraction & exploration
+23,Food & Beverage,Consumer,12.1,2.51,Mature,21.0,Quality control & supply chain forecasting
+24,Public Health,Healthcare,95.0,2.09,Scaling,24.8,Epidemiological modelling
+25,Marketing & Advertising,Professional Services,19.8,1.31,Exploring,371.0,Ad targeting & content generation

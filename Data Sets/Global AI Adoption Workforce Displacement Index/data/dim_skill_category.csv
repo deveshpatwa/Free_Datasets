@@ -1,0 +1,9 @@
+skill_category_id,skill_category_name,skill_category_code,ai_replaceability_score,ai_augmentation_potential,median_reskilling_duration_months,typical_education_level,global_worker_share_pct
+1,Cognitive & Analytical,COG-ANL,20.9,93.1,19.6,Bachelor's degree or higher,6.9
+2,Manual & Physical,MAN-PHY,36.9,66.1,14.9,Vocational / on-the-job training,7.9
+3,Creative & Design,CRE-DES,39.6,74.0,9.7,Bachelor's degree or portfolio-based,11.0
+4,Social & Interpersonal,SOC-INT,42.1,35.3,7.0,Varies by role,11.7
+5,Technical & Digital,TEC-DIG,50.1,50.0,9.9,Bachelor's degree or certification,18.3
+6,Administrative & Clerical,ADM-CLR,48.4,66.3,8.2,Secondary education or diploma,13.0
+7,Managerial & Strategic,MGT-STR,29.1,65.7,7.6,Bachelor's degree plus experience,24.0
+8,Manual Skilled Trades,TRD-SKL,79.6,66.9,4.9,Apprenticeship or vocational certification,7.2

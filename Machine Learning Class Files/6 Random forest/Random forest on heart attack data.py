@@ -34,6 +34,13 @@ df = pd.read_csv("heart_attack.csv")
 df.head().T
 df.describe().T
 df.columns
+df.info()
+df.isnull().sum()
+
+# data clean for BMI
+df['BMI'] = df['BMI'].fillna(27)
+
+
 
 x = df.drop(columns='HeartDiseaseorAttack')
 y = df['HeartDiseaseorAttack']
@@ -50,3 +57,24 @@ accuracy_score(ytest,prediction)
 print(classification_report(ytest,prediction))
 
 
+
+
+# now we will fit model using SMOTE
+# Another popular approach is SMOTE (Synthetic Minority Over-sampling Technique).
+# It creates synthetic examples of the minority class.
+
+from imblearn.over_sampling import SMOTE
+
+smote = SMOTE(random_state=42)
+
+Xtrain_resampled, ytrain_resampled = smote.fit_resample(
+    xtrain,
+    ytrain
+)
+
+model.fit(Xtrain_resampled, ytrain_resampled)
+
+prediction = model.predict(xtest)
+accuracy_score(ytest,prediction)
+
+print(classification_report(ytest,prediction))
