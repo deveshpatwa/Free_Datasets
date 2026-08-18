@@ -1,5 +1,5 @@
 # to install any module in python go to terminal and write this code
-# ----------- >   python -m pip install seaborn
+# ----------- >   python -m pip install module_name
 
 
 # loading imp libraries
@@ -26,8 +26,9 @@ df.columns
 # Dealing with Null values
 df.isnull().sum()
 
-
 # Outliers
+
+
 # how to find them 
 sns.boxplot(data=df,x="area")
 plt.show()
@@ -66,3 +67,14 @@ df.describe().round(2)
 # Feature Engineering  ----->
 
 # Feature engineering is the process of using domain knowledge and statistical techniques to transform raw data into meaningful inputs (features) for machine learning models. Its goal is to highlight patterns and simplify data so algorithms can learn more effectively and make highly accurate predictions.
+
+# Adding columns like
+
+# - total rooms
+df['total_rooms'] = df.bedrooms + df.bathrooms 
+
+# - bathroom per bedroom
+df['bathroom_per_bedroom'] = df.bathrooms / df.bedrooms
+
+# - total area of all floors
+df['aream_of_all_floors'] = df.area * df.stories
