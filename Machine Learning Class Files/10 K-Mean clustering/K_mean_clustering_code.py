@@ -21,6 +21,9 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+# import machine learning library
+from sklearn.cluster import KMeans
+
 # import data
 df = pd.read_csv("Mall_Customers.csv")
 df.head()
@@ -28,3 +31,29 @@ df.head()
 # information about the data
 df.info()
 df.describe()
+df.shape
+df.isnull().sum()
+
+# Select features
+x = df[['Annual Income (k$)', 'Spending Score (1-100)']]
+
+sns.scatterplot(x=x['Annual Income (k$)'],y=x['Spending Score (1-100)'])
+plt.show()
+
+# Create K-Means model
+# hyperparameter - n_clusters=5, random_state=42, n_init=10
+kmeans = KMeans(n_clusters=5)
+
+# Train the model
+df['Cluster'] = kmeans.fit_predict(x)
+
+# Display first few rows
+print(df.head())
+
+centers = kmeans.cluster_centers_
+
+
+# Plot clusters
+sns.scatterplot(x=x['Annual Income (k$)'],y=x['Spending Score (1-100)'],hue=df['Cluster'],alpha=0.8,palette="coolwarm")
+sns.scatterplot(x=centers[:,0],y=centers[:,1],markers="*",color='black',alpha=1,s=100)
+plt.show()
