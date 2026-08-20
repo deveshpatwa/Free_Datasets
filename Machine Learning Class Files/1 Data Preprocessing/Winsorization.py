@@ -3,6 +3,7 @@ from feature_engine.outliers import Winsorizer
 import pandas as pd
 
 df = pd.DataFrame({"income":[45,23,78,56,98,56,34,3500]})
+print(df)
 
 winsor = Winsorizer(capping_method="iqr",tail="both")
 winsor.fit_transform(df)

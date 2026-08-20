@@ -43,10 +43,10 @@ q3
 iqr = q3-q1
 iqr
 
-lb = q1-iqr1.5 
+lb = q1-iqr*1.5 
 lb
 
-ub = q3+iqr1.5
+ub = q3+iqr*1.5
 ub
 
 # this will filter the data 
@@ -78,7 +78,7 @@ df['total_rooms'] = df.bedrooms + df.bathrooms
 df['bathroom_per_bedroom'] = df.bathrooms / df.bedrooms
 
 # - total area of all floors
-df['aream_of_all_floors'] = df.area  df.stories
+df['aream_of_all_floors'] = df.area * df.stories
 
 # find num columns
 df.select_dtypes(include=int)

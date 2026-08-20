@@ -35,17 +35,20 @@ df.shape
 df.isnull().sum()
 
 # Select features
-x = df[['Annual Income (k$)', 'Spending Score (1-100)']]
+df = df[['Annual Income (k$)', 'Spending Score (1-100)']]
 
-sns.scatterplot(x=x['Annual Income (k$)'],y=x['Spending Score (1-100)'])
+sns.scatterplot(data=df , x='Annual Income (k$)',y='Spending Score (1-100)')
 plt.show()
 
 # Create K-Means model
 # hyperparameter - n_clusters=5, random_state=42, n_init=10
-kmeans = KMeans(n_clusters=5)
+kmeans = KMeans(n_clusters=5,random_state=42)
 
 # Train the model
-df['Cluster'] = kmeans.fit_predict(x)
+kmeans.fit(df)
+
+df['Cluster'] = kmeans.predict(df)
+
 
 # Display first few rows
 print(df.head())
@@ -54,6 +57,13 @@ centers = kmeans.cluster_centers_
 
 
 # Plot clusters
-sns.scatterplot(x=x['Annual Income (k$)'],y=x['Spending Score (1-100)'],hue=df['Cluster'],alpha=0.8,palette="coolwarm")
+sns.scatterplot(
+    data=df,
+    x='Annual Income (k$)',
+    y='Spending Score (1-100)'
+    ,hue=df['Cluster'],
+    alpha=0.8,
+    palette="coolwarm"
+    )
 sns.scatterplot(x=centers[:,0],y=centers[:,1],markers="*",color='black',alpha=1,s=100)
 plt.show()
