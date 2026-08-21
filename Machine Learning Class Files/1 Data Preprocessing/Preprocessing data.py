@@ -78,7 +78,7 @@ df['total_rooms'] = df.bedrooms + df.bathrooms
 df['bathroom_per_bedroom'] = df.bathrooms / df.bedrooms
 
 # - total area of all floors
-df['aream_of_all_floors'] = df.area * df.stories
+df['aream_of_all_floors'] = df.area *  df.stories
 
 # find num columns
 df.select_dtypes(include=int)
@@ -102,16 +102,69 @@ df.head()
 
 # Scaling the data -------->
 
-# MinMaxScaler is a feature scaling technique that converts numerical values to a fixed range, usually 0 to 1, by subtracting the minimum value of the feature and dividing by the difference between the maximum and minimum values. This preserves the relative distances between data points while ensuring all features have the same scale. It is commonly used with machine learning algorithms such as KNN, K-Means, SVM, and Neural Networks, which are sensitive to the magnitude of input features. However, because it uses the minimum and maximum values, MinMaxScaler is sensitive to outliers.
+# MinMaxScaler is a feature scaling technique that converts numerical values to a fixed range, usually 0 to 1, by subtracting the minimum value of the feature and dividing by the difference between the maximum and minimum values. This preserves the relative distances between data points while ensuring all features have the same scale.
 
 from sklearn.preprocessing import MinMaxScaler 
 
-df = pd.DataFrame({"income":[45,23,78,56,98,56,34,35]})
+df = pd.DataFrame({"income":[45,23,78,56,98,56,34,85]})
 print(df)
 
 scaler = MinMaxScaler()
 
-data = scaler.fit_transform(df)
-pd.DataFrame(data)  # scaled
-df                   # old data
- 
+scaler.fit_transform(df)
+
+
+
+
+
+#  StandardScaler -------->
+
+# StandardScaler is a feature scaling technique that transforms numerical values so that they have a mean of 0 and a standard deviation of 1. It does this by subtracting the feature's mean from each value and dividing by its standard deviation. Unlike MinMaxScaler, StandardScaler does not restrict values to a fixed range, so the transformed data can contain both positive and negative values and It is less affected by outliers 
+
+
+from sklearn.preprocessing import StandardScaler
+
+df = pd.DataFrame({"income":[45,23,78,56,98,56,34,85]})
+print(df)
+
+scaler = StandardScaler()
+
+scaler.fit_transform(df)
+
+
+# RobustScaler ------------->
+
+# RobustScaler is a feature scaling technique that scales numerical values using the median and the interquartile range (IQR) instead of the mean and standard deviation. It subtracts the median from each value and divides by the IQR (the difference between the 75th and 25th percentiles). Because it relies on the median and IQR, RobustScaler is highly resistant to outliers, making it a better choice when the dataset contains extreme values.
+
+from sklearn.preprocessing import RobustScaler
+df = pd.DataFrame({"income":[45,23,78,56,98,56,34,850]})
+print(df)
+scaler = RobustScaler()
+scaler.fit_transform(df)
+
+
+
+# Encoding ------------>
+
+# is the process of converting raw, categorical, or non-numeric data into a mathematical format that models can interpret.
+
+# 1. Lable encoding
+from sklearn.preprocessing import LabelEncoder
+encoder = LabelEncoder()
+data = pd.DataFrame({"gender":["male","female","male","male"]})
+data
+
+encoder.fit_transform(data)
+
+
+# 2. One Hot encoding
+from sklearn.preprocessing import OneHotEncoder
+
+encoder = OneHotEncoder(sparse_output=False,drop = "first", handle_unknown='ignore')
+
+data = pd.DataFrame({"gender":["male","female","male","male"]})
+data
+
+encoder.fit_transform(data)
+
+pd.get_dummies(data,drop_first=False, dtype=int)     # through python pandas
