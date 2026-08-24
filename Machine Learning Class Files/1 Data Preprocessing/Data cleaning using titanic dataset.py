@@ -8,12 +8,27 @@ import matplotlib.pyplot as plt
 df = pd.read_csv("titanic.csv")
 df.head()
 
+
+# column info
+
+# | PassengerId | A unique ID assigned to each passenger. It has no effect on survival and is mainly used for identification.                    | `1`, `892`                                               |
+# | Survived    | Whether the passenger survived the disaster. This is the target variable in ML.                                                | `0 = No`, `1 = Yes`                                      |
+# | Pclass      | Passenger class (ticket class). It indicates the socioeconomic status of the passenger.                                        | `1 = First Class`, `2 = Second Class`, `3 = Third Class` |
+# | Name        | Full name of the passenger, often including title (Mr., Mrs., Miss., etc.).                                                    | `Braund, Mr. Owen Harris`                                |
+# | Sex         | Gender of the passenger.                                                                                                       | `male`, `female`                                         |
+# | Age         | Age of the passenger in years. Some values are missing.                                                                        | `22`, `38`, `NaN`                                        |
+# | SibSp       | Number of siblings and spouses aboard the Titanic.                                                                             | `1` means one sibling or spouse was traveling with them. |
+# | Parch       | Number of parents and children aboard the Titanic.                                                                             | `2` means two parents/children were traveling with them. |
+# | Ticket      | Ticket number assigned to the passenger. It is usually treated as a categorical feature or dropped because of high uniqueness. | `A/5 21171`                                              |
+# | Fare        | The ticket price paid by the passenger.                                                                                        | `7.25`, `71.2833`                                        |
+# | Cabin       | Cabin number where the passenger stayed. Many values are missing because not every passenger had an assigned cabin.            | `C85`, `B28`, `NaN`                                      |
+# | Embarked    | Port where the passenger boarded the Titanic.                                                                                  | `C`, `Q`, `S`                                            |
+
+
 df.shape
 df.info()
 df.head(2).T
 df.describe().round(2)
-
-
 
 
 # Dealing with null values ------------------>
@@ -99,5 +114,48 @@ df['Survived'].value_counts()
 # show them in percentage %
 df['Survived'].value_counts() / df['Survived'].size * 100
 
+df.columns
+
+# analysis on pclass
+df.pivot_table(index='Pclass',columns='Survived',values='PassengerId',aggfunc="count")
+
+
+# Analysis on gender
+df.pivot_table(index='Sex',columns='Survived',values='PassengerId',aggfunc="count")
+
+
+# Analysis on age 
+sns.histplot(data=df,x="Age",kde=True,hue="Survived")
+plt.show()
+
+def age_cat(age):
+    if age<12:
+        return "child"
+    elif age<20:
+        return "teen"
+    elif age < 50:
+        return "adult"
+    else:
+        return "old"
+
+df["age_cat"] = df['Age'].apply(age_cat)
+df.pivot_table(index='age_cat',columns='Survived',values='PassengerId',aggfunc="count")
+
+# Analysis on cabin
+df.pivot_table(index='Cabin',columns='Survived',values='PassengerId',aggfunc="count")
+
+# clean cabin column
+df['Cabin'] = df['Cabin'].apply(lambda x : x[0])
+
+df.columns
+x = df[['Pclass', 'Sex', 'Age', 'SibSp','Parch', 'Fare', 'Cabin', 'Embarked']]
+y = df['Survived']
+
+x
+y
+
+# Dividing data for train test split 
+from sklearn.model_selection import train_test_split
+xtrain,xtest,ytrain,ytest =  train_test_split(x,y,test_size=0.2,random_state=42)
 
 

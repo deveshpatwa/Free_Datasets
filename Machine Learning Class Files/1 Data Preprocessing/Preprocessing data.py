@@ -152,19 +152,27 @@ scaler.fit_transform(df)
 from sklearn.preprocessing import LabelEncoder
 encoder = LabelEncoder()
 data = pd.DataFrame({"gender":["male","female","male","male"]})
+data2 = pd.DataFrame({"country":["india","china","india","russia"]})
 data
-
+data2
 encoder.fit_transform(data)
+encoder.fit_transform(data2)
 
 
 # 2. One Hot encoding
 from sklearn.preprocessing import OneHotEncoder
-
 encoder = OneHotEncoder(sparse_output=False,drop = "first", handle_unknown='ignore')
-
 data = pd.DataFrame({"gender":["male","female","male","male"]})
+data2 = pd.DataFrame({"country":["india","china","india","russia"]})
 data
+data2
 
 encoder.fit_transform(data)
 
-pd.get_dummies(data,drop_first=False, dtype=int)     # through python pandas
+data
+pd.get_dummies(data) 
+pd.get_dummies(data, dtype=int) 
+pd.get_dummies(data,drop_first=True, dtype=int)     # through python pandas
+
+
+pd.get_dummies(data2) 
