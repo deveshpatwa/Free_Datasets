@@ -105,15 +105,12 @@ df.head()
 # MinMaxScaler is a feature scaling technique that converts numerical values to a fixed range, usually 0 to 1, by subtracting the minimum value of the feature and dividing by the difference between the maximum and minimum values. This preserves the relative distances between data points while ensuring all features have the same scale.
 
 from sklearn.preprocessing import MinMaxScaler 
-
 df = pd.DataFrame({"income":[45,23,78,56,98,56,34,85]})
-print(df)
+df2 = pd.DataFrame({"income":[45,23,78,56,98,56,34,850]})
 
 scaler = MinMaxScaler()
-
 scaler.fit_transform(df)
-
-
+scaler.fit_transform(df2)
 
 
 
@@ -125,12 +122,13 @@ scaler.fit_transform(df)
 from sklearn.preprocessing import StandardScaler
 
 df = pd.DataFrame({"income":[45,23,78,56,98,56,34,85]})
-print(df)
+df2 = pd.DataFrame({"income":[45,23,78,56,98,56,34,230]})
+df3 = pd.DataFrame({"income":[45,23,78,56,98,56,34,930]})
 
 scaler = StandardScaler()
-
 scaler.fit_transform(df)
-
+scaler.fit_transform(df2)
+scaler.fit_transform(df3)
 
 # RobustScaler ------------->
 
@@ -169,7 +167,6 @@ data2
 
 encoder.fit_transform(data)
 
-data
 pd.get_dummies(data) 
 pd.get_dummies(data, dtype=int) 
 pd.get_dummies(data,drop_first=True, dtype=int)     # through python pandas
