@@ -35,6 +35,8 @@ df.describe().round(2)
 df.isnull().sum()
 
 df['Cabin']
+df['Cabin'].value_counts()
+
 
 df['Cabin'] = df['Cabin'].fillna("No cabin")  
 
@@ -79,13 +81,13 @@ ub
 # check outliers
 df[df['Age'] > ub]
 
-
-df['new_age'] = np.where(df['Age'] > ub , ub,df['Age'])
-
-df[['Age','new_age']].describe()
+df['Age'] = np.where(df['Age'] > ub , ub,df['Age'])
 
 # filling null values in age columns
 df['Age'] = df['Age'].fillna(df['Age'].median())
+
+df['Age'].describe()
+df.isnull().sum()
 
 
 
@@ -141,8 +143,23 @@ def age_cat(age):
 df["age_cat"] = df['Age'].apply(age_cat)
 df.pivot_table(index='age_cat',columns='Survived',values='PassengerId',aggfunc="count")
 
+df.pivot_table(index='SibSp',columns='Survived',values='PassengerId',aggfunc="count")
+
+df.pivot_table(index='Parch',columns='Survived',values='PassengerId',aggfunc="count")
+
+
+# Analysis on fare
+sns.histplot(data=df,x="Fare",hue="Survived")
+plt.show()
+
+
 # Analysis on cabin
-df.pivot_table(index='Cabin',columns='Survived',values='PassengerId',aggfunc="count")
+data = df.pivot_table(index='Cabin',columns='Survived',values='PassengerId',aggfunc="count")
+
+data['total'] = data[0] + data[1]
+data["dead %"] = data[0] / data['total'] * 100
+data["Alive %"] = data[1] / data['total'] * 100
+data[['dead %','Alive %']].round(2).sort_values(by="Alive %" , ascending=False)
 
 # clean cabin column
 df['Cabin'] = df['Cabin'].apply(lambda x : x[0])
@@ -151,11 +168,12 @@ df.columns
 x = df[['Pclass', 'Sex', 'Age', 'SibSp','Parch', 'Fare', 'Cabin', 'Embarked']]
 y = df['Survived']
 
-x
-y
+x.head()
+y.head()
 
 # Dividing data for train test split 
 from sklearn.model_selection import train_test_split
+train_test_split(x,y,test_size=0.2,random_state=42)
 xtrain,xtest,ytrain,ytest =  train_test_split(x,y,test_size=0.2,random_state=42)
 
 
