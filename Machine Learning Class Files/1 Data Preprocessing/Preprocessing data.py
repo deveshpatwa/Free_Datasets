@@ -109,6 +109,11 @@ df = pd.DataFrame({"income":[45,23,78,56,98,56,34,85]})
 df2 = pd.DataFrame({"income":[45,23,78,56,98,56,34,850]})
 
 scaler = MinMaxScaler()
+scaler.fit(df)
+scaler.data_min_
+scaler.data_max_
+scaler.transform(df)
+
 scaler.fit_transform(df)
 scaler.fit_transform(df2)
 
