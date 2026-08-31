@@ -1,0 +1,501 @@
+order_id,order_date,name,city,state,post_code,region,category,sub_category,sales,qty,profit
+CA-2016-155488,2016-11-13 00:00:00,Frank Merwin,Vancouver,Washington,98661,West,Office Supplies,Art,44.02,2,11.45
+CA-2015-124891,2015-07-31 00:00:00,Rick Hansen,New York City,New York,NULL,East,Technology,Accessories,2309.65,7,762.18
+CA-2015-124891,2015-07-31 00:00:00,Rick Hansen,New York City,New York,NULL,East,Furniture,Tables,1090.78,7,-290.88
+CA-2015-124891,2015-07-31 00:00:00,Rick Hansen,New York City,New York,NULL,East,Office Supplies,Paper,19.44,3,9.33
+CA-2015-126445,2015-08-27 00:00:00,Ryan Akin,Murrieta,California,NULL,West,Office Supplies,Storage,484.65,3,92.08
+CA-2015-111199,2015-11-13 00:00:00,Joe Kamberova,Jacksonville,North Carolina,NULL,South,Office Supplies,Paper,115.3,3,40.35
+CA-2015-105312,2015-11-06 00:00:00,Meg Tillman,Scottsdale,Arizona,NULL,West,Office Supplies,Envelopes,7.08,3,2.48
+CA-2015-105312,2015-11-06 00:00:00,Meg Tillman,Scottsdale,Arizona,NULL,West,Office Supplies,Binders,4.4,3,-3.52
+US-2017-106705,2017-12-26 00:00:00,Patrick O'Brill,Burlington,Iowa,NULL,Central,Office Supplies,Paper,44.75,5,20.59
+CA-2017-135034,2017-08-01 00:00:00,Annie Thurman,Chicago,Illinois,NULL,Central,Technology,Phones,95.98,2,6
+CA-2014-158540,2014-11-24 00:00:00,Vivek Gonzalez,San Diego,California,NULL,West,Furniture,Furnishings,151.72,4,27.31
+CA-2017-118437,2017-06-17 00:00:00,Philip Fox,Olympia,Washington,NULL,West,Furniture,Furnishings,155.25,3,46.58
+CA-2017-118437,2017-06-17 00:00:00,Philip Fox,Olympia,Washington,NULL,West,Office Supplies,Storage,14.03,1,4.07
+US-2015-126214,2015-12-21 00:00:00,John Stevenson,Seattle,Washington,98103,West,Furniture,Tables,1618.37,13,356.04
+US-2015-126214,2015-12-21 00:00:00,John Stevenson,Seattle,Washington,98103,West,Technology,Accessories,99.6,1,36.85
+CA-2015-133025,2015-09-17 00:00:00,Meg O'Connel,Los Angeles,California,90036,West,Office Supplies,Paper,32.4,5,15.55
+CA-2015-108665,2015-07-06 00:00:00,Kalyca Meade,New York City,New York,10011,East,Furniture,Furnishings,13.96,2,6.7
+CA-2015-108665,2015-07-06 00:00:00,Kalyca Meade,New York City,New York,10011,East,Furniture,Furnishings,155.82,3,63.89
+CA-2015-108665,2015-07-06 00:00:00,Kalyca Meade,New York City,New York,10011,East,Technology,Phones,124.95,5,2.5
+CA-2015-108665,2015-07-06 00:00:00,Kalyca Meade,New York City,New York,10011,East,Office Supplies,Storage,601.65,5,156.43
+CA-2015-124450,2015-04-27 00:00:00,Greg Tran,Washington,District of Columbia,20016,East,Office Supplies,Art,22.74,3,8.87
+CA-2015-124450,2015-04-27 00:00:00,Greg Tran,Washington,District of Columbia,20016,East,Furniture,Chairs,1267.53,3,316.88
+CA-2015-124450,2015-04-27 00:00:00,Greg Tran,Washington,District of Columbia,20016,East,Technology,Machines,1379.92,8,648.56
+CA-2015-167269,2015-06-16 00:00:00,Philip Brown,Philadelphia,Pennsylvania,19134,East,Office Supplies,Envelopes,6.21,2,2.17
+CA-2017-106964,2017-12-17 00:00:00,Hallie Redmond,Los Angeles,California,90045,West,Office Supplies,Binders,11.81,2,4.28
+CA-2016-126529,2016-01-11 00:00:00,Deanra Eno,Springfield,Ohio,45503,East,Office Supplies,Paper,15.55,3,5.44
+CA-2016-126529,2016-01-11 00:00:00,Deanra Eno,Springfield,Ohio,45503,East,Office Supplies,Paper,63.31,3,20.58
+CA-2016-126529,2016-01-11 00:00:00,Deanra Eno,Springfield,Ohio,NULL,East,Technology,Phones,15.59,2,-9.87
+CA-2014-163552,2014-07-11 00:00:00,Laura Armstrong,Hackensack,New Jersey,7601,East,Office Supplies,Paper,177.2,5,83.28
+CA-2014-163552,2014-07-11 00:00:00,Laura Armstrong,Hackensack,New Jersey,7601,East,Technology,Phones,197.97,3,57.41
+CA-2014-163552,2014-07-11 00:00:00,Laura Armstrong,Hackensack,New Jersey,7601,East,Furniture,Chairs,854.94,3,213.74
+CA-2014-163552,2014-07-11 00:00:00,Laura Armstrong,Hackensack,New Jersey,7601,East,Furniture,Furnishings,124.11,9,52.13
+CA-2014-163552,2014-07-11 00:00:00,Laura Armstrong,Hackensack,New Jersey,7601,East,Office Supplies,Labels,14.4,5,7.06
+CA-2016-109820,2016-11-20 00:00:00,Allen Goldenen,Cincinnati,Ohio,45231,East,Office Supplies,Paper,15.7,3,5.1
+CA-2016-109820,2016-11-20 00:00:00,Allen Goldenen,Cincinnati,Ohio,45231,East,Office Supplies,Binders,2.63,2,-1.93
+CA-2016-109820,2016-11-20 00:00:00,Allen Goldenen,Cincinnati,Ohio,45231,East,Office Supplies,Binders,14.43,3,-10.58
+CA-2016-113061,2016-04-22 00:00:00,Ed Ludwig,Jefferson City,Missouri,65109,Central,Furniture,Furnishings,86.62,2,8.66
+CA-2015-127418,2015-06-13 00:00:00,Jennifer Jackson,Los Angeles,California,90004,West,Office Supplies,Binders,36.62,3,13.73
+CA-2017-121818,2017-11-20 00:00:00,Jennifer Halladay,Burlington,North Carolina,27217,South,Office Supplies,Art,23.97,7,2.7
+CA-2017-121818,2017-11-20 00:00:00,Jennifer Halladay,Burlington,North Carolina,27217,South,Office Supplies,Art,28.73,3,1.8
+CA-2016-127670,2016-03-20 00:00:00,Robert Dilbeck,Saint Peters,Missouri,63376,Central,Furniture,Tables,697.16,4,146.4
+CA-2016-102981,2016-09-06 00:00:00,Mary O'Rourke,New York City,New York,NULL,East,Technology,Accessories,31.86,2,11.15
+CA-2016-102981,2016-09-06 00:00:00,Mary O'Rourke,New York City,New York,NULL,East,Furniture,Bookcases,722.35,3,90.29
+CA-2017-115651,2017-07-09 00:00:00,Noel Staavos,Chicago,Illinois,NULL,Central,Office Supplies,Art,8.84,5,2.98
+CA-2017-115651,2017-07-09 00:00:00,Noel Staavos,Chicago,Illinois,60610,Central,Office Supplies,Appliances,58.46,9,-146.16
+CA-2017-152702,2017-10-12 00:00:00,Steve Nguyen,Rockford,Illinois,61107,Central,Furniture,Chairs,254.6,14,-18.19
+CA-2016-169103,2016-03-08 00:00:00,Zuschuss Carroll,Miami,Florida,33142,South,Technology,Phones,1363.96,5,85.25
+CA-2016-169103,2016-03-08 00:00:00,Zuschuss Carroll,Miami,Florida,33142,South,Furniture,Furnishings,102.36,3,-3.84
+CA-2014-139192,2014-05-27 00:00:00,Lena Creighton,San Francisco,California,94109,West,Technology,Phones,1113.5,12,125.27
+CA-2014-139192,2014-05-27 00:00:00,Lena Creighton,San Francisco,California,94109,West,Technology,Accessories,99.99,1,38
+US-2015-153500,2015-07-03 00:00:00,Deirdre Greer,Philadelphia,Pennsylvania,19134,East,Furniture,Furnishings,168.46,2,-29.48
+US-2015-153500,2015-07-03 00:00:00,Deirdre Greer,Philadelphia,Pennsylvania,19134,East,Office Supplies,Paper,6.72,2,2.44
+US-2015-153500,2015-07-03 00:00:00,Deirdre Greer,Philadelphia,Pennsylvania,19134,East,Furniture,Furnishings,282.89,9,56.58
+CA-2015-110667,2015-04-04 00:00:00,Nicole Fjeld,New York City,New York,10009,East,Office Supplies,Art,11.16,2,4.35
+CA-2015-110667,2015-04-04 00:00:00,Nicole Fjeld,New York City,New York,10009,East,Furniture,Furnishings,108.4,2,22.76
+CA-2015-110667,2015-04-04 00:00:00,Nicole Fjeld,New York City,New York,10009,East,Office Supplies,Binders,82.34,3,27.79
+CA-2015-110667,2015-04-04 00:00:00,Nicole Fjeld,New York City,New York,10009,East,Office Supplies,Binders,9.09,4,3.29
+CA-2017-167150,2017-12-10 00:00:00,Ben Peterman,San Diego,California,92037,West,Office Supplies,Binders,19.94,4,7.23
+CA-2017-167150,2017-12-10 00:00:00,Ben Peterman,San Diego,California,92037,West,Office Supplies,Binders,65.57,2,22.95
+CA-2016-105284,2016-11-24 00:00:00,Matthew Grinstein,Philadelphia,Pennsylvania,19143,East,Office Supplies,Fasteners,4.42,3,1.6
+US-2015-125374,2015-03-23 00:00:00,Julia Dunbar,Houston,Texas,77095,Central,Furniture,Chairs,107.77,2,-29.25
+CA-2015-161263,2015-04-16 00:00:00,Theresa Swint,Toledo,Ohio,43615,East,Office Supplies,Appliances,45.22,3,4.52
+CA-2015-161263,2015-04-16 00:00:00,Theresa Swint,Toledo,Ohio,43615,East,Office Supplies,Fasteners,10.42,7,-2.21
+CA-2015-161263,2015-04-16 00:00:00,Theresa Swint,Toledo,Ohio,43615,East,Office Supplies,Art,7.87,3,1.28
+CA-2015-161263,2015-04-16 00:00:00,Theresa Swint,Toledo,Ohio,43615,East,Technology,Phones,118.78,3,-27.72
+CA-2015-161263,2015-04-16 00:00:00,Theresa Swint,Toledo,Ohio,43615,East,Office Supplies,Fasteners,1.45,1,0.24
+CA-2015-161263,2015-04-16 00:00:00,Theresa Swint,Toledo,Ohio,43615,East,Office Supplies,Binders,55.47,5,-46.23
+CA-2016-157686,2016-10-01 00:00:00,Brian DeCherney,San Francisco,California,94122,West,Furniture,Chairs,194.85,4,12.18
+US-2017-139955,2017-09-28 00:00:00,Charles McCrossin,Brownsville,Texas,78521,Central,Office Supplies,Supplies,1.74,1,-0.35
+US-2015-150161,2015-07-25 00:00:00,Ross Baird,Philadelphia,Pennsylvania,19143,East,Office Supplies,Binders,25.18,4,-18.46
+CA-2015-144652,2015-11-20 00:00:00,Skye Norling,Los Angeles,California,90008,West,Office Supplies,Art,19.46,7,5.06
+CA-2016-152814,2016-04-28 00:00:00,Erica Hernandez,Denver,Colorado,80219,West,Office Supplies,Paper,29.47,3,9.95
+CA-2017-106943,2017-11-14 00:00:00,Frank Olsen,New York City,New York,10035,East,Office Supplies,Binders,8.64,2,3.02
+CA-2016-134348,2016-11-12 00:00:00,Maurice Satty,Mesa,Arizona,85204,West,Office Supplies,Binders,6.27,5,-4.6
+CA-2016-134348,2016-11-12 00:00:00,Maurice Satty,Mesa,Arizona,85204,West,Office Supplies,Binders,4.37,7,-3.35
+CA-2016-134348,2016-11-12 00:00:00,Maurice Satty,Mesa,Arizona,85204,West,Technology,Accessories,31.98,2,2
+CA-2016-161781,2016-09-29 00:00:00,Chad Cunningham,Columbus,Indiana,47201,Central,Office Supplies,Art,40.88,7,10.63
+CA-2017-132521,2017-09-23 00:00:00,Don Weiss,Seattle,Washington,98105,West,Office Supplies,Appliances,119.96,2,33.59
+CA-2017-132521,2017-09-23 00:00:00,Don Weiss,Seattle,Washington,98105,West,Office Supplies,Storage,31.44,3,8.49
+CA-2017-132521,2017-09-23 00:00:00,Don Weiss,Seattle,Washington,98105,West,Office Supplies,Binders,6.88,1,2.32
+CA-2015-110016,2015-11-29 00:00:00,Bill Tyler,Detroit,Michigan,48227,Central,Office Supplies,Paper,19.92,4,9.36
+CA-2015-110016,2015-11-29 00:00:00,Bill Tyler,Detroit,Michigan,48227,Central,Furniture,Chairs,1106.91,9,121.76
+US-2016-143819,2016-03-01 00:00:00,Karen Daniels,Yonkers,New York,10701,East,Furniture,Tables,836.59,8,-264.92
+US-2016-143819,2016-03-01 00:00:00,Karen Daniels,Yonkers,New York,10701,East,Office Supplies,Paper,26.38,1,12.13
+US-2016-143819,2016-03-01 00:00:00,Karen Daniels,Yonkers,New York,10701,East,Office Supplies,Storage,362.92,2,105.25
+US-2016-143819,2016-03-01 00:00:00,Karen Daniels,Yonkers,New York,10701,East,Technology,Machines,4899.93,7,2400.97
+CA-2016-167584,2016-08-12 00:00:00,Lena Cacioppo,Des Moines,Iowa,50315,Central,Office Supplies,Paper,6.48,1,3.11
+CA-2016-166163,2016-08-15 00:00:00,Craig Yedwab,Oakland,California,94601,West,Technology,Phones,71.98,3,7.2
+CA-2016-166163,2016-08-15 00:00:00,Craig Yedwab,Oakland,California,94601,West,Office Supplies,Labels,3.15,1,1.51
+CA-2017-158407,2017-06-04 00:00:00,Lindsay Williams,Monroe,North Carolina,28110,South,Furniture,Furnishings,31.98,2,2
+CA-2017-158407,2017-06-04 00:00:00,Lindsay Williams,Monroe,North Carolina,28110,South,Technology,Phones,71.98,2,25.19
+CA-2015-143490,2015-12-06 00:00:00,Naresj Patel,San Diego,California,92105,West,Office Supplies,Art,120.15,9,33.64
+CA-2015-143490,2015-12-06 00:00:00,Naresj Patel,San Diego,California,92105,West,Technology,Phones,219.18,2,19.18
+CA-2015-165085,2015-12-27 00:00:00,Brad Thomas,Clinton,Maryland,20735,East,Office Supplies,Paper,28.9,5,14.16
+CA-2015-165085,2015-12-27 00:00:00,Brad Thomas,Clinton,Maryland,20735,East,Office Supplies,Appliances,355.96,2,103.23
+CA-2017-160423,2017-01-21 00:00:00,Penelope Sewall,Charlotte,North Carolina,28205,South,Office Supplies,Storage,348.21,7,30.47
+CA-2017-160423,2017-01-21 00:00:00,Penelope Sewall,Charlotte,North Carolina,28205,South,Office Supplies,Binders,35.78,7,-28.63
+CA-2014-159338,2014-06-25 00:00:00,Noel Staavos,Los Angeles,California,90049,West,Furniture,Tables,447.84,5,11.2
+CA-2016-107216,2016-06-14 00:00:00,Paul Van Hugh,San Francisco,California,94122,West,Office Supplies,Art,7.04,4,2.04
+CA-2016-107216,2016-06-14 00:00:00,Paul Van Hugh,San Francisco,California,94122,West,Furniture,Furnishings,8.73,3,4.1
+CA-2016-107216,2016-06-14 00:00:00,Paul Van Hugh,San Francisco,California,94122,West,Technology,Accessories,29.29,1,9.67
+CA-2016-107216,2016-06-14 00:00:00,Paul Van Hugh,San Francisco,California,94122,West,Office Supplies,Art,8.64,3,2.51
+US-2017-145863,2017-04-21 00:00:00,Resi PÃ¶lking,Houston,Texas,77041,Central,Office Supplies,Binders,2.69,3,-4.71
+US-2017-145863,2017-04-21 00:00:00,Resi PÃ¶lking,Houston,Texas,77041,Central,Office Supplies,Binders,2.93,3,-4.99
+CA-2016-112340,2016-10-21 00:00:00,Neoma Murray,Riverside,California,92503,West,Office Supplies,Paper,22.92,3,11.23
+US-2016-110156,2016-11-19 00:00:00,Eric Hoffmann,Houston,Texas,77041,Central,Office Supplies,Storage,100.7,6,-16.36
+US-2016-110156,2016-11-19 00:00:00,Eric Hoffmann,Houston,Texas,77041,Central,Furniture,Furnishings,2.33,2,-0.76
+US-2016-110156,2016-11-19 00:00:00,Eric Hoffmann,Houston,Texas,77041,Central,Office Supplies,Binders,10.78,5,-17.25
+US-2016-110156,2016-11-19 00:00:00,Eric Hoffmann,Houston,Texas,77041,Central,Office Supplies,Fasteners,58.37,12,21.89
+US-2016-110156,2016-11-19 00:00:00,Eric Hoffmann,Houston,Texas,77041,Central,Office Supplies,Envelopes,40.97,3,13.83
+US-2016-110156,2016-11-19 00:00:00,Eric Hoffmann,Houston,Texas,77041,Central,Technology,Phones,71.96,5,25.19
+US-2016-110156,2016-11-19 00:00:00,Eric Hoffmann,Houston,Texas,77041,Central,Office Supplies,Paper,10.37,2,3.63
+US-2016-110156,2016-11-19 00:00:00,Eric Hoffmann,Houston,Texas,77041,Central,Office Supplies,Binders,1.19,2,-2.03
+CA-2017-140585,2017-12-18 00:00:00,Russell Applegate,Encinitas,California,92024,West,Office Supplies,Binders,46.67,2,16.34
+CA-2017-140585,2017-12-18 00:00:00,Russell Applegate,Encinitas,California,92024,West,Furniture,Bookcases,119.83,1,-12.69
+CA-2017-140585,2017-12-18 00:00:00,Russell Applegate,Encinitas,California,92024,West,Technology,Accessories,119.98,2,57.59
+CA-2016-144855,2016-07-22 00:00:00,Dionis Lloyd,San Francisco,California,94110,West,Office Supplies,Labels,6.3,2,3.02
+CA-2015-142755,2015-09-04 00:00:00,Christine Sundaresam,Roswell,Georgia,30076,South,Office Supplies,Paper,279.9,5,137.15
+CA-2015-142755,2015-09-04 00:00:00,Christine Sundaresam,Roswell,Georgia,30076,South,Technology,Accessories,619.95,5,111.59
+CA-2015-142755,2015-09-04 00:00:00,Christine Sundaresam,Roswell,Georgia,30076,South,Office Supplies,Paper,4.36,2,2.05
+CA-2015-142755,2015-09-04 00:00:00,Christine Sundaresam,Roswell,Georgia,30076,South,Office Supplies,Envelopes,15.28,2,7.49
+US-2014-147627,2014-01-20 00:00:00,Hunter Lopez,Jonesboro,Arkansas,72401,South,Technology,Phones,699.93,7,181.98
+US-2014-147627,2014-01-20 00:00:00,Hunter Lopez,Jonesboro,Arkansas,72401,South,Office Supplies,Art,22.96,7,6.66
+US-2014-147627,2014-01-20 00:00:00,Hunter Lopez,Jonesboro,Arkansas,72401,South,Furniture,Furnishings,38.6,4,11.58
+US-2014-147627,2014-01-20 00:00:00,Hunter Lopez,Jonesboro,Arkansas,72401,South,Office Supplies,Art,6.63,3,1.79
+US-2014-147627,2014-01-20 00:00:00,Hunter Lopez,Jonesboro,Arkansas,72401,South,Office Supplies,Envelopes,23.34,3,10.97
+US-2014-147627,2014-01-20 00:00:00,Hunter Lopez,Jonesboro,Arkansas,72401,South,Furniture,Chairs,1067.94,3,224.27
+CA-2015-105970,2015-03-02 00:00:00,Pete Armstrong,Richmond,Indiana,47374,Central,Office Supplies,Art,10.16,1,2.64
+CA-2015-105970,2015-03-02 00:00:00,Pete Armstrong,Richmond,Indiana,47374,Central,Office Supplies,Envelopes,101.88,6,50.94
+CA-2016-112102,2016-04-12 00:00:00,Brian Dahlen,Springfield,Virginia,22153,South,Furniture,Tables,343.92,4,75.66
+CA-2016-112102,2016-04-12 00:00:00,Brian Dahlen,Springfield,Virginia,22153,South,Office Supplies,Paper,40.99,1,20.09
+CA-2016-112102,2016-04-12 00:00:00,Brian Dahlen,Springfield,Virginia,22153,South,Office Supplies,Envelopes,63.9,5,28.76
+US-2016-114776,2016-12-06 00:00:00,Greg Guthrie,Antioch,California,94509,West,Office Supplies,Paper,19.44,3,9.33
+US-2016-134908,2016-06-05 00:00:00,Joni Sundaresam,Philadelphia,Pennsylvania,19134,East,Office Supplies,Storage,124.61,4,-23.36
+US-2016-134908,2016-06-05 00:00:00,Joni Sundaresam,Philadelphia,Pennsylvania,19134,East,Office Supplies,Labels,7.56,3,2.65
+US-2016-148803,2016-12-11 00:00:00,Lena Radford,Homestead,Florida,33030,South,Office Supplies,Storage,85.22,3,7.46
+CA-2016-152170,2016-11-12 00:00:00,Frank Hawley,La Porte,Indiana,46350,Central,Office Supplies,Envelopes,287.52,8,129.38
+CA-2016-152170,2016-11-12 00:00:00,Frank Hawley,La Porte,Indiana,46350,Central,Office Supplies,Appliances,37.68,2,10.55
+CA-2016-152170,2016-11-12 00:00:00,Frank Hawley,La Porte,Indiana,46350,Central,Office Supplies,Paper,19.98,2,8.99
+CA-2016-152170,2016-11-12 00:00:00,Frank Hawley,La Porte,Indiana,46350,Central,Office Supplies,Art,20.58,7,5.56
+CA-2016-152170,2016-11-12 00:00:00,Frank Hawley,La Porte,Indiana,46350,Central,Office Supplies,Binders,17.38,2,8.69
+CA-2014-146969,2014-09-29 00:00:00,Arthur Prichep,Los Angeles,California,90045,West,Furniture,Furnishings,204.6,2,53.2
+CA-2014-146969,2014-09-29 00:00:00,Arthur Prichep,Los Angeles,California,90045,West,Office Supplies,Fasteners,8.72,4,2.88
+CA-2014-146969,2014-09-29 00:00:00,Arthur Prichep,Los Angeles,California,90045,West,Office Supplies,Paper,6.48,1,3.11
+CA-2014-146969,2014-09-29 00:00:00,Arthur Prichep,Los Angeles,California,90045,West,Technology,Machines,686.32,2,223.05
+CA-2014-146969,2014-09-29 00:00:00,Arthur Prichep,Los Angeles,California,90045,West,Office Supplies,Storage,62.18,1,16.79
+CA-2015-112452,2015-04-04 00:00:00,Nat Carroll,Lansing,Michigan,48911,Central,Office Supplies,Appliances,644.08,2,107.35
+CA-2015-112452,2015-04-04 00:00:00,Nat Carroll,Lansing,Michigan,48911,Central,Office Supplies,Fasteners,5.84,2,2.63
+CA-2015-112452,2015-04-04 00:00:00,Nat Carroll,Lansing,Michigan,48911,Central,Office Supplies,Binders,12.76,2,5.87
+CA-2015-112452,2015-04-04 00:00:00,Nat Carroll,Lansing,Michigan,48911,Central,Technology,Phones,10.95,1,0.44
+CA-2015-112452,2015-04-04 00:00:00,Nat Carroll,Lansing,Michigan,48911,Central,Technology,Copiers,599.98,2,209.99
+CA-2015-113971,2015-05-08 00:00:00,Claudia Bergmann,Cuyahoga Falls,Ohio,44221,East,Furniture,Furnishings,8.35,6,1.25
+CA-2017-160395,2016-12-31 00:00:00,Kelly Lampkin,Reno,Nevada,89502,West,Office Supplies,Art,3.64,2,1.64
+CA-2017-160395,2016-12-31 00:00:00,Kelly Lampkin,Reno,Nevada,89502,West,Office Supplies,Binders,159.77,7,53.92
+CA-2014-136567,2014-12-20 00:00:00,Penelope Sewall,Harrisonburg,Virginia,22801,South,Office Supplies,Storage,122.48,2,0
+CA-2014-136567,2014-12-20 00:00:00,Penelope Sewall,Harrisonburg,Virginia,22801,South,Furniture,Tables,2244.48,7,493.79
+CA-2014-136567,2014-12-20 00:00:00,Penelope Sewall,Harrisonburg,Virginia,22801,South,Office Supplies,Binders,62.31,3,29.29
+CA-2014-136567,2014-12-20 00:00:00,Penelope Sewall,Harrisonburg,Virginia,22801,South,Furniture,Tables,455.1,2,100.12
+CA-2016-149314,2016-07-02 00:00:00,George Bell,Los Angeles,California,90004,West,Furniture,Chairs,195.18,1,19.52
+CA-2017-147039,2017-06-29 00:00:00,Alex Avila,Minneapolis,Minnesota,55407,Central,Office Supplies,Appliances,362.94,3,90.74
+CA-2017-147039,2017-06-29 00:00:00,Alex Avila,Minneapolis,Minnesota,55407,Central,Office Supplies,Binders,11.54,2,5.77
+CA-2014-126522,2014-09-01 00:00:00,Larry Tron,Escondido,California,92025,West,Office Supplies,Art,53.94,3,15.64
+CA-2014-127964,2014-03-03 00:00:00,Anne Pryor,New York City,New York,10035,East,Technology,Phones,9.99,1,4.6
+CA-2014-127964,2014-03-03 00:00:00,Anne Pryor,New York City,New York,10035,East,Office Supplies,Binders,125.76,3,40.87
+CA-2014-127964,2014-03-03 00:00:00,Anne Pryor,New York City,New York,10035,East,Office Supplies,Binders,25.32,5,9.18
+CA-2014-117709,2014-05-04 00:00:00,Paul MacIntyre,Jackson,Michigan,49201,Central,Office Supplies,Binders,46.8,4,21.06
+CA-2015-125416,2015-11-02 00:00:00,Kelly Collister,Seattle,Washington,98115,West,Technology,Accessories,447.93,9,49.27
+CA-2017-145226,2017-12-08 00:00:00,Delfina Latchford,New York City,New York,10035,East,Furniture,Furnishings,109.48,2,33.94
+CA-2017-145226,2017-12-08 00:00:00,Delfina Latchford,New York City,New York,10035,East,Office Supplies,Storage,272.94,3,0
+CA-2017-145226,2017-12-08 00:00:00,Delfina Latchford,New York City,New York,10035,East,Office Supplies,Paper,19.44,3,9.33
+CA-2017-145226,2017-12-08 00:00:00,Delfina Latchford,New York City,New York,10035,East,Office Supplies,Storage,31.92,4,8.3
+US-2014-100279,2014-03-10 00:00:00,Scott Williamson,Royal Oak,Michigan,48073,Central,Office Supplies,Paper,22.38,2,10.74
+CA-2014-158064,2014-04-21 00:00:00,Allen Armold,Los Angeles,California,90008,West,Office Supplies,Binders,16.52,5,5.58
+US-2015-104430,2015-10-22 00:00:00,Liz Thompson,Bloomington,Illinois,61701,Central,Office Supplies,Binders,5.18,4,-7.76
+CA-2015-132080,2015-08-22 00:00:00,Dave Poirier,New York City,New York,10035,East,Office Supplies,Binders,50.11,6,16.29
+CA-2016-161207,2016-08-29 00:00:00,Adam Bellavance,Concord,New Hampshire,3301,East,Office Supplies,Supplies,27.93,3,8.1
+CA-2014-120243,2014-12-27 00:00:00,Alyssa Tate,Los Angeles,California,90004,West,Office Supplies,Labels,11.56,4,5.43
+CA-2016-113621,2016-12-01 00:00:00,Joel Eaton,Rockville,Maryland,20852,East,Furniture,Chairs,172.5,2,51.75
+CA-2016-113621,2016-12-01 00:00:00,Joel Eaton,Rockville,Maryland,20852,East,Technology,Phones,179.97,3,44.99
+CA-2016-168081,2016-04-24 00:00:00,Cathy Armstrong,Houston,Texas,77070,Central,Technology,Accessories,258.7,3,64.67
+CA-2014-128146,2014-06-21 00:00:00,Dave Brooks,Lakewood,New Jersey,8701,East,Technology,Phones,1322.93,7,357.19
+CA-2014-128146,2014-06-21 00:00:00,Dave Brooks,Lakewood,New Jersey,8701,East,Office Supplies,Art,3.76,2,1.09
+CA-2017-138779,2017-01-14 00:00:00,Rob Beeghly,Jacksonville,North Carolina,28540,South,Office Supplies,Envelopes,21.74,1,7.34
+CA-2017-138779,2017-01-14 00:00:00,Rob Beeghly,Jacksonville,North Carolina,28540,South,Technology,Phones,7.92,5,0.69
+CA-2014-127131,2014-11-24 00:00:00,Harold Ryan,Seattle,Washington,98103,West,Office Supplies,Binders,12.1,7,4.23
+CA-2014-127131,2014-11-24 00:00:00,Harold Ryan,Seattle,Washington,98103,West,Office Supplies,Storage,485.88,6,9.72
+CA-2014-127131,2014-11-24 00:00:00,Harold Ryan,Seattle,Washington,98103,West,Office Supplies,Paper,25.92,4,12.44
+CA-2014-127131,2014-11-24 00:00:00,Harold Ryan,Seattle,Washington,98103,West,Office Supplies,Storage,197.58,2,53.35
+CA-2017-117212,2017-02-26 00:00:00,Bradley Talbott,Los Angeles,California,90036,West,Office Supplies,Appliances,81.92,4,22.12
+CA-2017-117212,2017-02-26 00:00:00,Bradley Talbott,Los Angeles,California,90036,West,Technology,Phones,889.54,8,66.72
+CA-2017-117212,2017-02-26 00:00:00,Bradley Talbott,Los Angeles,California,90036,West,Furniture,Chairs,892.22,3,89.22
+CA-2017-117212,2017-02-26 00:00:00,Bradley Talbott,Los Angeles,California,90036,West,Office Supplies,Paper,223.92,4,109.72
+CA-2017-117212,2017-02-26 00:00:00,Bradley Talbott,Los Angeles,California,90036,West,Office Supplies,Paper,23.12,4,11.33
+US-2015-130519,2015-09-15 00:00:00,Nat Gilpin,Coral Springs,Florida,33065,South,Office Supplies,Paper,15.55,3,5.44
+US-2015-130519,2015-09-15 00:00:00,Nat Gilpin,Coral Springs,Florida,33065,South,Furniture,Furnishings,15.71,4,2.55
+US-2015-130519,2015-09-15 00:00:00,Nat Gilpin,Coral Springs,Florida,33065,South,Office Supplies,Storage,24.67,2,2.16
+US-2015-130519,2015-09-15 00:00:00,Nat Gilpin,Coral Springs,Florida,33065,South,Furniture,Furnishings,55.97,1,-2.1
+CA-2016-130946,2016-04-08 00:00:00,Zuschuss Carroll,Houston,Texas,77041,Central,Technology,Accessories,431.93,9,64.79
+CA-2016-130946,2016-04-08 00:00:00,Zuschuss Carroll,Houston,Texas,77041,Central,Furniture,Chairs,95.98,4,-4.11
+CA-2016-130946,2016-04-08 00:00:00,Zuschuss Carroll,Houston,Texas,77041,Central,Office Supplies,Binders,1088.79,4,-1850.95
+CA-2016-114727,2016-07-18 00:00:00,Linda Southworth,Denver,Colorado,80219,West,Furniture,Chairs,544.01,3,40.8
+CA-2016-114727,2016-07-18 00:00:00,Linda Southworth,Denver,Colorado,80219,West,Office Supplies,Binders,1.87,3,-1.44
+CA-2016-114727,2016-07-18 00:00:00,Linda Southworth,Denver,Colorado,80219,West,Furniture,Chairs,854.35,3,10.68
+CA-2016-114727,2016-07-18 00:00:00,Linda Southworth,Denver,Colorado,80219,West,Office Supplies,Storage,593.57,2,0
+CA-2016-114727,2016-07-18 00:00:00,Linda Southworth,Denver,Colorado,80219,West,Office Supplies,Storage,338.04,3,-33.8
+CA-2017-133235,2017-08-01 00:00:00,Larry Hughes,Charlotte,North Carolina,28205,South,Technology,Phones,271.96,5,17
+CA-2016-137050,2016-07-14 00:00:00,Steven Ward,New York City,New York,10009,East,Office Supplies,Storage,11.21,1,3.36
+CA-2016-137050,2016-07-14 00:00:00,Steven Ward,New York City,New York,10009,East,Office Supplies,Binders,9.14,3,3.2
+CA-2016-137050,2016-07-14 00:00:00,Steven Ward,New York City,New York,10009,East,Office Supplies,Fasteners,14.07,7,6.89
+CA-2016-137050,2016-07-14 00:00:00,Steven Ward,New York City,New York,10009,East,Office Supplies,Art,41.86,7,10.47
+CA-2016-137050,2016-07-14 00:00:00,Steven Ward,New York City,New York,10009,East,Office Supplies,Binders,8.54,2,2.88
+CA-2016-137050,2016-07-14 00:00:00,Steven Ward,New York City,New York,10009,East,Furniture,Bookcases,579.14,4,21.72
+US-2017-118087,2017-09-09 00:00:00,Stefania Perrino,Philadelphia,Pennsylvania,19134,East,Furniture,Chairs,141.37,2,-48.47
+US-2017-118087,2017-09-09 00:00:00,Stefania Perrino,Philadelphia,Pennsylvania,19134,East,Office Supplies,Binders,3.04,2,-2.33
+US-2017-118087,2017-09-09 00:00:00,Stefania Perrino,Philadelphia,Pennsylvania,19134,East,Office Supplies,Binders,4.5,1,-3.6
+US-2017-118087,2017-09-09 00:00:00,Stefania Perrino,Philadelphia,Pennsylvania,19134,East,Office Supplies,Art,4.67,1,1.58
+US-2017-118087,2017-09-09 00:00:00,Stefania Perrino,Philadelphia,Pennsylvania,19134,East,Technology,Accessories,95.88,3,28.76
+US-2017-118087,2017-09-09 00:00:00,Stefania Perrino,Philadelphia,Pennsylvania,19134,East,Furniture,Furnishings,17.02,2,1.7
+US-2017-118087,2017-09-09 00:00:00,Stefania Perrino,Philadelphia,Pennsylvania,19134,East,Technology,Accessories,258.7,3,64.67
+US-2017-118087,2017-09-09 00:00:00,Stefania Perrino,Philadelphia,Pennsylvania,19134,East,Technology,Phones,1931.96,7,-386.39
+CA-2014-110184,2014-07-12 00:00:00,Ben Ferrer,Los Angeles,California,90036,West,Office Supplies,Storage,249.75,9,44.96
+CA-2014-110184,2014-07-12 00:00:00,Ben Ferrer,Los Angeles,California,90036,West,Technology,Phones,255.94,8,28.79
+CA-2016-126004,2016-12-04 00:00:00,Becky Martin,New York City,New York,10024,East,Furniture,Furnishings,113.79,3,20.48
+CA-2016-126004,2016-12-04 00:00:00,Becky Martin,New York City,New York,10024,East,Technology,Accessories,78.15,1,34.39
+CA-2016-126004,2016-12-04 00:00:00,Becky Martin,New York City,New York,10024,East,Office Supplies,Binders,1.73,1,0.6
+CA-2016-126004,2016-12-04 00:00:00,Becky Martin,New York City,New York,10024,East,Office Supplies,Paper,40.56,4,19.87
+CA-2016-126004,2016-12-04 00:00:00,Becky Martin,New York City,New York,10024,East,Office Supplies,Storage,182.94,3,3.66
+CA-2016-126004,2016-12-04 00:00:00,Becky Martin,New York City,New York,10024,East,Office Supplies,Storage,193.86,2,11.63
+CA-2017-100013,2017-11-06 00:00:00,Zuschuss Carroll,Los Angeles,California,90045,West,Office Supplies,Envelopes,15.28,2,7.49
+CA-2017-100013,2017-11-06 00:00:00,Zuschuss Carroll,Los Angeles,California,90045,West,Furniture,Furnishings,8.73,1,2.97
+CA-2017-100013,2017-11-06 00:00:00,Zuschuss Carroll,Los Angeles,California,90045,West,Office Supplies,Art,5.68,2,1.76
+CA-2015-132570,2015-10-31 00:00:00,Kean Thornton,Buffalo,New York,14215,East,Office Supplies,Art,2.78,2,0.72
+CA-2015-132570,2015-10-31 00:00:00,Kean Thornton,Buffalo,New York,14215,East,Office Supplies,Envelopes,79.96,2,35.98
+CA-2016-153682,2016-05-30 00:00:00,Brooke Gillingham,Cincinnati,Ohio,45231,East,Technology,Copiers,839.99,2,70
+CA-2016-144344,2016-10-28 00:00:00,Patrick Gardner,Boynton Beach,Florida,33437,South,Furniture,Furnishings,47.95,3,13.79
+CA-2016-144344,2016-10-28 00:00:00,Patrick Gardner,Boynton Beach,Florida,33437,South,Office Supplies,Binders,37.43,5,-29.94
+CA-2016-144344,2016-10-28 00:00:00,Patrick Gardner,Boynton Beach,Florida,33437,South,Furniture,Furnishings,63.97,2,0
+CA-2016-144344,2016-10-28 00:00:00,Patrick Gardner,Boynton Beach,Florida,33437,South,Furniture,Furnishings,165.05,3,41.26
+CA-2014-127012,2014-08-11 00:00:00,Greg Matthias,Seattle,Washington,98105,West,Furniture,Furnishings,12.35,1,5.43
+CA-2014-127012,2014-08-11 00:00:00,Greg Matthias,Seattle,Washington,98105,West,Office Supplies,Art,40.97,1,10.65
+CA-2014-127012,2014-08-11 00:00:00,Greg Matthias,Seattle,Washington,98105,West,Office Supplies,Fasteners,22.96,2,10.79
+CA-2016-128727,2016-08-29 00:00:00,Meg O'Connel,New York City,New York,10024,East,Technology,Phones,22,4,5.5
+US-2016-162859,2016-02-15 00:00:00,Patrick Gardner,New York City,New York,10009,East,Office Supplies,Binders,398.35,3,124.49
+US-2016-162859,2016-02-15 00:00:00,Patrick Gardner,New York City,New York,10009,East,Office Supplies,Fasteners,8.72,4,3.58
+CA-2017-133641,2017-05-14 00:00:00,Eva Jacobs,Gulfport,Mississippi,39503,South,Office Supplies,Envelopes,48.69,9,23.86
+CA-2014-168494,2014-12-12 00:00:00,Nora Preis,Fresno,California,93727,West,Furniture,Tables,764.69,6,95.59
+CA-2014-168494,2014-12-12 00:00:00,Nora Preis,Fresno,California,93727,West,Furniture,Tables,3610.85,12,135.41
+CA-2014-168494,2014-12-12 00:00:00,Nora Preis,Fresno,California,93727,West,Furniture,Bookcases,254.97,3,12
+CA-2017-115602,2017-12-18 00:00:00,Doug Jacobs,New York City,New York,10009,East,Office Supplies,Art,38.82,6,17.47
+CA-2017-115602,2017-12-18 00:00:00,Doug Jacobs,New York City,New York,10009,East,Furniture,Chairs,1141.94,9,139.57
+CA-2017-115602,2017-12-18 00:00:00,Doug Jacobs,New York City,New York,10009,East,Office Supplies,Appliances,1704.56,13,511.37
+CA-2017-115602,2017-12-18 00:00:00,Doug Jacobs,New York City,New York,10009,East,Office Supplies,Art,3.2,2,1.38
+CA-2015-154956,2015-07-04 00:00:00,Irene Maddox,Milwaukee,Wisconsin,53209,Central,Technology,Phones,1099.96,4,285.99
+CA-2017-144638,2017-03-10 00:00:00,Mick Hernandez,Chester,Pennsylvania,19013,East,Office Supplies,Art,5.25,2,0.59
+CA-2017-144638,2017-03-10 00:00:00,Mick Hernandez,Chester,Pennsylvania,19013,East,Technology,Phones,35.91,3,-8.38
+CA-2017-144638,2017-03-10 00:00:00,Mick Hernandez,Chester,Pennsylvania,19013,East,Furniture,Furnishings,6.7,1,0.5
+CA-2017-144638,2017-03-10 00:00:00,Mick Hernandez,Chester,Pennsylvania,19013,East,Furniture,Furnishings,43.87,2,11.52
+US-2016-168620,2016-12-24 00:00:00,Ross Baird,Charlotte,North Carolina,28205,South,Office Supplies,Binders,27.88,3,-20.45
+US-2016-168620,2016-12-24 00:00:00,Ross Baird,Charlotte,North Carolina,28205,South,Office Supplies,Storage,540.05,3,-47.25
+US-2016-168620,2016-12-24 00:00:00,Ross Baird,Charlotte,North Carolina,28205,South,Technology,Accessories,255.68,8,76.7
+CA-2017-117079,2017-10-23 00:00:00,Jocasta Rupert,Jacksonville,Florida,32216,South,Technology,Phones,863.88,3,107.99
+US-2016-144393,2016-10-28 00:00:00,Suzanne McNair,Greenville,North Carolina,27834,South,Office Supplies,Binders,17.62,4,-14.09
+CA-2017-105053,2017-07-07 00:00:00,Christine Sundaresam,Long Beach,New York,11561,East,Office Supplies,Binders,17.47,3,6.33
+CA-2016-155992,2016-10-01 00:00:00,Chris Cortes,La Porte,Indiana,46350,Central,Technology,Phones,69.9,2,18.87
+CA-2016-155992,2016-10-01 00:00:00,Chris Cortes,La Porte,Indiana,46350,Central,Furniture,Furnishings,41.85,5,10.88
+CA-2017-110380,2017-09-02 00:00:00,Phillip Flathmann,San Francisco,California,94122,West,Office Supplies,Art,6.57,3,1.77
+US-2014-167738,2014-12-24 00:00:00,Julie Creighton,Los Angeles,California,90045,West,Office Supplies,Storage,142.86,1,41.43
+US-2014-167738,2014-12-24 00:00:00,Julie Creighton,Los Angeles,California,90045,West,Furniture,Chairs,292.27,6,18.27
+CA-2017-121412,2017-09-23 00:00:00,Brooke Gillingham,Louisville,Colorado,80027,West,Furniture,Furnishings,29.33,3,3.67
+CA-2017-100426,2017-06-04 00:00:00,Dan Campbell,Florence,Alabama,35630,South,Office Supplies,Paper,12.48,2,5.62
+US-2016-103646,2016-04-21 00:00:00,Sibella Parks,Chicago,Illinois,60623,Central,Office Supplies,Storage,102.34,4,-12.79
+US-2016-103646,2016-04-21 00:00:00,Sibella Parks,Chicago,Illinois,60623,Central,Office Supplies,Appliances,48.79,3,-126.86
+US-2016-103646,2016-04-21 00:00:00,Sibella Parks,Chicago,Illinois,60623,Central,Office Supplies,Binders,44.85,8,-67.27
+CA-2016-119186,2016-05-26 00:00:00,Maurice Satty,Fort Worth,Texas,76106,Central,Office Supplies,Paper,10.37,2,3.63
+CA-2016-119186,2016-05-26 00:00:00,Maurice Satty,Fort Worth,Texas,76106,Central,Furniture,Chairs,388.43,5,-88.78
+CA-2016-119186,2016-05-26 00:00:00,Maurice Satty,Fort Worth,Texas,76106,Central,Office Supplies,Paper,14.35,3,5.2
+CA-2016-119186,2016-05-26 00:00:00,Maurice Satty,Fort Worth,Texas,76106,Central,Technology,Accessories,63.99,1,-7.2
+CA-2016-148698,2016-05-02 00:00:00,Bryan Davis,Houston,Texas,77070,Central,Office Supplies,Art,86.35,3,5.4
+CA-2014-163293,2014-09-08 00:00:00,Karen Carlisle,Macon,Georgia,31204,South,Technology,Accessories,32.97,3,12.86
+CA-2014-163293,2014-09-08 00:00:00,Karen Carlisle,Macon,Georgia,31204,South,Technology,Accessories,83.88,4,30.2
+CA-2016-160815,2016-09-05 00:00:00,Toby Ritter,Cedar Rapids,Iowa,52402,Central,Technology,Phones,278.4,3,80.74
+CA-2017-122154,2017-04-09 00:00:00,Sue Ann Reed,Jacksonville,Florida,32216,South,Office Supplies,Labels,15.12,3,4.91
+CA-2017-122154,2017-04-09 00:00:00,Sue Ann Reed,Jacksonville,Florida,32216,South,Office Supplies,Binders,17.43,1,-13.36
+CA-2017-122154,2017-04-09 00:00:00,Sue Ann Reed,Jacksonville,Florida,32216,South,Office Supplies,Paper,251.64,3,88.07
+US-2015-149692,2015-12-06 00:00:00,Katrina Willman,Austin,Texas,78745,Central,Office Supplies,Binders,2.77,7,-4.85
+CA-2016-119445,2016-06-26 00:00:00,Gene McClure,Providence,Rhode Island,2908,East,Office Supplies,Storage,14.9,5,1.04
+CA-2015-124268,2015-07-04 00:00:00,Alan Dominguez,New York City,New York,10035,East,Office Supplies,Art,15.48,3,4.49
+CA-2016-154711,2016-11-22 00:00:00,Todd Boyes,New York City,New York,10009,East,Furniture,Furnishings,39.88,2,11.17
+CA-2016-154711,2016-11-22 00:00:00,Todd Boyes,New York City,New York,10009,East,Office Supplies,Binders,12.19,4,4.11
+CA-2016-154711,2016-11-22 00:00:00,Todd Boyes,New York City,New York,10009,East,Office Supplies,Art,20.82,3,7.5
+CA-2016-163384,2016-11-10 00:00:00,Chuck Clark,San Francisco,California,94122,West,Office Supplies,Binders,13.22,4,4.46
+CA-2016-163384,2016-11-10 00:00:00,Chuck Clark,San Francisco,California,94122,West,Office Supplies,Paper,32.4,5,15.55
+CA-2015-101707,2015-08-27 00:00:00,Philip Fox,San Diego,California,92105,West,Office Supplies,Supplies,32.94,3,9.22
+CA-2015-101707,2015-08-27 00:00:00,Philip Fox,San Diego,California,92105,West,Office Supplies,Paper,114.2,5,52.53
+CA-2015-101707,2015-08-27 00:00:00,Philip Fox,San Diego,California,92105,West,Office Supplies,Labels,3.08,1,1.48
+CA-2015-138898,2015-05-25 00:00:00,Justin Hirsh,Pueblo,Colorado,81001,West,Office Supplies,Appliances,845.73,13,84.57
+CA-2017-115427,2017-12-30 00:00:00,Erica Bern,Fairfield,California,94533,West,Office Supplies,Binders,13.9,2,4.52
+CA-2017-115427,2017-12-30 00:00:00,Erica Bern,Fairfield,California,94533,West,Office Supplies,Binders,20.72,2,6.48
+CA-2016-134425,2016-12-08 00:00:00,Quincy Jones,Saint Paul,Minnesota,55106,Central,Technology,Phones,114.95,5,2.3
+CA-2015-121391,2015-10-04 00:00:00,Alex Avila,San Francisco,California,94109,West,Office Supplies,Storage,26.96,2,7.01
+CA-2016-137043,2016-12-23 00:00:00,Logan Currie,Springfield,Virginia,22153,South,Furniture,Furnishings,572.76,6,166.1
+CA-2016-137043,2016-12-23 00:00:00,Logan Currie,Springfield,Virginia,22153,South,Furniture,Furnishings,286.38,3,83.05
+CA-2015-115847,2015-09-19 00:00:00,Tracy Collins,Arlington,Virginia,22204,South,Furniture,Bookcases,61.96,2,4.34
+US-2017-126179,2017-07-03 00:00:00,Chuck Sachs,Columbus,Georgia,31907,South,Furniture,Furnishings,23.99,1,5.52
+US-2017-126179,2017-07-03 00:00:00,Chuck Sachs,Columbus,Georgia,31907,South,Technology,Phones,287.97,3,77.75
+CA-2016-101966,2016-07-14 00:00:00,Bryan Mills,Houston,Texas,77036,Central,Technology,Phones,419.94,7,52.49
+CA-2016-141397,2016-06-20 00:00:00,Roy Collins,Pasadena,California,91104,West,Office Supplies,Paper,46.76,7,22.44
+CA-2016-141397,2016-06-20 00:00:00,Roy Collins,Pasadena,California,91104,West,Office Supplies,Binders,17.71,3,6.42
+CA-2016-141397,2016-06-20 00:00:00,Roy Collins,Pasadena,California,91104,West,Office Supplies,Appliances,21.78,2,5.66
+CA-2016-141397,2016-06-20 00:00:00,Roy Collins,Pasadena,California,91104,West,Office Supplies,Storage,161.94,3,9.72
+CA-2016-141397,2016-06-20 00:00:00,Roy Collins,Pasadena,California,91104,West,Furniture,Chairs,161.57,2,-8.08
+CA-2016-141082,2016-12-09 00:00:00,Fred McMath,Lawrence,Massachusetts,1841,East,Office Supplies,Labels,3.69,1,1.73
+CA-2016-141082,2016-12-09 00:00:00,Fred McMath,Lawrence,Massachusetts,1841,East,Office Supplies,Labels,122.12,4,56.18
+US-2016-134488,2016-09-24 00:00:00,Pete Kriz,Columbus,Ohio,43229,East,Furniture,Chairs,155.37,2,-13.32
+CA-2016-145919,2016-12-18 00:00:00,Henry Goldwyn,Los Angeles,California,90032,West,Office Supplies,Paper,38.88,6,18.66
+CA-2016-145919,2016-12-18 00:00:00,Henry Goldwyn,Los Angeles,California,90032,West,Furniture,Furnishings,183.84,8,62.51
+CA-2016-145919,2016-12-18 00:00:00,Henry Goldwyn,Los Angeles,California,90032,West,Office Supplies,Supplies,579.3,5,28.97
+CA-2017-157651,2017-12-10 00:00:00,Helen Andreada,Philadelphia,Pennsylvania,19120,East,Technology,Accessories,14.2,1,3.37
+CA-2014-160773,2014-07-01 00:00:00,Laurel Workman,Deltona,Florida,32725,South,Technology,Phones,575.92,2,71.99
+CA-2014-160773,2014-07-01 00:00:00,Laurel Workman,Deltona,Florida,32725,South,Office Supplies,Binders,5.18,6,-3.63
+CA-2017-167703,2017-02-03 00:00:00,Matt Collins,Cincinnati,Ohio,45231,East,Office Supplies,Binders,5.23,3,-4.18
+CA-2017-167703,2017-02-03 00:00:00,Matt Collins,Cincinnati,Ohio,45231,East,Office Supplies,Storage,285.55,2,35.69
+CA-2017-121804,2017-03-03 00:00:00,Liz Preis,Murray,Kentucky,42071,South,Office Supplies,Appliances,72.8,5,19.66
+CA-2017-162635,2017-10-09 00:00:00,Evan Bailliet,Wilmington,North Carolina,28403,South,Office Supplies,Paper,10.82,4,3.52
+CA-2014-107153,2014-09-28 00:00:00,George Zrebassa,Lawrence,Massachusetts,1841,East,Office Supplies,Storage,46.26,3,12.49
+US-2014-117058,2014-05-27 00:00:00,Laurel Elliston,Chicago,Illinois,60653,Central,Office Supplies,Binders,17.46,6,-30.56
+CA-2015-120439,2015-06-14 00:00:00,Alan Dominguez,Philadelphia,Pennsylvania,19120,East,Furniture,Furnishings,51.07,6,5.11
+CA-2016-128258,2016-03-30 00:00:00,Cathy Prescott,Norwich,Connecticut,6360,East,Office Supplies,Paper,11.34,1,5.56
+CA-2017-106033,2017-10-15 00:00:00,Frank Gastineau,San Francisco,California,94110,West,Office Supplies,Art,87.92,4,26.38
+CA-2016-142762,2016-05-23 00:00:00,Lisa DeCherney,San Francisco,California,94109,West,Furniture,Furnishings,37.05,3,16.3
+CA-2017-127705,2017-06-02 00:00:00,Alejandro Ballentine,Lorain,Ohio,44052,East,Technology,Phones,2.97,1,-0.64
+CA-2017-127705,2017-06-02 00:00:00,Alejandro Ballentine,Lorain,Ohio,44052,East,Office Supplies,Storage,27.44,2,2.4
+CA-2014-122567,2014-02-16 00:00:00,Michael Nguyen,Dallas,Texas,75220,Central,Office Supplies,Binders,1.08,3,-1.73
+CA-2014-122567,2014-02-16 00:00:00,Michael Nguyen,Dallas,Texas,75220,Central,Office Supplies,Appliances,7.96,2,-13.93
+CA-2014-121664,2014-05-06 00:00:00,Harold Pawlan,Los Angeles,California,90049,West,Office Supplies,Binders,140.74,8,52.78
+CA-2016-122133,2016-05-16 00:00:00,Jim Radford,Middletown,Connecticut,6457,East,Office Supplies,Storage,552.56,4,0
+US-2017-123281,2017-04-02 00:00:00,Jamie Frazer,Los Angeles,California,90008,West,Furniture,Furnishings,25.11,3,6.53
+CA-2017-100524,2017-03-31 00:00:00,Chad McGuire,New York City,New York,10011,East,Furniture,Furnishings,29.78,2,8.04
+CA-2017-100524,2017-03-31 00:00:00,Chad McGuire,New York City,New York,10011,East,Technology,Phones,677.58,3,176.17
+CA-2017-100524,2017-03-31 00:00:00,Chad McGuire,New York City,New York,10011,East,Office Supplies,Paper,75.04,8,36.02
+CA-2017-113481,2017-01-02 00:00:00,Aaron Smayling,Jacksonville,North Carolina,28540,South,Technology,Machines,695.7,2,-27.83
+CA-2017-113481,2017-01-02 00:00:00,Aaron Smayling,Jacksonville,North Carolina,28540,South,Office Supplies,Binders,15.66,5,-12.53
+CA-2017-113481,2017-01-02 00:00:00,Aaron Smayling,Jacksonville,North Carolina,28540,South,Office Supplies,Binders,28.85,6,-21.16
+CA-2015-131758,2015-05-28 00:00:00,Karl Braun,Freeport,New York,11520,East,Office Supplies,Art,47.82,3,14.35
+CA-2015-131758,2015-05-28 00:00:00,Karl Braun,Freeport,New York,11520,East,Office Supplies,Labels,13.05,5,6
+CA-2014-118339,2014-03-17 00:00:00,Bradley Nguyen,Lakeville,Minnesota,55044,Central,Office Supplies,Appliances,93.78,2,36.57
+CA-2014-118339,2014-03-17 00:00:00,Bradley Nguyen,Lakeville,Minnesota,55044,Central,Office Supplies,Paper,47.18,7,23.59
+CA-2014-118339,2014-03-17 00:00:00,Bradley Nguyen,Lakeville,Minnesota,55044,Central,Office Supplies,Art,19.68,6,5.71
+CA-2014-118339,2014-03-17 00:00:00,Bradley Nguyen,Lakeville,Minnesota,55044,Central,Office Supplies,Binders,53.4,10,25.1
+CA-2014-118339,2014-03-17 00:00:00,Bradley Nguyen,Lakeville,Minnesota,55044,Central,Office Supplies,Binders,35.88,6,17.22
+CA-2014-153976,2014-10-03 00:00:00,Beth Paige,Evanston,Illinois,60201,Central,Furniture,Chairs,258.28,3,-70.1
+CA-2016-162901,2016-03-28 00:00:00,Aaron Smayling,Arlington,Virginia,22204,South,Office Supplies,Storage,31.4,2,7.85
+CA-2017-162978,2017-05-04 00:00:00,Lindsay Williams,San Francisco,California,94109,West,Technology,Phones,183.96,5,20.7
+CA-2017-162978,2017-05-04 00:00:00,Lindsay Williams,San Francisco,California,94109,West,Office Supplies,Paper,17.61,3,8.45
+CA-2017-162978,2017-05-04 00:00:00,Lindsay Williams,San Francisco,California,94109,West,Furniture,Tables,300.9,1,11.28
+US-2014-160444,2014-07-05 00:00:00,Dan Campbell,Houston,Texas,77036,Central,Office Supplies,Storage,220.78,3,-44.16
+US-2014-160444,2014-07-05 00:00:00,Dan Campbell,Houston,Texas,77036,Central,Office Supplies,Storage,281.42,11,-35.18
+CA-2016-145247,2016-05-05 00:00:00,Natalie DeCherney,Louisville,Kentucky,40214,South,Office Supplies,Paper,79.14,3,36.4
+CA-2017-160045,2017-04-26 00:00:00,Larry Blacks,Fort Worth,Texas,76106,Central,Furniture,Furnishings,1.99,1,-1.44
+US-2014-151925,2014-09-26 00:00:00,Kean Takahito,Los Angeles,California,90049,West,Furniture,Chairs,145.57,2,0
+CA-2017-125199,2017-10-19 00:00:00,Harry Marie,Philadelphia,Pennsylvania,19120,East,Office Supplies,Art,123.26,7,9.24
+CA-2017-125199,2017-10-19 00:00:00,Harry Marie,Philadelphia,Pennsylvania,19120,East,Office Supplies,Paper,23.68,4,7.4
+CA-2017-125199,2017-10-19 00:00:00,Harry Marie,Philadelphia,Pennsylvania,19120,East,Technology,Phones,309.58,4,-56.76
+US-2017-155425,2017-11-10 00:00:00,Ann Blume,Tucson,Arizona,85705,West,Office Supplies,Binders,38.39,14,-25.59
+US-2017-155425,2017-11-10 00:00:00,Ann Blume,Tucson,Arizona,85705,West,Technology,Machines,95.99,2,-64
+US-2017-155425,2017-11-10 00:00:00,Ann Blume,Tucson,Arizona,85705,West,Technology,Accessories,239.95,6,-35.99
+US-2017-155425,2017-11-10 00:00:00,Ann Blume,Tucson,Arizona,85705,West,Technology,Phones,201.58,2,15.12
+US-2017-155425,2017-11-10 00:00:00,Ann Blume,Tucson,Arizona,85705,West,Furniture,Chairs,899.14,4,-146.11
+CA-2017-133249,2017-07-08 00:00:00,Sam Zeldin,Pico Rivera,California,90660,West,Furniture,Furnishings,145.9,5,62.74
+US-2015-103471,2015-12-24 00:00:00,Jim Radford,Colorado Springs,Colorado,80906,West,Furniture,Bookcases,590.06,7,-786.74
+US-2015-103471,2015-12-24 00:00:00,Jim Radford,Colorado Springs,Colorado,80906,West,Office Supplies,Art,14.04,3,1.58
+CA-2017-136672,2017-03-07 00:00:00,Michael Granlund,Clinton,Maryland,20735,East,Technology,Accessories,49.08,3,4.91
+US-2014-157021,2014-04-01 00:00:00,Kunst Miller,Vallejo,California,94591,West,Office Supplies,Labels,29.6,2,14.8
+US-2014-157021,2014-04-01 00:00:00,Kunst Miller,Vallejo,California,94591,West,Office Supplies,Binders,17.09,4,5.55
+CA-2015-120362,2015-09-14 00:00:00,Christina Anderson,Provo,Utah,84604,West,Furniture,Tables,912.75,5,118.66
+CA-2014-126361,2014-08-04 00:00:00,Valerie Dominguez,Pleasant Grove,Utah,84062,West,Office Supplies,Appliances,1089.75,3,305.13
+CA-2014-126361,2014-08-04 00:00:00,Valerie Dominguez,Pleasant Grove,Utah,84062,West,Office Supplies,Paper,447.84,8,219.44
+CA-2014-126361,2014-08-04 00:00:00,Valerie Dominguez,Pleasant Grove,Utah,84062,West,Office Supplies,Art,16.4,5,4.26
+CA-2014-126361,2014-08-04 00:00:00,Valerie Dominguez,Pleasant Grove,Utah,84062,West,Technology,Phones,399.96,5,35
+CA-2014-126361,2014-08-04 00:00:00,Valerie Dominguez,Pleasant Grove,Utah,84062,West,Office Supplies,Storage,158.9,5,7.95
+CA-2014-126361,2014-08-04 00:00:00,Valerie Dominguez,Pleasant Grove,Utah,84062,West,Office Supplies,Binders,13.18,1,4.78
+US-2016-100566,2016-09-03 00:00:00,Julie Kriz,Aurora,Illinois,60505,Central,Furniture,Furnishings,83.95,3,-90.25
+US-2016-108504,2016-02-05 00:00:00,Paul Prost,Smyrna,Georgia,30080,South,Office Supplies,Storage,80.98,1,1.62
+US-2016-108504,2016-02-05 00:00:00,Paul Prost,Smyrna,Georgia,30080,South,Office Supplies,Paper,348.84,9,170.93
+US-2016-108504,2016-02-05 00:00:00,Paul Prost,Smyrna,Georgia,30080,South,Office Supplies,Fasteners,9.45,5,0.19
+US-2016-108504,2016-02-05 00:00:00,Paul Prost,Smyrna,Georgia,30080,South,Furniture,Furnishings,18.84,3,7.16
+US-2016-108504,2016-02-05 00:00:00,Paul Prost,Smyrna,Georgia,30080,South,Furniture,Bookcases,239.98,2,52.8
+US-2016-108504,2016-02-05 00:00:00,Paul Prost,Smyrna,Georgia,30080,South,Office Supplies,Envelopes,167.96,2,78.94
+US-2016-108504,2016-02-05 00:00:00,Paul Prost,Smyrna,Georgia,30080,South,Technology,Phones,104.85,3,28.31
+US-2016-108504,2016-02-05 00:00:00,Paul Prost,Smyrna,Georgia,30080,South,Technology,Phones,484.83,3,126.06
+US-2016-108504,2016-02-05 00:00:00,Paul Prost,Smyrna,Georgia,30080,South,Office Supplies,Paper,122.97,3,60.26
+US-2016-108504,2016-02-05 00:00:00,Paul Prost,Smyrna,Georgia,30080,South,Office Supplies,Storage,154.44,3,1.54
+US-2016-108504,2016-02-05 00:00:00,Paul Prost,Smyrna,Georgia,30080,South,Office Supplies,Paper,342.37,7,160.91
+CA-2017-124828,2017-07-03 00:00:00,Yana Sorensen,Burlington,North Carolina,27217,South,Office Supplies,Art,9.55,3,1.55
+US-2017-117247,2017-10-09 00:00:00,Cyma Kinney,Aurora,Illinois,60505,Central,Furniture,Tables,652.45,5,-430.62
+US-2017-117247,2017-10-09 00:00:00,Cyma Kinney,Aurora,Illinois,60505,Central,Furniture,Tables,66.65,3,-42.65
+CA-2016-124485,2016-11-24 00:00:00,Nat Carroll,New York City,New York,10035,East,Office Supplies,Binders,17.22,4,6.03
+CA-2016-124485,2016-11-24 00:00:00,Nat Carroll,New York City,New York,10035,East,Office Supplies,Paper,11.56,2,5.66
+CA-2016-124485,2016-11-24 00:00:00,Nat Carroll,New York City,New York,10035,East,Technology,Accessories,88.4,4,11.49
+CA-2016-124485,2016-11-24 00:00:00,Nat Carroll,New York City,New York,10035,East,Office Supplies,Paper,6.48,1,3.11
+CA-2016-159212,2016-11-01 00:00:00,Katherine Murray,Salem,Virginia,24153,South,Technology,Phones,21.8,2,6.1
+CA-2016-159212,2016-11-01 00:00:00,Katherine Murray,Salem,Virginia,24153,South,Office Supplies,Envelopes,251.79,3,118.34
+US-2016-161396,2016-04-19 00:00:00,Gary Mitchum,Columbus,Ohio,43229,East,Furniture,Tables,205.18,2,-58.13
+US-2016-161396,2016-04-19 00:00:00,Gary Mitchum,Columbus,Ohio,43229,East,Office Supplies,Paper,419.4,5,146.79
+US-2014-118486,2014-04-06 00:00:00,Shirley Daniels,Philadelphia,Pennsylvania,19143,East,Office Supplies,Supplies,10.3,1,-2.19
+US-2014-118486,2014-04-06 00:00:00,Shirley Daniels,Philadelphia,Pennsylvania,19143,East,Furniture,Tables,154.76,3,-36.11
+US-2014-118486,2014-04-06 00:00:00,Shirley Daniels,Philadelphia,Pennsylvania,19143,East,Technology,Accessories,116.78,2,21.9
+CA-2016-130407,2016-09-02 00:00:00,Karen Daniels,New York City,New York,10024,East,Office Supplies,Art,75.48,2,19.62
+CA-2016-130407,2016-09-02 00:00:00,Karen Daniels,New York City,New York,10024,East,Furniture,Furnishings,39.98,2,10
+US-2016-122245,2016-09-25 00:00:00,Adrian Barton,Phoenix,Arizona,85023,West,Furniture,Tables,393.17,3,-204.45
+CA-2017-105144,2017-11-04 00:00:00,Sam Zeldin,Grand Prairie,Texas,75051,Central,Office Supplies,Labels,23.68,2,8.88
+CA-2016-136329,2016-07-09 00:00:00,Jonathan Doherty,New York City,New York,10035,East,Furniture,Chairs,408.01,2,72.53
+CA-2016-136329,2016-07-09 00:00:00,Jonathan Doherty,New York City,New York,10035,East,Furniture,Furnishings,165.28,4,14.88
+CA-2014-146640,2014-06-30 00:00:00,Helen Abelman,New York City,New York,10024,East,Office Supplies,Binders,334.77,7,108.8
+CA-2017-115994,2017-01-28 00:00:00,Beth Thompson,Costa Mesa,California,92627,West,Technology,Accessories,239.97,3,26.4
+CA-2017-115994,2017-01-28 00:00:00,Beth Thompson,Costa Mesa,California,92627,West,Furniture,Furnishings,37.74,3,12.83
+CA-2015-126697,2015-09-21 00:00:00,Stuart Van,Houston,Texas,77041,Central,Technology,Phones,946.34,7,118.29
+CA-2015-126697,2015-09-21 00:00:00,Stuart Van,Houston,Texas,77041,Central,Technology,Accessories,151.2,3,32.13
+CA-2015-126697,2015-09-21 00:00:00,Stuart Van,Houston,Texas,77041,Central,Furniture,Furnishings,4.93,4,-1.48
+CA-2015-124800,2015-09-26 00:00:00,Rick Wilson,Mesa,Arizona,85204,West,Office Supplies,Paper,86.27,4,31.27
+CA-2015-124800,2015-09-26 00:00:00,Rick Wilson,Mesa,Arizona,85204,West,Office Supplies,Binders,72.59,2,-48.39
+CA-2015-124800,2015-09-26 00:00:00,Rick Wilson,Mesa,Arizona,85204,West,Office Supplies,Appliances,60.67,2,14.41
+CA-2015-124800,2015-09-26 00:00:00,Rick Wilson,Mesa,Arizona,85204,West,Office Supplies,Binders,77.03,9,-59.06
+CA-2015-124800,2015-09-26 00:00:00,Rick Wilson,Mesa,Arizona,85204,West,Office Supplies,Storage,119.9,6,-1.5
+CA-2015-124800,2015-09-26 00:00:00,Rick Wilson,Mesa,Arizona,85204,West,Technology,Phones,263.96,5,23.1
+CA-2015-124800,2015-09-26 00:00:00,Rick Wilson,Mesa,Arizona,85204,West,Office Supplies,Storage,363.65,4,-86.37
+US-2015-164448,2015-10-31 00:00:00,Damala Kotsonis,Salinas,California,93905,West,Office Supplies,Binders,9.73,2,3.28
+US-2015-164448,2015-10-31 00:00:00,Damala Kotsonis,Salinas,California,93905,West,Office Supplies,Envelopes,14.75,5,7.08
+US-2015-164448,2015-10-31 00:00:00,Damala Kotsonis,Salinas,California,93905,West,Office Supplies,Binders,29.8,5,9.31
+US-2015-164448,2015-10-31 00:00:00,Damala Kotsonis,Salinas,California,93905,West,Office Supplies,Labels,427.42,14,196.61
+CA-2017-122700,2017-11-26 00:00:00,Liz Thompson,Columbus,Ohio,43229,East,Technology,Phones,220.75,8,-40.47
+CA-2014-120768,2014-12-19 00:00:00,Irene Maddox,Florence,Alabama,35630,South,Office Supplies,Binders,152.76,6,74.85
+CA-2014-120768,2014-12-19 00:00:00,Irene Maddox,Florence,Alabama,35630,South,Office Supplies,Supplies,7.27,1,1.96
+CA-2014-120768,2014-12-19 00:00:00,Irene Maddox,Florence,Alabama,35630,South,Furniture,Chairs,1819.86,14,163.79
+US-2016-153129,2016-12-26 00:00:00,Frank Preis,Seattle,Washington,98105,West,Office Supplies,Paper,33.9,5,15.59
+CA-2017-106852,2017-06-20 00:00:00,Shui Tom,Parma,Ohio,44134,East,Office Supplies,Paper,31.1,6,10.89
+CA-2017-106852,2017-06-20 00:00:00,Shui Tom,Parma,Ohio,44134,East,Office Supplies,Art,5.25,2,0.59
+CA-2015-139731,2015-10-15 00:00:00,Joel Eaton,Amarillo,Texas,79109,Central,Technology,Accessories,263.88,3,42.88
+CA-2015-139731,2015-10-15 00:00:00,Joel Eaton,Amarillo,Texas,79109,Central,Furniture,Chairs,2453.43,5,-350.49
+CA-2017-122735,2017-04-12 00:00:00,Bill Donatelli,Providence,Rhode Island,2908,East,Office Supplies,Binders,29.7,5,13.37
+CA-2017-122735,2017-04-12 00:00:00,Bill Donatelli,Providence,Rhode Island,2908,East,Office Supplies,Paper,39.96,4,17.98
+CA-2017-128160,2017-12-19 00:00:00,Michael Moore,San Francisco,California,94110,West,Office Supplies,Binders,36.67,2,11.46
+CA-2017-117695,2017-08-05 00:00:00,Pauline Webber,Richmond,Kentucky,40475,South,Office Supplies,Paper,13.76,2,6.33
+CA-2015-166135,2015-10-01 00:00:00,Shaun Chance,Aurora,Colorado,80013,West,Office Supplies,Storage,139.42,4,17.43
+CA-2016-133725,2016-05-23 00:00:00,Ken Lonsdale,Chicago,Illinois,60623,Central,Technology,Phones,1979.93,9,148.49
+CA-2017-102337,2017-06-13 00:00:00,Shirley Daniels,Chicago,Illinois,60653,Central,Office Supplies,Storage,164.74,4,-39.12
+CA-2017-102337,2017-06-13 00:00:00,Shirley Daniels,Chicago,Illinois,60653,Central,Furniture,Chairs,470.3,7,-87.34
+CA-2017-102337,2017-06-13 00:00:00,Shirley Daniels,Chicago,Illinois,60653,Central,Technology,Phones,47.98,2,6
+US-2014-112564,2014-04-23 00:00:00,Theresa Swint,Philadelphia,Pennsylvania,19134,East,Office Supplies,Binders,2.5,3,-1.75
+CA-2015-145821,2015-05-01 00:00:00,Jennifer Braxton,Los Angeles,California,90008,West,Technology,Phones,88.75,3,11.09
+US-2015-160150,2015-07-19 00:00:00,Thais Sissman,Phoenix,Arizona,85023,West,Office Supplies,Binders,2.03,1,-1.35
+CA-2016-133711,2016-11-26 00:00:00,Mark Cousins,Mobile,Alabama,36608,South,Office Supplies,Paper,70.98,7,34.78
+CA-2016-133711,2016-11-26 00:00:00,Mark Cousins,Mobile,Alabama,36608,South,Office Supplies,Binders,91.68,3,45.84
+CA-2016-133711,2016-11-26 00:00:00,Mark Cousins,Mobile,Alabama,36608,South,Office Supplies,Binders,33.75,5,16.88
+CA-2016-133711,2016-11-26 00:00:00,Mark Cousins,Mobile,Alabama,36608,South,Technology,Machines,3040,8,1459.2
+CA-2017-148474,2017-06-12 00:00:00,Maria Etezadi,Columbus,Georgia,31907,South,Office Supplies,Binders,91.2,3,41.95
+CA-2017-148474,2017-06-12 00:00:00,Maria Etezadi,Columbus,Georgia,31907,South,Furniture,Tables,452.94,3,67.94
+CA-2015-111297,2015-08-17 00:00:00,Shaun Chance,New Bedford,Massachusetts,2740,East,Office Supplies,Binders,52.2,9,23.49
+CA-2016-123722,2016-09-25 00:00:00,Nicole Hansen,Irving,Texas,75061,Central,Office Supplies,Labels,15.94,4,5.18
+CA-2014-155271,2014-05-04 00:00:00,Andrew Allen,Middletown,Connecticut,6457,East,Furniture,Furnishings,27.46,2,9.89
+CA-2015-119907,2015-12-01 00:00:00,Logan Currie,Seattle,Washington,98103,West,Office Supplies,Binders,55.42,2,19.4
+US-2016-128902,2016-03-11 00:00:00,Mick Brown,Vineland,New Jersey,8360,East,Furniture,Tables,244.01,2,-31.37
+CA-2016-152289,2016-08-26 00:00:00,Linda Cazamias,Pasadena,Texas,77506,Central,Technology,Accessories,159.98,2,44
+CA-2016-152289,2016-08-26 00:00:00,Linda Cazamias,Pasadena,Texas,77506,Central,Furniture,Chairs,1024.72,6,-29.28
+US-2016-104794,2016-12-16 00:00:00,Keith Dawkins,New York City,New York,10009,East,Office Supplies,Fasteners,3.68,2,1.8
+CA-2014-151708,2014-08-08 00:00:00,Maria Bertelson,Glendale,Arizona,85301,West,Furniture,Furnishings,121.38,4,-3.03
+CA-2014-151708,2014-08-08 00:00:00,Maria Bertelson,Glendale,Arizona,85301,West,Technology,Accessories,95.98,3,-10.8
+CA-2015-100769,2015-05-16 00:00:00,Tracy Hopkins,Jacksonville,Florida,32216,South,Technology,Accessories,255.97,4,32
+CA-2017-139199,2017-12-09 00:00:00,Damala Kotsonis,Detroit,Michigan,48234,Central,Furniture,Chairs,872.94,3,226.96
+CA-2017-139199,2017-12-09 00:00:00,Damala Kotsonis,Detroit,Michigan,48234,Central,Office Supplies,Binders,41.54,2,19.52
+CA-2017-139199,2017-12-09 00:00:00,Damala Kotsonis,Detroit,Michigan,48234,Central,Office Supplies,Paper,12.96,2,6.22
+US-2015-161466,2015-09-24 00:00:00,Odella Nelson,Philadelphia,Pennsylvania,19120,East,Office Supplies,Art,6.85,2,0.6
+CA-2017-164959,2017-07-11 00:00:00,Katherine Nockton,Los Angeles,California,90004,West,Office Supplies,Labels,8.67,3,4.07
+US-2015-105676,2015-12-01 00:00:00,Neoma Murray,Houston,Texas,77036,Central,Furniture,Furnishings,6.69,4,-4.01
+CA-2016-113138,2016-11-19 00:00:00,Nora Pelletier,Niagara Falls,New York,14304,East,Office Supplies,Art,17.28,6,5.01
+CA-2016-113138,2016-11-19 00:00:00,Nora Pelletier,Niagara Falls,New York,14304,East,Office Supplies,Binders,17.71,3,6.42
+US-2017-104955,2017-03-19 00:00:00,Catherine Glotzbach,New York City,New York,10024,East,Office Supplies,Labels,28.91,7,13.3
+CA-2016-121958,2016-11-13 00:00:00,Cindy Stewart,Thomasville,North Carolina,27360,South,Office Supplies,Supplies,52.14,7,5.87
+CA-2017-121468,2017-11-19 00:00:00,Katherine Ducich,Westminster,California,92683,West,Technology,Phones,31.97,4,2.4
+US-2016-108455,2016-12-02 00:00:00,Mike Kennedy,San Francisco,California,94122,West,Office Supplies,Paper,25.92,4,12.44
+US-2016-108455,2016-12-02 00:00:00,Mike Kennedy,San Francisco,California,94122,West,Office Supplies,Paper,40.46,7,19.83
+US-2016-108455,2016-12-02 00:00:00,Mike Kennedy,San Francisco,California,94122,West,Office Supplies,Storage,33.87,3,8.81
+CA-2017-101210,2017-08-25 00:00:00,Don Weiss,Jackson,Tennessee,38301,South,Office Supplies,Art,9.73,2,1.7
+CA-2017-101210,2017-08-25 00:00:00,Don Weiss,Jackson,Tennessee,38301,South,Office Supplies,Paper,3.42,1,1.07
+US-2016-108098,2016-10-14 00:00:00,Christine Phan,Seattle,Washington,98115,West,Technology,Accessories,177,3,30.09
+CA-2014-119032,2014-11-27 00:00:00,Maxwell Schwartz,New York City,New York,10035,East,Office Supplies,Fasteners,3.76,2,1.32
+CA-2015-140410,2015-11-03 00:00:00,Corinna Mitchell,Los Angeles,California,90008,West,Technology,Phones,1212.85,7,106.12
+CA-2015-140410,2015-11-03 00:00:00,Corinna Mitchell,Los Angeles,California,90008,West,Technology,Accessories,89.97,3,37.79
+CA-2015-140410,2015-11-03 00:00:00,Corinna Mitchell,Los Angeles,California,90008,West,Furniture,Furnishings,42.6,3,16.61
+CA-2014-136280,2014-11-29 00:00:00,Corey-Lock,Philadelphia,Pennsylvania,19143,East,Office Supplies,Labels,5.04,2,1.76
+CA-2017-151911,2017-04-30 00:00:00,Dionis Lloyd,New York City,New York,10024,East,Office Supplies,Envelopes,62.96,4,28.33
+CA-2017-166436,2017-11-24 00:00:00,Todd Sumrall,New York City,New York,10035,East,Office Supplies,Paper,5.88,1,2.88
+CA-2017-166436,2017-11-24 00:00:00,Todd Sumrall,New York City,New York,10035,East,Furniture,Chairs,977.29,6,173.74
+CA-2017-139661,2017-10-30 00:00:00,Jane Waco,Vancouver,Washington,98661,West,Furniture,Furnishings,9.64,2,3.66
+CA-2014-123925,2014-12-17 00:00:00,Roy Franz,Columbus,Georgia,31907,South,Office Supplies,Art,40.05,3,11.21
+CA-2017-152485,2017-09-04 00:00:00,John Dryer,Coppell,Texas,75019,Central,Office Supplies,Art,10.19,7,3.19
+CA-2017-152485,2017-09-04 00:00:00,John Dryer,Coppell,Texas,75019,Central,Office Supplies,Storage,16.78,1,-0.21
+CA-2017-152485,2017-09-04 00:00:00,John Dryer,Coppell,Texas,75019,Central,Office Supplies,Art,13.12,5,3.77
+CA-2016-141586,2016-10-17 00:00:00,Neil Knudson,San Francisco,California,94122,West,Office Supplies,Binders,18.16,5,6.58
+CA-2017-130386,2017-11-12 00:00:00,Nathan Gelder,Austin,Texas,78745,Central,Office Supplies,Paper,16.06,3,5.82

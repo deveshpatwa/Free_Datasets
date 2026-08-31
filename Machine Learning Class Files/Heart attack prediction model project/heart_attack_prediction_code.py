@@ -11,7 +11,7 @@ from sklearn.preprocessing import OneHotEncoder , StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report, precision_recall_curve
 from sklearn.metrics import roc_curve, roc_auc_score
 
 # find the file
@@ -38,6 +38,9 @@ df['BMI'] = df['BMI'].fillna(28)
 # sns.histplot(data=df,x='BMI',bins=50,kde=True,hue='HeartDiseaseorAttack')
 # plt.show()
 
+df['HeartDiseaseorAttack'].value_counts() / df.shape[0] * 100
+
+
 x = df.drop(columns='HeartDiseaseorAttack')
 y = df['HeartDiseaseorAttack']
 
@@ -50,6 +53,8 @@ prediction = model.predict(xtest)
 
 accuracy_score(ytest,prediction)
 
+confusion_matrix(ytest,prediction)
+
 print(classification_report(ytest,prediction))
 
 
@@ -57,6 +62,7 @@ print(classification_report(ytest,prediction))
 # change probability solution for only testing the data
 # Instead of: y_pred = model.predict(X_test)
 y_probs = model.predict_proba(xtest)[:, 1]
+y_probs
 
 # Lower threshold to boost recall
 custom_threshold = 0.15
@@ -75,3 +81,27 @@ prediction = model.predict(xtest)
 accuracy_score(ytest,prediction)
 
 print(classification_report(ytest,prediction))
+
+
+
+precision, recall, thresholds = precision_recall_curve(
+    ytest,
+    y_probs
+)
+
+precision
+recall
+thresholds
+average_line = precision + recall /2
+
+plt.plot(precision,color="blue")
+plt.plot(recall,color='red')
+plt.plot(average_line,color='black')
+plt.show()
+
+plt.plot(recall, precision)
+plt.xlabel("Recall")
+plt.ylabel("Precision")
+plt.title("Precision-Recall Curve")
+plt.show()
+
