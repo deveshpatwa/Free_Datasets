@@ -67,6 +67,7 @@ y_probs
 # Lower threshold to boost recall
 custom_threshold = 0.15
 y_pred_custom = (y_probs >= custom_threshold).astype(int)
+accuracy_score(ytest,y_pred_custom)
 print(classification_report(ytest,y_pred_custom))
 
 
@@ -75,6 +76,8 @@ from imblearn.over_sampling import SMOTE
 
 smote = SMOTE(random_state=42)
 xtrain_res, ytrain_res = smote.fit_resample(xtrain, ytrain)
+ytrain.value_counts() / ytrain.shape[0] * 100
+ytrain_res.value_counts() / ytrain_res.shape[0] * 100
 model.fit(xtrain_res,ytrain_res)
 prediction = model.predict(xtest)
 
@@ -96,7 +99,8 @@ average_line = precision + recall /2
 
 plt.plot(precision,color="blue")
 plt.plot(recall,color='red')
-plt.plot(average_line,color='black')
+plt.plot(thresholds,color='green')
+# plt.plot(average_line,color='black')
 plt.show()
 
 plt.plot(recall, precision)
@@ -104,4 +108,16 @@ plt.xlabel("Recall")
 plt.ylabel("Precision")
 plt.title("Precision-Recall Curve")
 plt.show()
+
+# ROC Curve
+fpr, tpr, thresholds = roc_curve(ytest, y_probs)
+roc_auc = roc_auc_score(ytest, y_probs)
+
+plt.plot(fpr, tpr, color='darkorange', lw=2, label=f'ROC curve (AUC = {roc_auc:.2f})')
+plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--')
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.title('Receiver Operating Characteristic (ROC) Curve')
+plt.legend(loc="lower right")
+plt.show()  
 
