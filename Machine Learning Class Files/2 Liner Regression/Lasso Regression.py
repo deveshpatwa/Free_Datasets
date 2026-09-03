@@ -30,6 +30,16 @@ df.isnull().sum()
 
 df.describe().round(2)
 
+q1 = df['price'].quantile(0.25)
+q3 = df['price'].quantile(0.75)
+iqr = q3 - q1
+lb = q1 - 1.5 * iqr
+ub = q3 + 1.5 * iqr
+lb
+ub
+df =  df[df['price']<ub]
+
+
 # creating list for Categorical and numerical features 
 categorical_features =  ['mainroad', 'guestroom', 'basement', 'hotwaterheating',
                           'airconditioning', 'prefarea', 'furnishingstatus']
@@ -84,7 +94,7 @@ transformer = ColumnTransformer(
 pipe = Pipeline(
     [
         ("transform_data",transformer),
-        ("mocel",Lasso(alpha=0.05))
+        ("mocel",Lasso(alpha=0.1))
 
     ]
 )

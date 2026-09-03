@@ -45,3 +45,15 @@ store['name'].value_counts()
 data = pd.Series(list("abcdeaab"))
 data
 data.mode()
+
+# Box Plot
+titanic['Age'].describe().round(1)
+titanic['Age'].plot(kind='box', vert=False)
+plt.show()
+
+
+car['mpg'].plot(kind='box', vert=False)
+plt.show()
+
+car['horsepower'].plot(kind='box', vert=False)
+plt.show()

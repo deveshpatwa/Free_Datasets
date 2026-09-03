@@ -4,7 +4,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_squared_error, r2_score , mean_absolute_error
+from sklearn.metrics import mean_squared_error, r2_score , mean_absolute_error , root_mean_squared_error
 
 df = pd.read_csv('car_average.csv')
 df.head()
@@ -37,3 +37,6 @@ y
 prediction
 
 mean_absolute_error(y, prediction)
+mean_squared_error(y, prediction)
+root_mean_squared_error(y, prediction)
+r2_score(y, prediction)

@@ -31,6 +31,16 @@ df.isnull().sum()
 
 df.describe().round(2)
 
+q1 = df['price'].quantile(0.25)
+q3 = df['price'].quantile(0.75)
+iqr = q3 - q1
+lb = q1 - 1.5 * iqr
+ub = q3 + 1.5 * iqr
+lb
+ub
+df =  df[df['price']<ub]
+
+
 # creating list for Categorical and numerical features 
 categorical_features =  ['mainroad', 'guestroom', 'basement', 'hotwaterheating',
                           'airconditioning', 'prefarea', 'furnishingstatus']
@@ -45,6 +55,8 @@ y = df['price']
 
 x.head()
 y.head()
+
+
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
 x_train
