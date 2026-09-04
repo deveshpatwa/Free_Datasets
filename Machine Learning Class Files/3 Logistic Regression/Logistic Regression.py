@@ -87,7 +87,7 @@ y = df['Survived']
 
 xtrain,xtest,ytrain,ytest = train_test_split(x,y,test_size=0.2,random_state=42)
 
-cat = x.select_dtypes("object").columns
+cat = x.select_dtypes(str).columns
 num = x.select_dtypes(np.number).columns
 
 preprocessor = ColumnTransformer( [ ("cat",OneHotEncoder(),cat),("num",StandardScaler(),num)] )

@@ -10,6 +10,7 @@ from sklearn import tree
 from sklearn import datasets
 
 df = datasets.load_iris()
+df
 
 x = df['data']
 x
@@ -30,6 +31,3 @@ accuracy_score(ytrain,train_prediction)
 accuracy_score(ytest,test_prediction)
 
 print(classification_report(ytrain,train_prediction))
-
-
-classification_report(ytest,test_prediction)
