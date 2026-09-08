@@ -10,12 +10,8 @@ from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder , StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
-from sklearn.linear_model import LogisticRegression
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score, classification_report
-from sklearn.metrics import roc_curve, roc_auc_score
-from sklearn.ensemble import VotingClassifier
+from sklearn.ensemble import RandomForestClassifier
 
 
 df =  pd.read_csv("titanic_cleaned.csv")
@@ -36,18 +32,13 @@ preprocessor = ColumnTransformer(
     ] 
 )
 
-estimators = [
-    ("lr",LogisticRegression()),
-    ("dt",DecisionTreeClassifier()),
-    ("svm",SVC())
-]
 
-model = VotingClassifier(estimators=estimators,voting="hard")
+model = RandomForestClassifier(n_estimators=200)
 
 pipe = Pipeline(
     [
         ("preprocessor",preprocessor),
-        ("voting",model)
+        ("model",model)
     ]
 )
 

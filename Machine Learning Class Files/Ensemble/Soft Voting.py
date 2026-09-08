@@ -42,10 +42,12 @@ estimators = [
     ("svm",SVC(probability=True))
 ]
 
+model = VotingClassifier(estimators=estimators,voting="soft")
+
 pipe = Pipeline(
     [
         ("preprocessor",preprocessor),
-        ("voting",VotingClassifier(estimators=estimators,voting="soft"))
+        ("voting",model)
     ]
 )
 

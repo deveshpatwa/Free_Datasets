@@ -4,18 +4,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-
 # import machine learning library
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder , StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
-from sklearn.linear_model import LogisticRegression
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score, classification_report
-from sklearn.metrics import roc_curve, roc_auc_score
-from sklearn.ensemble import VotingClassifier
+from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.tree import DecisionTreeClassifier
 
 
 df =  pd.read_csv("titanic_cleaned.csv")
@@ -36,18 +32,18 @@ preprocessor = ColumnTransformer(
     ] 
 )
 
-estimators = [
-    ("lr",LogisticRegression()),
-    ("dt",DecisionTreeClassifier()),
-    ("svm",SVC())
-]
 
-model = VotingClassifier(estimators=estimators,voting="hard")
+model = GradientBoostingClassifier(
+    n_estimators=100,      # Number of sequential trees
+    learning_rate=0.1,     # Shrinkage rate (0.01 - 0.2 typical)
+    max_depth=3,           # Shallow depth prevents overfitting
+)
+
 
 pipe = Pipeline(
     [
         ("preprocessor",preprocessor),
-        ("voting",model)
+        ("model",model)
     ]
 )
 
