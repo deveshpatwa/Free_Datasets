@@ -8,7 +8,7 @@ import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
 from sklearn.svm import LinearSVC
-from sklearn.metrics import classification_report, confusion_matrix,accuracy_score
+from sklearn.metrics import classification_report,accuracy_score
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.pipeline import make_pipeline, Pipeline
 from sklearn.model_selection import GridSearchCV
@@ -28,9 +28,13 @@ x,y = df.drop(columns='species'), df['species']
 x
 y
 
+sns.scatterplot(data=df, x = "petal_length", y = "petal_width", hue = "species")
+plt.show()
+
+
 # Visualize the data
-# sns.pairplot(df, hue='species', palette='coolwarm')
-# plt.show()
+sns.pairplot(df, hue='species', palette='coolwarm')
+plt.show()
 
 
 # train test split
@@ -45,13 +49,15 @@ pipe.fit(xtrain, ytrain)
 
 # Make predictions on the test data
 prediction = pipe.predict(xtest)
+train_prediction = pipe.predict(xtrain)
 
 # Evaluate the model
 accuracy_score(ytest, prediction)
+accuracy_score(ytrain, train_prediction)
 
 # classification report
 print(classification_report(ytest,prediction))
-
+print(classification_report(ytrain, train_prediction))
 
 
 
@@ -102,7 +108,7 @@ transformer = ColumnTransformer(
 pipe = Pipeline(
     [
         ("transformer", transformer),
-        ("svc", SVC(kernel='rbf',degree=3, C=1))   
+        ("svc", SVC())   
     ]
 )
 
@@ -172,7 +178,7 @@ param_grid = {
     'svc__kernel': ['linear', 'poly', 'rbf'],
     'svc__C': [0.1, 1, 5, 10],
     'svc__gamma': ['scale', 'auto'],
-    'svc__degree': [3, 4]  # only used for poly kernel
+    'svc__degree': [2,3, 4]  # only used for poly kernel
 }
 
 grid = GridSearchCV(

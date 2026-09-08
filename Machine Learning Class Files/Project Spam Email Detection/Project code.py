@@ -9,6 +9,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.svm import LinearSVC
 from sklearn.tree import DecisionTreeClassifier
+from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
 df = pd.read_csv('emails.csv')
@@ -26,8 +27,12 @@ df.size
 
 # removing the first column (email name) as it is not needed for prediction
 df = df.drop(columns=["Email No.","Prediction"])
+df.head()
+df['spam'].value_counts()
 
 df["spam"] = df["spam"].apply(lambda x: 1 if x > 0 else 0)
+
+df['spam'].value_counts() / df.shape[0] * 100
 
 x = df.drop(columns="spam")
 y = df["spam"]
@@ -79,3 +84,9 @@ prediction = model.predict(x_test)
 accuracy_score(y_test,prediction)
 print(classification_report(y_test,prediction))
 
+
+model = SVC(kernel='rbf')
+model.fit(x_train,y_train)
+prediction = model.predict(x_test)
+accuracy_score(y_test,prediction)
+print(classification_report(y_test,prediction))
