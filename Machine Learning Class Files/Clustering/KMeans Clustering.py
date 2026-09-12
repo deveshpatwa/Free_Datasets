@@ -23,6 +23,7 @@ import matplotlib.pyplot as plt
 
 # import machine learning library
 from sklearn.cluster import KMeans
+from sklearn.metrics import silhouette_score
 
 # import data
 df = pd.read_csv("Mall_Customers.csv")
@@ -30,7 +31,7 @@ df.head()
 
 # information about the data
 df.info()
-df.describe()
+df.describe().round(1)
 df.shape
 df.isnull().sum()
 
@@ -42,18 +43,19 @@ plt.show()
 
 # Create K-Means model
 # hyperparameter - n_clusters=5, random_state=42, n_init=10
-kmeans = KMeans(n_clusters=5,random_state=42)
+model = KMeans(n_clusters=4,random_state=42)
 
 # Train the model
-kmeans.fit(df)
+model.fit(df)
 
-df['Cluster'] = kmeans.predict(df)
+df['Cluster'] = model.predict(df)
+df['Cluster']
 
 
 # Display first few rows
 print(df.head())
 
-centers = kmeans.cluster_centers_
+centers = model.cluster_centers_
 
 
 # Plot clusters
@@ -61,9 +63,30 @@ sns.scatterplot(
     data=df,
     x='Annual Income (k$)',
     y='Spending Score (1-100)'
-    ,hue=df['Cluster'],
+    ,hue='Cluster',
     alpha=0.8,
     palette="coolwarm"
     )
 sns.scatterplot(x=centers[:,0],y=centers[:,1],markers="*",color='black',alpha=1,s=100)
 plt.show()
+
+
+# How to check if the model is good or not 
+
+# Elbow Method
+wcss = []
+k_range = range(1, 11)
+for k in k_range:
+    kmeans = KMeans(n_clusters=k)
+    kmeans.fit(df[['Annual Income (k$)', 'Spending Score (1-100)']])
+    wcss.append(kmeans.inertia_)
+
+plt.plot([i for i in range(1,11)],wcss)
+plt.show()
+
+
+# Silhouette score
+silhouette_score(
+    df[['Annual Income (k$)', 'Spending Score (1-100)']], 
+    df['Cluster']
+    )

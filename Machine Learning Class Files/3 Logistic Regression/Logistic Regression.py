@@ -57,8 +57,7 @@ df['Age'] = df['Age'].fillna(df.Age.median())
 # filling cabin column with only its initials 
 df.head()
 df.Cabin.value_counts()
-df['Cabin'] = df['Cabin'].astype(str)
-df['Cabin'] = df['Cabin'].apply(lambda x : x[0])
+df['Cabin'] = df['Cabin'].apply(lambda x : str(x)[0])
 
 df.head()
 df.info()
@@ -87,10 +86,15 @@ y = df['Survived']
 
 xtrain,xtest,ytrain,ytest = train_test_split(x,y,test_size=0.2,random_state=42)
 
-cat = x.select_dtypes(str).columns
+cat = x.select_dtypes("object").columns
 num = x.select_dtypes(np.number).columns
 
-preprocessor = ColumnTransformer( [ ("cat",OneHotEncoder(),cat),("num",StandardScaler(),num)] )
+preprocessor = ColumnTransformer( 
+    [ 
+        ("cat",OneHotEncoder(),cat),
+        ("num",StandardScaler(),num)
+    ] 
+)
 
 model = LogisticRegression()
 
@@ -111,6 +115,7 @@ prediction_probability
 
 fpr,tpr,threshhold = roc_curve(ytest,prediction_probability)
 auc = roc_auc_score(ytest,prediction)
+auc
 
 
 # plot ROC-AUC curve

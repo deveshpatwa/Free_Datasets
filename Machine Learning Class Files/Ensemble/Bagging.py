@@ -34,14 +34,14 @@ preprocessor = ColumnTransformer(
 )
 
 # Define the base estimator
-base_tree = DecisionTreeClassifier(random_state=42)
+base_tree = DecisionTreeClassifier()
 
 # Create and train the Bagging Classifier
 model = BaggingClassifier(
     estimator=base_tree,
     n_estimators=200,       # Number of base trees
-    max_samples=0.5,       # Train each tree on 80% of data
-    oob_score=True,        # Use Out-of-Bag samples for validation (dataset with replacement)
+    max_samples=0.2,       # Train each tree on 80% of data
+    oob_score=False,        # Use Out-of-Bag samples for validation (dataset with replacement)
     random_state=42,
     n_jobs=-1              # Use all CPU cores (parallel training)
 )

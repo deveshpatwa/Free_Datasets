@@ -2,8 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
-
-# sklearn lib 
+ 
 from sklearn.cluster import AgglomerativeClustering
 from scipy.cluster.hierarchy import dendrogram, linkage
 from sklearn.metrics import silhouette_score
@@ -25,7 +24,6 @@ sns.scatterplot(data=x,x="petal_length",y="petal_width",hue=y)
 plt.show()
 
 
-# Scipy: Compute linkage matrix & plot Dendrogram
 # Linkage options: 'ward' (minimizes variance), 'complete', 'average', 'single'
 linkage_matrix = linkage(x, method='ward')
 linkage_matrix
@@ -54,6 +52,4 @@ plt.title("with model predicted lables")
 plt.tight_layout()
 plt.show()
 
-
-score = silhouette_score(x, labels)
-print(f"Silhouette Score: {score:.2}")
+silhouette_score(x, labels)

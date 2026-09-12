@@ -32,7 +32,10 @@ preprocessor = ColumnTransformer(
 )
 
 
-model = XGBClassifier(n_estimators=200,learning_rate=0.02)
+model = XGBClassifier(
+    n_estimators=300,
+    learning_rate=0.02,
+    )
 
 
 pipe = Pipeline(

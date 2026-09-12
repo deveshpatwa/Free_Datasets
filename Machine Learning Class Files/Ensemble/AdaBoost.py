@@ -35,8 +35,8 @@ preprocessor = ColumnTransformer(
 
 model = AdaBoostClassifier(
     estimator=DecisionTreeClassifier(max_depth=1),
-    n_estimators=100,
-    learning_rate=1.0,
+    n_estimators=200,
+    learning_rate=1,
     random_state=42
 )
 
