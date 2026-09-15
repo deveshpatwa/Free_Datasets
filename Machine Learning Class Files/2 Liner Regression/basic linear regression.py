@@ -17,10 +17,11 @@ y = df['weight']
 
 model = LinearRegression()
 model.fit(x.values.reshape(-1, 1), y)
-prediction = model.predict(x.values.reshape(-1, 1))
 
 print("Slope:", model.coef_[0])
 print("Intercept:", model.intercept_)
+
+prediction = model.predict(x.values.reshape(-1, 1))
 
 # plot
 plt.scatter(x, y, label='Data points')
@@ -31,7 +32,7 @@ plt.legend()
 plt.show()
 
 # predict weight for a car with 200 horsepower
-model.predict([[180]])
+model.predict([[200]])
 
 y
 prediction

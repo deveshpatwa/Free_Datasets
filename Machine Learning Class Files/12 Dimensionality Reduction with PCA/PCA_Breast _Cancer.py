@@ -21,7 +21,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import plotly.express as px
 
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import StandardScaler,MinMaxScaler
 from sklearn.decomposition import PCA
 from sklearn.svm import SVC
 from sklearn.linear_model import LogisticRegression
@@ -47,7 +47,8 @@ x = df.drop(columns='diagnosis')
 y = df['diagnosis']
 
 
-scaler = StandardScaler()
+# scaler = StandardScaler()
+scaler = MinMaxScaler()
 x_scaled = scaler.fit_transform(x)
 
 pca = PCA(n_components=3)
@@ -57,19 +58,19 @@ df_pca = pd.DataFrame(x_pca)
 df_pca
 
 # 2D chart in PCA-2
-sns.scatterplot(data=df_pca,x=0,y=1,hue=df['diagnosis'],alpha=0.5)
-plt.show()
+# sns.scatterplot(data=df_pca,x=0,y=1,hue=df['diagnosis'],alpha=0.5)
+# plt.show()
 
 # 3D chart in PCA-3 - using matplotlib
-fig = plt.figure(figsize=(8, 6))
-ax = fig.add_subplot(111, projection='3d')
-surf = ax.plot_surface(df_pca[0], df_pca[1], df_pca[2], cmap='viridis')
-fig.colorbar(surf, ax=ax, shrink=0.5, aspect=5)
-plt.show()
+# fig = plt.figure(figsize=(8, 6))
+# ax = fig.add_subplot(111, projection='3d')
+# surf = ax.plot_surface(df_pca[0], df_pca[1], df_pca[2], cmap='viridis')
+# fig.colorbar(surf, ax=ax, shrink=0.5, aspect=5)
+# plt.show()
 
 
 # 3D chart in PCA-3 - using plotly
-fig = px.scatter_3d(df_pca,x=0,y=1,z=2)
+fig = px.scatter_3d(df_pca.iloc[0:30],x=0,y=1,z=2)
 fig.show()
 
 

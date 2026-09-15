@@ -43,7 +43,7 @@ plt.show()
 
 # Create K-Means model
 # hyperparameter - n_clusters=5, random_state=42, n_init=10
-model = KMeans(n_clusters=4,random_state=42)
+model = KMeans(n_clusters=6,random_state=42)
 
 # Train the model
 model.fit(df)
@@ -81,6 +81,8 @@ for k in k_range:
     kmeans.fit(df[['Annual Income (k$)', 'Spending Score (1-100)']])
     wcss.append(kmeans.inertia_)
 
+
+wcss
 plt.plot([i for i in range(1,11)],wcss)
 plt.show()
 
