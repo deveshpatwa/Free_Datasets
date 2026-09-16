@@ -1,7 +1,6 @@
-# Ridge Regression is an extension of standard linear regression that prevents overfitting and 
-# handles highly correlated variables by adding an L2 regularization penalty to the model's loss 
-# function. Instead of just minimizing the prediction error, it shrinks the coefficient estimates
-# toward zero, stabilizing the model for better predictions on unseen data
+# Lasso Regression (Least Absolute Shrinkage and Selection Operator) is a type of linear 
+# regression that reduces overfitting by adding an L1 penalty. Unlike Ridge Regression, it
+# can shrink some coefficients all the way to 0, effectively removing unimportant features.
 
 
 # importing data analysis library
@@ -11,7 +10,7 @@ import pandas as pd
 import seaborn as sns
 
 # importing machine learning library
-from sklearn.linear_model import Ridge
+from sklearn.linear_model import ElasticNet
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler , OneHotEncoder
 from sklearn.compose import ColumnTransformer
@@ -50,9 +49,6 @@ lb
 ub
 df =  df[df['area']<=ub]
 
-df.shape
-
-
 
 # creating list for Categorical and numerical features 
 categorical_features =  ['mainroad', 'guestroom', 'basement', 'hotwaterheating',
@@ -68,8 +64,6 @@ y = df['price']
 
 x.head()
 y.head()
-
-
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
 x_train
@@ -110,7 +104,7 @@ transformer = ColumnTransformer(
 pipe = Pipeline(
     [
         ("transform_data",transformer),
-        ("mocel",Ridge(alpha=5))
+        ("mocel",ElasticNet(alpha=1,random_state=42))
 
     ]
 )
