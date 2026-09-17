@@ -23,6 +23,7 @@ X_scaled = scaler.fit_transform(X)
 # 3. Apply PCA
 pca = PCA(n_components=2) # Compress 4 features down to 2
 X_pca = pca.fit_transform(X_scaled)
+X_pca
 
 # 4. Inspect Results
 print("Original shape:", X_scaled.shape)

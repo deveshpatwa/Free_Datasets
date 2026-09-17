@@ -57,23 +57,28 @@ x_pca = pca.fit_transform(x)
 df_pca = pd.DataFrame(x_pca)
 df_pca
 
+pca.explained_variance_ratio_
+np.sum(pca.explained_variance_ratio_)
+
 # 2D chart in PCA-2
-# sns.scatterplot(data=df_pca,x=0,y=1,hue=df['diagnosis'],alpha=0.5)
-# plt.show()
+sns.scatterplot(data=df_pca,x=0,y=1,hue=df['diagnosis'],alpha=0.5)
+plt.show()
 
 # 3D chart in PCA-3 - using matplotlib
-# fig = plt.figure(figsize=(8, 6))
-# ax = fig.add_subplot(111, projection='3d')
-# surf = ax.plot_surface(df_pca[0], df_pca[1], df_pca[2], cmap='viridis')
-# fig.colorbar(surf, ax=ax, shrink=0.5, aspect=5)
-# plt.show()
+fig = plt.figure(figsize=(8, 6))
+ax = fig.add_subplot(111, projection='3d')
+surf = ax.plot_surface(df_pca[0], df_pca[1], df_pca[2], cmap='viridis')
+fig.colorbar(surf, ax=ax, shrink=0.5, aspect=5)
+plt.show()
 
 
 # 3D chart in PCA-3 - using plotly
-fig = px.scatter_3d(df_pca.iloc[0:30],x=0,y=1,z=2)
+# df_pca['diagnosis'] = df['diagnosis']
+# df_pca
+fig = px.scatter_3d(df_pca,x=0,y=1,z=2,color=df['diagnosis'])
 fig.show()
 
-
+df['diagnosis']
 
 
 
