@@ -4,19 +4,20 @@ import pandas as pd
 import seaborn as sns
 
 from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_absolute_error,r2_score
 
 
 df = pd.read_csv("car_average.csv")
 df.head()
 
-# sns.scatterplot(data=df,x="horsepower",y='mpg')
-# plt.show()
+sns.scatterplot(data=df,x="horsepower",y='mpg')
+plt.show()
 
 x = df[['horsepower']]
 y = df['mpg']
 
 # rough
-x['horsepower_sqr'] = x['horsepower'] ** 2
+# x['horsepower_sqr'] = x['horsepower'] ** 2
 # x['horsepower_power3'] = x['horsepower'] ** 3
 # x['horsepower_power4'] = x['horsepower'] ** 4
 # x['horsepower_power5'] = x['horsepower'] ** 5
@@ -34,3 +35,7 @@ prediction = model.predict(x)
 sns.scatterplot(data=df,x="horsepower",y='mpg')
 sns.lineplot(data=df,x="horsepower",y=prediction,color='red')
 plt.show()
+
+
+mean_absolute_error(y, prediction)
+r2_score(y, prediction)

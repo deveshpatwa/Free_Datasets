@@ -112,5 +112,6 @@ pipe = Pipeline(
 
 pipe.fit(xtrain, ytrain)
 prediction =  pipe.predict(xtest)
+
 accuracy_score(ytest, prediction)
 print(classification_report(ytest, prediction))

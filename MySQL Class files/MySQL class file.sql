@@ -1,11 +1,19 @@
 # create a database db
 create database db;
 
+# Q create a databse test?
+
+
 # now use it
 use db;
 
+# Q now try to use test database?
+
+
 # delete the database db
 drop database db;
+
+# drop database test?
 
 # create a customer table with name, age, balance, dob, sales
 create table customer(
@@ -16,6 +24,10 @@ create table customer(
     sales int
 );
 
+# Q Create a table of sales with these columns Order_id, product, weight, qty, sales?
+# Q drop the table sales?
+# Q Create a new table product with these columns product_id, batch_date, weight?
+# Q drop product table?
 
 # delete a table
 drop table customer;
