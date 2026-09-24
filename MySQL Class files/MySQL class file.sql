@@ -46,7 +46,7 @@ select * from customer;
 # 2.Create books_info table with - book_id, name, pages, writer, year
 # 3.Create stock - book_id, total_books, issued, remaining
 
--- ---------------  Alter  ---------------------
+-- ---------------  Alter  DDL ---------------------
 
 # Add a new column address in customer table
 alter table customer add column address varchar(100);
@@ -91,7 +91,7 @@ select * from emp;
 insert into emp
 values ("kunal",28,23000),("suman",56,50600),("kartik",12,23000);
 
-
+# when you have limited information
 insert into emp(name,age)
 values ("mohit",49);
 
