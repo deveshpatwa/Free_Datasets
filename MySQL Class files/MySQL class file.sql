@@ -113,6 +113,8 @@ values (null,null,null);
 select * from emp;
 
 # update a record in emp table where name is rohan and set age to 13
+set sql_safe_updates = 0;
+
 update emp
 set age = 13
 where name = "rohan";
@@ -123,7 +125,7 @@ set age = 55;
 
 select * from emp;
 
-set sql_safe_updates = 0;
+
 
 # delete a record from emp table where name is mohit
 select * from emp;
@@ -185,6 +187,7 @@ create table bank(
 	name varchar(30),
     amount int 
     );
+    
     
 insert into bank values ("ravi",500), ("kunal",1000);
 

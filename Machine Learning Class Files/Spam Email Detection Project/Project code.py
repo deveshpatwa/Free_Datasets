@@ -27,7 +27,7 @@ df.size
 
 # removing the first column (email name) as it is not needed for prediction
 df = df.drop(columns=["Email No.","Prediction"])
-df.head()
+
 df['spam'].value_counts()
 
 df["spam"] = df["spam"].apply(lambda x: 1 if x > 0 else 0)

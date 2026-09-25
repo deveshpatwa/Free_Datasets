@@ -43,7 +43,8 @@ model = BaggingClassifier(
     max_samples=0.2,       # Train each tree on 80% of data
     oob_score=False,        # Use Out-of-Bag samples for validation (dataset with replacement)
     random_state=42,
-    n_jobs=-1              # Use all CPU cores (parallel training)
+    n_jobs=-1,
+    bootstrap=False            # Use all CPU cores (parallel training)
 )
 
 
