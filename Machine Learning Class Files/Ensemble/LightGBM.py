@@ -10,8 +10,7 @@ from sklearn.preprocessing import OneHotEncoder , StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import accuracy_score, classification_report
-from sklearn.ensemble import AdaBoostClassifier
-from sklearn.tree import DecisionTreeClassifier
+import lightgbm as lgb
 
 
 df =  pd.read_csv("titanic_cleaned.csv")
@@ -33,13 +32,10 @@ preprocessor = ColumnTransformer(
 )
 
 
-model = AdaBoostClassifier(
-    estimator=DecisionTreeClassifier(max_depth=1),
-    n_estimators=300,
-    learning_rate=1,
-    random_state=42
+model = lgb.LGBMClassifier(
+    learning_rate=0.05,     # Step size shrinkage
+    n_estimators=100,       # Number of boosting iterations
 )
-
 
 pipe = Pipeline(
     [
