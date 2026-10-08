@@ -42,8 +42,8 @@ sns.scatterplot(data=df , x='Annual Income (k$)',y='Spending Score (1-100)')
 plt.show()
 
 # Create K-Means model
-# hyperparameter - n_clusters=5, random_state=42, n_init=10
-model = KMeans(n_clusters=6,random_state=42)
+# hyperparameter - n_clusters=5, random_state=42
+model = KMeans(n_clusters=8,random_state=42)
 
 # Train the model
 model.fit(df)

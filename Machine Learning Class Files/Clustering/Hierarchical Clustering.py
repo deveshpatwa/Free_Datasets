@@ -32,7 +32,7 @@ dendrogram(linkage_matrix)
 plt.show()
 
 # Apply Agglomerative Clustering
-model = AgglomerativeClustering(n_clusters=3, metric='euclidean', linkage='ward')
+model = AgglomerativeClustering(n_clusters=3)
 
 labels = model.fit_predict(x)
 

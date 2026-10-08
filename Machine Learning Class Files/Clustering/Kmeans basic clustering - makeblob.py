@@ -6,10 +6,12 @@ import matplotlib.pyplot as plt
 from sklearn.datasets import make_blobs
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
+from sklearn.preprocessing import StandardScaler
 
-# Generate 100 samples with 2 features and 3 centers (clusters)
-x, y = make_blobs(n_samples=100, n_features=2, centers=3, cluster_std=1.0, random_state=42)
-
+# Generate 200 samples with 2 features and 3 centers (clusters)
+x, y = make_blobs(n_samples=500, n_features=2, centers=3, cluster_std=2.0, random_state=42)
+# x = StandardScaler().fit_transform(x)
+x.shape
 
 sns.scatterplot(x=x[:,0],y=x[:,1])
 plt.show()
