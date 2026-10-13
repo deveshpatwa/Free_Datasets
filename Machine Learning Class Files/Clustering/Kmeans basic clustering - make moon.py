@@ -8,7 +8,7 @@ from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
 
 # Generate 100 samples with 2 features and 3 centers (clusters)
-x,y = make_moons(n_samples=100, noise=0.08, random_state=42)
+x,y = make_moons(n_samples=500, noise=0.08, random_state=42)
 x
 y
 

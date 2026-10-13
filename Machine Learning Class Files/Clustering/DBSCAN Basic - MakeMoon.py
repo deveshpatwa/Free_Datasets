@@ -8,7 +8,7 @@ from sklearn.cluster import DBSCAN
 from sklearn.metrics import silhouette_score
 
 # Generate 100 samples with 2 features and 3 centers (clusters)
-x,y = make_moons(n_samples=1000, noise=0.05, random_state=42)
+x,y = make_moons(n_samples=1000, noise=0.5, random_state=42)
 x
 y
 

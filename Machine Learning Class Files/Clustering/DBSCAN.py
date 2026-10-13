@@ -30,6 +30,7 @@ plt.show()
 
 
 
+
 # Model on mall customers
 df = pd.read_csv("Mall_Customers.csv")
 df.head()
@@ -39,7 +40,7 @@ df = df[['Annual Income (k$)', 'Spending Score (1-100)']]
 sns.scatterplot(data=df , x='Annual Income (k$)',y='Spending Score (1-100)')
 plt.show()
 
-model = DBSCAN()
+model = DBSCAN(eps=8)
 labels = model.fit_predict(df)
 
 sns.scatterplot(data=df , x='Annual Income (k$)',y='Spending Score (1-100)',hue=labels)

@@ -2,7 +2,7 @@
 create database db;
 
 # Q create a databse test?
-
+create database test;
 
 # now use it
 use db;
@@ -25,12 +25,13 @@ create table customer(
 );
 
 # Q Create a table of sales with these columns Order_id, product, weight, qty, sales?
+
 # Q drop the table sales?
 # Q Create a new table product with these columns product_id, batch_date, weight?
 # Q drop product table?
 
 # delete a table
-drop table customer;
+drop table sales;
 
 # check the structure of a table
 describe customer;
@@ -69,7 +70,7 @@ alter table customer drop column balance;
 # change the table name customer to new_customer?
 alter table customer rename to new_customer;
 
-# delete the table customer
+# Drop the table new_customer?
 drop table new_customer;
 
 -- ---------------------------- DML --------------------------------

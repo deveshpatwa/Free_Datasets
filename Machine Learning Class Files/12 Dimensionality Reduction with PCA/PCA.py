@@ -54,10 +54,17 @@ y = df['HeartDiseaseorAttack']
 scaler = StandardScaler()
 x_scaled = scaler.fit_transform(x)
 
-pca = PCA(n_components=2)
+pca = PCA(n_components=3)
 x_pca = pca.fit_transform(x_scaled)
 
 x_pca
 
 sns.scatterplot(x=x_pca[:,0], y = x_pca[:,1],alpha=0.1, hue=y)
+plt.show()
+
+
+pcadf = pd.DataFrame(x_pca, columns=['PC1', 'PC2', 'PC3'])
+pcadf['Target'] = y
+pcadf
+sns.pairplot(data=pcadf,hue="Target",palette="Set2")
 plt.show()

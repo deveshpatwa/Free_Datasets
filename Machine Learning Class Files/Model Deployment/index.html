@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Model Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 4px;
+        }
+        .success { background-color: #d4edda; color: #155724; }
+        .error { background-color: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+
+    <h2>Iris Flower Predictor</h2>
+    <form id="predictForm">
+        <div class="form-group">
+            <label for="sepalLength">Sepal Length (cm):</label>
+            <input type="number" id="sepalLength" step="0.1" value="5.1" required>
+        </div>
+        <div class="form-group">
+            <label for="sepalWidth">Sepal Width (cm):</label>
+            <input type="number" id="sepalWidth" step="0.1" value="3.5" required>
+        </div>
+        <div class="form-group">
+            <label for="petalLength">Petal Length (cm):</label>
+            <input type="number" id="petalLength" step="0.1" value="1.4" required>
+        </div>
+        <div class="form-group">
+            <label for="petalWidth">Petal Width (cm):</label>
+            <input type="number" id="petalWidth" step="0.1" value="0.2" required>
+        </div>
+        <button type="submit">Predict</button>
+    </form>
+
+    <div id="result" style="display: none;"></div>
+
+    <script>
+        document.getElementById('predictForm').addEventListener('submit', async function(e) {
+            e.preventDefault(); // Stop page refresh
+            
+            const resultDiv = document.getElementById('result');
+            resultDiv.style.display = 'none';
+
+            // 1. Gather values from form inputs
+            const features = [
+                parseFloat(document.getElementById('sepalLength').value),
+                parseFloat(document.getElementById('sepalWidth').value),
+                parseFloat(document.getElementById('petalLength').value),
+                parseFloat(document.getElementById('petalWidth').value)
+            ];
+
+            try {
+                // 2. Send POST request to the Flask server
+                const response = await fetch('http://127.0.0', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ features: features })
+                });
+
+                const data = await response.json();
+
+                // 3. Display the response
+                if (data.status === 'success') {
+                    // Map class numbers back to target names
+                    const classes = ['Setosa', 'Versicolor', 'Virginica'];
+                    const flowerName = classes[data.prediction] || `Class ${data.prediction}`;
+                    
+                    resultDiv.className = 'success';
+                    resultDiv.innerText = `Prediction: ${flowerName}`;
+                } else {
+                    resultDiv.className = 'error';
+                    resultDiv.innerText = `Error: ${data.message}`;
+                }
+            } catch (err) {
+                resultDiv.className = 'error';
+                resultDiv.innerText = 'Error connecting to the Flask server.';
+            }
+
+            resultDiv.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
