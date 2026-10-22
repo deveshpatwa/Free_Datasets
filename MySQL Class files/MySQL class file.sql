@@ -297,6 +297,9 @@ create table orders(
     foreign key(customer_id) references customer(customer_id)
     );
   
+describe orders;  
+  
+show create table orders;
 
 insert into customer values(1,"rohan"),(2,"kunal");
 
@@ -306,10 +309,7 @@ insert into orders values("apple",400,2);
 insert into orders values("Banana",670,4);
 insert into orders values("Banana",670,null);
 select * from orders;
-  
-describe orders;  
-  
-show create table orders;
+
 
 
 -- --------------------- DQL ---------------
@@ -330,30 +330,39 @@ select "hello world" as msg ;
 
 select "Mohan" as name, 45 as age;
 
-select name,sales,sales*0.8 as discounted_sales from store;
+select name from store;
 
+select name , sales from store;
+
+select sales,profit , sales - profit from store;
+
+select name, sales, sales*0.8 as discounted_sales from store;
 
 select name,city as location ,sales from store;
 
 select name as customer_name from store;
 
--- -------------select with calculations
-select name,sales,profit,sales-profit as cost from store;
+select name as 'customer name' from store;
 
--- ---------------- functions
+select name as `customer name` from store;
+
+-- ---------------- FUNCTIONS
 
 -- --------- Text Functions
+
 select upper(name),name from store;
+
 select lower(name) from store;
 
 select left(name,2) from store;
-select name,right(name,3) from store;
+
+select right(name,3) from store;
 
 select concat("Rohan"," ","Kumar") as full_name;
 
 select length(name),name from store;
 
-select concat(name , " " , category) as full_name from store;
+select concat(category , " - " , sub_category) as product from store;
 
 select state , city from store;
 
@@ -365,10 +374,7 @@ select sales,if(sales>1000,"good","bad") as sales_category from store;
 # make a profit category( profit / loss ) column?
 select profit from store;
 
-
-select 
-	profit,
-    if(profit>0,"profit","loss") as profit_category
+select profit, if(profit>0,"profit","loss") as profit_category
 from store; 
 
 select sales, round( if(sales>1000,sales*0.10,sales*0.05),2) as discount
