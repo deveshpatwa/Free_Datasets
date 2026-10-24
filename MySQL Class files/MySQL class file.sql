@@ -2,7 +2,7 @@
 create database db;
 
 # Q create a databse test?
-create database test;
+
 
 # now use it
 use db;
@@ -24,7 +24,7 @@ create table customer(
     sales int
 );
 
-# Q Create a table of sales with these columns Order_id, product, weight, qty, sales?
+# Q Create a table of sales with these columns Order_id, product_name, weight, qty, sales?
 
 # Q drop the table sales?
 # Q Create a new table product with these columns product_id, batch_date, weight?
@@ -39,13 +39,10 @@ describe customer;
 # to check the data in a table 
 select * from customer;
 
-
-# Create a table of sales with these columns - Order_id (A101), product, weight(5.67) , qty, sales?
-
 # Create a table for library management system where there will be these table ?
-# 1.Create a database Library
-# 2.Create books_info table with - book_id, name, pages, writer, year
-# 3.Create stock - book_id, total_books, issued, remaining
+# 1.Create a database Library then use it?
+# 2.Create books_info table with - book_id, name, pages, writer, year?
+# 3.Create stock - book_id, total_books, issued_date, remaining?
 
 -- ---------------  Alter  DDL ---------------------
 
@@ -113,13 +110,18 @@ values (null,null,null);
 
 select * from emp;
 
-# update a record in emp table where name is rohan and set age to 13
+# to turn off safe update
 set sql_safe_updates = 0;
+
+# update a record in emp table where name is rohan and set age to 13
 
 update emp
 set age = 13
 where name = "rohan";
 
+update emp 
+set age = 55 ,salary= 78000
+where  name= "mohit";
 
 update emp
 set age = 55;
@@ -134,62 +136,24 @@ select * from emp;
 delete from emp
 where name = "mohit";
 
-delete from emp;
-
 delete from emp
-where salary < 30000;
+where salary > 30000;
+
+# delete all records from emp table
+delete from emp;
 
 # delete all records from emp table
 truncate table emp;
 
-delete from emp
-where salary > 40000;
-
 select * from emp;
 
-describe emp;
+----------------------- TCL ------------------
 
-show create table emp;
+CREATE TABLE bank (
+    name VARCHAR(30),
+    amount INT
+);
 
--- --------------------TCL-------------------------------
--- --- ACID -------
-/*
-    ACID Properties in Database Systems
-    
-    ACID is an acronym that represents four key properties of reliable database transactions:
-    
-    1. ATOMICITY
-         - Ensures that a transaction is "all-or-nothing"
-         - Either all operations within a transaction complete successfully, or none of them do
-         - If a failure occurs mid-transaction, all changes are rolled back to maintain data consistency
-         - Example: Money transfer must either debit from one account AND credit to another, or neither happens
-    
-    2. CONSISTENCY
-         - Guarantees that a transaction takes the database from one valid state to another valid state
-         - All data integrity rules and constraints are maintained before and after the transaction
-         - The database will never be left in a partially updated or corrupted state
-         - Example: Total balance in all accounts must remain constant during a transfer
-    
-    3. ISOLATION
-         - Ensures that concurrent transactions do not interfere with each other
-         - Each transaction executes independently without visibility into uncommitted changes from other transactions
-         - Example: Two simultaneous transactions on the same data won't cause conflicts
-    
-    4. DURABILITY
-         - Guarantees that once a transaction is committed, the data persists permanently
-         - Even in case of system failures, power outages, or crashes, committed changes survive
-         - Data is stored in persistent storage (disk) and cannot be lost after commit
-         - Example: Once a purchase is confirmed, it remains in the database even if the server crashes
-    
-    ACID properties are essential for maintaining data reliability and integrity in critical applications.
-*/
-
-create table bank(
-	name varchar(30),
-    amount int 
-    );
-    
-    
 insert into bank values ("ravi",500), ("kunal",1000);
 
 select * from bank;
@@ -377,8 +341,11 @@ select profit from store;
 select profit, if(profit>0,"profit","loss") as profit_category
 from store; 
 
+select round(sales,2) from store;
+
 select sales, round( if(sales>1000,sales*0.10,sales*0.05),2) as discount
 from store;
+
 
 
 -- ---------------CASE - WHEN - THEN - ELSE - END
@@ -405,37 +372,45 @@ SELECT
 FROM
     store;
 
-# find total profit
+# find total profit and round it to 2 decimal places
+select round(sum(profit),2) as total_profit from store;
 
 # find avg of qty and round them to 2 decimal places 
 
-# find total number of orders?
+
+# find total number of rows in orders table?
 select count(*) from store;
 
+# to count only the non null values in a single column
 select count(post_code) from store;
 
 # find the profit margin of orders and round it to 2 decimal places?
 select round(sum(profit) / sum(sales) * 100,2) as profit_margin
 from store;
 
-# Find average unit price (sales/qty) and round it to 2 decimal places
-
-
-
 -- --------------- year - month - day functions
-select 
-	order_date, 
-    year(order_date),
-    month(order_date),
-    day(order_date),
-    monthname(order_date),
-    dayname(order_date),
-    now(),
-    current_date(),
-    current_time()
-from store;
+
+select order_date from store;
+
+select year(order_date) from store;
+
+select month(order_date) from store;
+
+select day(order_date) from store;
+
+select monthname(order_date) from store;
+
+select dayname(order_date) from store;
+
+select current_date() ;
+
+select current_time();
+
+select now() ;
+
 
 -- ---------TIMESTAMPDIFF 
+
 select order_date as DOB, timestampdiff(year, order_date, current_date()) as AGE
 from store;
 
@@ -456,15 +431,17 @@ select category from store;
 
 select distinct category  from store;
 
-# Find all the unique customers name from store ?
+select distinct category,sub_category from store;
+
+select distinct * from store;
 
 select count(distinct category)  from store;
 
-select distinct category,sub_category from store;
-
 select count(distinct city) from store;
 
-select  distinct * from store ;
+# Find all the unique customers name from store ?
+
+# Count the number of unique customer name?
 
 -- -------SELECT  WHERE 
 
@@ -473,22 +450,19 @@ from store
 where sub_category = "chairs";
 
 # Find total sales in furniture category ?
-select sum(sales) as total_sales
+select sum(sales) as total_sales_of_furniture
 from store
 where category = "furniture";
 
 # Select all the records where the category should not be furniture ?
+
 select *
 from store
 where category != "furniture";
 
-
-
-
 select name,sales
 from store
-where sales>=2000;
-
+where sales >= 2000;
 
 select * 
 from store
@@ -497,7 +471,7 @@ where region = "east";
 select * from store;
 
 # Select all the records of furniture category ?
-# Show name, sales and profit the records where we have loss ?
+# Show name, sales and profit the records where we have loss (profit is less then 0)?
 # Show all the transaction from year 2015 ?
 # Find total sales in 2016 ?
 # Find average profit in furniture category ?
@@ -506,11 +480,12 @@ select * from store;
 -- -------------WHERE WITH 	AND - OR 
 
 # Show customer name, category, sales, profit and there cost where the category is Furniture and we had face a loss ?
+
 select name, category ,sales , profit,round(sales-profit,1) as cost
 from store
 where category = "furniture"  and profit<0 ;
 
-# Show all the customer name region and sales where either the region should be East or the sales should be above 1000 ?
+# Show name, region and sales where either the region is East or the sales is above 1000 ?
 
 
 -- ---------SELECT WHERE  BETWEEN
