@@ -94,3 +94,5 @@ plt.show()
 
 car['horsepower'].plot(kind='box', vert=False)
 plt.show()
+
+car['horsepower'].corr(car['weight'])

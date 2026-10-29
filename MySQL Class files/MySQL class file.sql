@@ -195,8 +195,11 @@ CREATE table test (
 describe test;
 
 insert into test values("ravi",999,"bhopal");
-insert into test values("suman",999,"itarsi");
+insert into test(phone,city) values(444,"ratlam");
 insert into test values(null,888,"bhopal");
+
+insert into test values("suman",999,"itarsi");
+
 insert into test(name) values("mohit");
 insert into test values("mohan",777,null);
 
@@ -245,6 +248,10 @@ truncate table people;
 drop table customer;
 drop table orders;
 
+create table customer(
+	customer_id int not null unique,
+    name varchar(30)
+    );
 
 create table customer(
 	customer_id int primary key,
@@ -272,21 +279,15 @@ select * from customer;
 insert into orders values("apple",400,2); 
 insert into orders values("Banana",670,4);
 insert into orders values("Banana",670,null);
+
 select * from orders;
 
-
-
 -- --------------------- DQL ---------------
--- DQL (Data Query Language) is a subset of SQL used to retrieve and query data from databases.
--- Common DQL commands include SELECT, which allows you to fetch data from one or more tables
--- with various filtering, sorting, and aggregation options.
-
-
-select * from store;
-
 -- ------------------ select -----------------
 
 select 870 ;
+
+select "Hello World";
 
 select 67*2 ;
 
@@ -300,6 +301,10 @@ select name , sales from store;
 
 select sales,profit , sales - profit from store;
 
+select sales,profit , sales - profit as cost from store;
+
+select sales,profit , round(sales - profit,2) as cost from store;
+
 select name, sales, sales*0.8 as discounted_sales from store;
 
 select name,city as location ,sales from store;
@@ -310,11 +315,14 @@ select name as 'customer name' from store;
 
 select name as `customer name` from store;
 
--- ---------------- FUNCTIONS
+select * from store;
 
+select sales , sales from store;
+
+-- ---------------- FUNCTIONS
 -- --------- Text Functions
 
-select upper(name),name from store;
+select name, upper(name) from store;
 
 select lower(name) from store;
 
@@ -343,10 +351,9 @@ from store;
 
 select round(sales,2) from store;
 
+# give discount if sales is above 1000 then 10% else 5%?
 select sales, round( if(sales>1000,sales*0.10,sales*0.05),2) as discount
 from store;
-
-
 
 -- ---------------CASE - WHEN - THEN - ELSE - END
 select sales , 
@@ -358,19 +365,26 @@ select sales ,
     end as sales_category
 from store;
 
-# create a column for profit category - Loss, low profit , high profit, very high profit ?
+# create a column for profit category - Loss(<0), low profit (<100), high profit(<500), very high profit(500+) ?
 select profit from store;
 
 
+
 -- ------------ Aggfunc - sum, min, max, count, avg
-SELECT 
-    SUM(sales) AS total_sales,
-    MIN(sales),
-    MAX(sales),
-    COUNT(sales),
-    AVG(sales)
-FROM
-    store;
+
+select sum(sales) from store;
+
+select min(sales) from store;
+
+select max(sales) from store;
+
+select avg(sales) from store;
+
+select count(sales) from store;
+
+select sum(sales),sum(profit),avg(qty) from store;
+
+
 
 # find total profit and round it to 2 decimal places
 select round(sum(profit),2) as total_profit from store;
@@ -384,7 +398,13 @@ select count(*) from store;
 # to count only the non null values in a single column
 select count(post_code) from store;
 
+select count(name) from store;
+
 # find the profit margin of orders and round it to 2 decimal places?
+
+select sum(profit) / sum(sales) from store;
+
+
 select round(sum(profit) / sum(sales) * 100,2) as profit_margin
 from store;
 
@@ -402,9 +422,11 @@ select monthname(order_date) from store;
 
 select dayname(order_date) from store;
 
-select current_date() ;
+select current_date();
 
 select current_time();
+
+select dayname(current_date());
 
 select now() ;
 
@@ -449,8 +471,12 @@ select *
 from store
 where sub_category = "chairs";
 
+# show all records where sales is above 2000?
+
+# show name,region and sales from store where region is east ?
+
 # Find total sales in furniture category ?
-select sum(sales) as total_sales_of_furniture
+select sum(sales) 
 from store
 where category = "furniture";
 
@@ -470,8 +496,7 @@ where region = "east";
 
 select * from store;
 
-# Select all the records of furniture category ?
-# Show name, sales and profit the records where we have loss (profit is less then 0)?
+# Show name, sales and profit from store where we have loss (profit is less then 0)?
 # Show all the transaction from year 2015 ?
 # Find total sales in 2016 ?
 # Find average profit in furniture category ?
@@ -512,7 +537,6 @@ select count(*)
 from store
 where post_code is null;
 
-
 -- --------------- WHERE LIKE
 
 # Show all the unique names which starts with "A"
@@ -550,10 +574,10 @@ where sub_category NOT in ("art","paper","tables");
 -- for single column
 select region,sales from store;
 
+select region , sum(sales) from store;
+
 # show region wise total sales ?
-select region, sum(sales)
-from store
-group by region;
+select region, sum(sales) from store group by region;
 
 # Find city wise total profit and total sales ?
 select city , round(sum(sales)), round(sum(profit))
@@ -593,11 +617,16 @@ from store
 group by sub_category
 having total_sales < 1000;
 
+# region wise total profit
+select region , sum(profit) as total_profit
+from store
+group by region
+having total_profit > 5000;
+
 # Find department wise Average marks ?
 select  department , avg(marks) as percentage
 from students
-group by department
-having percentage > 85;
+group by department;
 
 
 -- ------------HAVING VS WHERE
@@ -613,9 +642,8 @@ from store
 group by category
 having category = "furniture";
 
-
-
 # Find all the subcategories where the total profit is in negative ?
+
 # Find category wise total sales where the total sales is less than 30,000 ?
 
 
@@ -624,9 +652,12 @@ having category = "furniture";
 select * from store;
 
 # show all the records from store table in ascending order of order_date ?
+
 SELECT *
 from store
-order by order_date  desc;
+order by order_date ;
+
+# Show name and sales column from store and order the sales column in desc ?
 
 # Show subcategory wise total sales and order them in descending order ?
 select sub_category , round(sum(sales)) as total_sales
@@ -654,6 +685,12 @@ limit 3;
 
 # Show name region and profit column where the name should start with "S" and the region should be "East" and show only top 10 transactions with highest profit ?
 
+# Find top 10 cities with highest total profit ? 
+
+select round(sales) 
+from store
+order by sales desc
+limit 1 offset 2;
 
 # Find top 2nd person with the highest total sales ?
 select name, round(sum(sales)) as total_sales
