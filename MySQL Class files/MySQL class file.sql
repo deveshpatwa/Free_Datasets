@@ -455,7 +455,7 @@ select distinct category  from store;
 
 select distinct category,sub_category from store;
 
-select distinct * from store;
+select distinct * from store;     
 
 select count(distinct category)  from store;
 
@@ -554,9 +554,16 @@ where name like "t%s";
 # Show name column from store where the customer name end with "gh"
 
 # Find all the unique sub_category which start with "A" and has total 3 char?
+
+select distinct sub_category 
+from store 
+where sub_category like "a%";
+
 select distinct sub_category
 from store
 where sub_category like "a__";
+
+# Find all the unique name where the second letter is D ?
 
 # Find if like works on numeric values? 
 
@@ -584,13 +591,11 @@ select city , round(sum(sales)), round(sum(profit))
 from store
 group by city;
 
-# Show gender wise average marks from students table?
+# Show gender wise average marks from students table? (students table)
 
-# Show department wise average marks for each gender ?
+# Show sub_category wise total sales and total profit ? (store tabe)
 
-# Show sub_category wise total sales and total profit ?
-
-# Find category wise number of orders ?
+# Find category wise number of orders ? (store tabe)
 
 
 -- --------------group by with multiple columns
@@ -602,6 +607,7 @@ group by region , category;
 
 # Show category then subcategory by total sales, total profit and average quantity ?
 
+# Show department wise average marks for each gender ?
 
 -- ------------------ HAVING -------------------
 
@@ -611,11 +617,17 @@ from store
 where total_sales < 1000
 group by sub_category;
 
-
+# show subcategory wise total sales where the total sales is less then 1000?
 select sub_category, round(sum(sales)) as total_sales
 from store
 group by sub_category
 having total_sales < 1000;
+
+select sub_category, round(sum(sales)) as total_sales
+from store
+group by sub_category
+having region = "East";
+
 
 # region wise total profit
 select region , sum(profit) as total_profit
@@ -655,7 +667,11 @@ select * from store;
 
 SELECT *
 from store
-order by order_date ;
+order by order_date asc;
+
+SELECT *
+from store
+order by order_date desc;
 
 # Show name and sales column from store and order the sales column in desc ?
 
@@ -668,7 +684,7 @@ order by total_sales desc;
 -- -----------order by with 2 columns
 select * 
 from store
-order by category,sub_category ,sales desc ;
+order by sub_category ,sales desc ;
 
 -- ---------------- limit 
 select * 
@@ -683,14 +699,22 @@ order by sales desc
 limit 3;
 
 
-# Show name region and profit column where the name should start with "S" and the region should be "East" and show only top 10 transactions with highest profit ?
+# Show name, region and profit column where the name should start with "S" and the region should be "East" and show only top 10 transactions with highest profit ?
+
 
 # Find top 10 cities with highest total profit ? 
 
+# find top 2nd highest sales amount
 select round(sales) 
 from store
 order by sales desc
 limit 1 offset 2;
+
+select round(sales) 
+from store
+order by sales desc
+limit 2,1;
+
 
 # Find top 2nd person with the highest total sales ?
 select name, round(sum(sales)) as total_sales
@@ -722,6 +746,18 @@ select *
 from employee join department
 on employee.department_id = department.department_id;
 
+select *
+from employee inner join department
+on employee.department_id = department.department_id;
+
+select *
+from employee left join department
+on employee.department_id = department.department_id;
+
+select *
+from employee right join department
+on employee.department_id = department.department_id;
+
 select name,name
 from employee join department
 on employee.department_id = department.department_id;
@@ -736,7 +772,7 @@ from employee inner join department
 on employee.department_id = department.department_id;
 
 # using short names
-select e.employee_id, e.name,e.salary,d.name
+select e.employee_id, e.name ,e.salary, d.name 
 from employee as e inner join department as d
 on e.department_id = d.department_id;
 
@@ -768,14 +804,33 @@ from employee , department;
 select *
 from employee cross join department;
 
+select * 
+from employee as e , department as d
+where e.department_id = d.department_id;
+
+
 # self join
-select emp.name as employee , coalesce(manager.name,"No manager")    as manager
+select emp.employee_id, emp.name as employee , manager.name    as manager
 from employee as emp left join employee as manager
 on emp.manager_id = manager.employee_id;
 
 
 # Show all the employees whose department head is Rakesh ?
+/*
 
+select e.name as employee_under_rakesh
+from employee as e inner join department as d
+on e.department_id = d.department_id
+where department_head = "rakesh";
+
+*/
+# Show all the employee whose manager is Shivam?
+/*
+select e.name as employees
+from employee as e join employee as m
+on e.manager_id = m.employee_id
+where m.name = "shivam";
+*/
 
 -- ----------------- UNION -------------------------------
 select * from sales_2019
@@ -784,14 +839,14 @@ select * from sales_2020
 union
 select * from sales_2021;
 
--- union all
+
 select * from sales_2019
-union 
-select * from sales_2020
-union 
-select * from sales_2021
+union
+select * from sales_2019;
+
+select * from sales_2019
 union all
-select * from sales_2021;
+select * from sales_2019;
 
 
 select month,salesamount from sales_2019
@@ -808,15 +863,15 @@ select avg(marks) from students;
 # Find the students with above average marks ?
 select * 
 from students
-where marks > (select avg(marks) from students )
-order by marks ;
+where marks > (select avg(marks) from students );
 
-# Find a student with the highest marks ?
-
-
+# Find a student with the highest marks using sub-query only?
+select * 
+from students
+where marks = (select max(marks) from students );
 
 -- When the output is a single column ?
-# Show all the transaction of customers who have made a transaction of above 1000 in their lifetime ?
+# Show all the transaction of customers who have made a sales of above 1000 in their lifetime ?
 select * from store;
 
 select distinct name
@@ -828,6 +883,11 @@ from store
 where name in (select distinct name from store where sales > 1000) ; 
 
 # Show all the records of the most profitable customer ?
+/*
+select *
+from store
+where name = (select name from store group by name order by sum(profit) desc limit 1) ;
+*/
 
 
 -- when you have a table as a output
@@ -842,9 +902,20 @@ group by pnl;
 with temp as 
 (select profit, if(profit>0,"Profit","Loss") as pnl from store)
 
-select pnl,count(*) as number_of_orders
+select pnl,count(*) as number_of_orders, avg(profit) as avg_amount
 from temp
 group by pnl;
+
+# find subcategory wise total sales where total sales is above 10,000 with CTE?
+with temp as (
+select sub_category, sum(sales) as total_sales
+from store
+group by sub_category)
+
+select *
+from temp
+where total_sales > 10000; 
+
 
 # Calculate year wise profit margin ?
 
@@ -880,14 +951,16 @@ order by number_of_orders desc;
 
 
 -- ------------------- Windows Functions -----------------------
+
+select max(sales) from store;
+
 select max(sales) over() from store;
 
 select * , max(sales) over() from store;
 
 select * , max(sales) from store;
 
-select *,max(sales) over(partition by sub_category)
-from store;
+select *,max(sales) over(partition by sub_category) from store;
 
 select region,sum(sales)
 from store
@@ -899,21 +972,33 @@ from store;
 
 select * from students;
 
-select student_name, marks, rank() over(order by marks desc)
+# Show department wise max marks using windows functions?
+select * , max(marks) over(partition by department)
+from students;
+
+select student_name, marks, rank() over()
 from students;
 
 select student_name, marks, rank() over(order by marks desc)
-from students;
-
-select * , rank() over(partition by department order by marks desc) as ranking
 from students;
 
 select student_name, marks, dense_rank() over(order by marks desc)
 from students;
 
-select student_name,marks, row_number() over()
+select student_name,marks, row_number() over(order by marks desc)
 from students;
 
+select * , rank() over(partition by department order by marks desc) as ranking
+from students;
+
+# Find top 3 students with highest marks by gender?
+with temp as (
+select *,rank() over(partition by gender order by marks desc) as ranking
+from students)
+
+select * 
+from temp 
+where ranking <=3;
 
 select * , 
 	rank() over(order by marks desc) as rank_func,
@@ -963,6 +1048,16 @@ from yearly_sales;
 select * , lead(amount) over() as nxt_year
 from yearly_sales;
 
+select *, lag(amount,2) over() as prv_year
+from yearly_sales;
+
+select name , sales , lag(sales) over() 
+from store;
+
+select name , sales , lead(sales) over() 
+from store;
+
+
 # Change in sales amount from previous year 
 with new as (
 select year,amount as cur_year, lag(amount) over() as prv_year
@@ -992,7 +1087,9 @@ where region = "east" and sales >= 1000;
 
 select * from v1;
 
-insert into v1 values("rohan","east",5500);
+update v1
+set sales = 5000
+where name = "Karen Daniels";
 
 select * from store;
 
@@ -1003,8 +1100,9 @@ group by region;
 
 select * from region_report;
 
-insert into region_report values("random",500);
-
+update region_report
+set total_sales = 36000
+where region = "east";
 
 
 # Create a view to fetch a daily report of the last days total sales total profit and total quantity ?
