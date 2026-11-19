@@ -1018,56 +1018,30 @@ select *
 from stud2
 where ranking  =1 ;
 
--- create table
-drop table yearly_sales;
-create table yearly_sales (
-    year int,
-    amount int
-);
 
--- insert sample data
-insert into yearly_sales
-values
-(2018, 4200),
-(2019, 4450),
-(2020, 3980),
-(2021, 4625),
-(2022, 4870),
-(2023, 5150),
-(2024, 5380),
-(2025, 5560);
+create table year_sales as (
+select year(order_date) as year ,round(sum(sales)) as total_sales
+from store
+group by year
+order by year);
 
--- view data
-select * 
-from yearly_sales;
+select * from year_sales;
+
+select *, lag(total_sales) over()
+from year_sales;
+
+select *, lead(total_sales) over()
+from year_sales;
 
 
-select *, lag(amount) over() as prv_year
-from yearly_sales;
+# Find YoY growth
+with temp as (
+select year,total_sales as cur_year_sales, lag(total_sales) over() as prv_year_sales 
+from year_sales)
 
-select * , lead(amount) over() as nxt_year
-from yearly_sales;
-
-select *, lag(amount,2) over() as prv_year
-from yearly_sales;
-
-select name , sales , lag(sales) over() 
-from store;
-
-select name , sales , lead(sales) over() 
-from store;
-
-
-# Change in sales amount from previous year 
-with new as (
-select year,amount as cur_year, lag(amount) over() as prv_year
-from yearly_sales)
-
-select * , cur_year - prv_year as changes
-from new;
-
-
-
+select *,concat(round((cur_year_sales - prv_year_sales) / prv_year_sales * 100,2)," %
+") as 'changes_in_%'
+from temp;
 
 
 -- ------------------Views in MySQL ------------------------
@@ -1088,7 +1062,7 @@ where region = "east" and sales >= 1000;
 select * from v1;
 
 update v1
-set sales = 5000
+set sales = 5001
 where name = "Karen Daniels";
 
 select * from store;
